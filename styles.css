@@ -902,3 +902,40 @@ body {
 ::-webkit-scrollbar-thumb:hover {
     background: #555;
 }
+
+/* Empathy Radio Buttons */
+.empathy-radio-container {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin: 20px 0;
+}
+
+.empathy-option {
+    display: flex;
+    align-items: center;
+    padding: 8px 12px;
+    border-radius: 6px;
+    transition: background-color 0.2s;
+}
+
+.empathy-option:hover {
+    background-color: #f0f8ff;
+}
+
+.empathy-option input[type="radio"] {
+    margin-right: 10px;
+    transform: scale(1.2);
+}
+
+.empathy-option label {
+    cursor: pointer;
+    font-size: 14px;
+    color: #333;
+    margin: 0;
+}
+
+.empathy-option input[type="radio"]:checked + label {
+    font-weight: 600;
+    color: #007bff;
+}

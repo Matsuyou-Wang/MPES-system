@@ -17,7 +17,6 @@ const VIDEOS = [
         path: 'assets/Ses01F_script01_1.mp4',
         duration: 429,  // 7分9秒
         annotationPoints: [
-            { time: 10 },
             { time: 30 },
             { time: 60 },
             { time: 90 },

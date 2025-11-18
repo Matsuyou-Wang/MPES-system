@@ -27,12 +27,11 @@ class AnnotationSystem {
         this.annotationView = document.getElementById('annotationView');
         this.closeModalBtn = document.querySelector('.close-btn');
 
-        // 滑动条元素
+        // 滑动条和表单元素
         this.sliders = {
             pleasure: document.getElementById('pleasureSlider'),
             arousal: document.getElementById('arousalSlider'),
             dominance: document.getElementById('dominanceSlider'),
-            empathy: document.getElementById('empathySlider'),
             pleasureLeft: document.getElementById('pleasureSliderLeft'),
             arousalLeft: document.getElementById('arousalSliderLeft'),
             dominanceLeft: document.getElementById('dominanceSliderLeft'),
@@ -40,6 +39,9 @@ class AnnotationSystem {
             arousalRight: document.getElementById('arousalSliderRight'),
             dominanceRight: document.getElementById('dominanceSliderRight')
         };
+
+        // Empathy单选按钮
+        this.empathyRadios = document.querySelectorAll('input[name="empathy"]');
 
         // 显示值元素
         this.valueDisplays = {
@@ -73,6 +75,7 @@ class AnnotationSystem {
     init() {
         this.loadVideos();
         this.setupEventListeners();
+        this.updateSliderValues(); // 初始化滑动条显示值
     }
 
     loadVideos() {
@@ -236,7 +239,12 @@ class AnnotationSystem {
             this.sliders.pleasureRight.value = existingAnnotation.pleasureRight || 0;
             this.sliders.arousalRight.value = existingAnnotation.arousalRight || 0;
             this.sliders.dominanceRight.value = existingAnnotation.dominanceRight || 0;
-            this.sliders.empathy.value = existingAnnotation.empathy || 4;
+            
+            // 设置empathy单选按钮
+            const empathyValue = existingAnnotation.empathy || 4;
+            const empathyRadio = document.getElementById(`empathy${empathyValue}`);
+            if (empathyRadio) empathyRadio.checked = true;
+            
             this.updateSliderValues();
         } else {
             // 重置为默认值
@@ -246,7 +254,11 @@ class AnnotationSystem {
             this.sliders.pleasureRight.value = 0;
             this.sliders.arousalRight.value = 0;
             this.sliders.dominanceRight.value = 0;
-            this.sliders.empathy.value = 4;
+            
+            // 重置empathy单选按钮到默认值（Neutral = 4）
+            const empathy4 = document.getElementById('empathy4');
+            if (empathy4) empathy4.checked = true;
+            
             this.updateSliderValues();
         }
 
@@ -282,7 +294,11 @@ class AnnotationSystem {
         this.sliders.pleasureRight.value = 0;
         this.sliders.arousalRight.value = 0;
         this.sliders.dominanceRight.value = 0;
-        this.sliders.empathy.value = 4;
+        
+        // 重置empathy单选按钮到默认值（Neutral = 4）
+        const empathy4 = document.getElementById('empathy4');
+        if (empathy4) empathy4.checked = true;
+        
         this.updateSliderValues();
     }
 
@@ -293,7 +309,12 @@ class AnnotationSystem {
         this.valueDisplays.pleasureRight.textContent = parseFloat(this.sliders.pleasureRight.value).toFixed(3);
         this.valueDisplays.arousalRight.textContent = parseFloat(this.sliders.arousalRight.value).toFixed(3);
         this.valueDisplays.dominanceRight.textContent = parseFloat(this.sliders.dominanceRight.value).toFixed(3);
-        this.valueDisplays.empathy.textContent = this.sliders.empathy.value;
+        
+        // 更新empathy显示值
+        const checkedEmpathy = document.querySelector('input[name="empathy"]:checked');
+        if (checkedEmpathy) {
+            this.valueDisplays.empathy.textContent = checkedEmpathy.value;
+        }
     }
 
     renderHistory() {
@@ -371,6 +392,7 @@ class AnnotationSystem {
 
         // 按钮事件
         this.confirmBtn.addEventListener('click', () => {
+            const checkedEmpathy = document.querySelector('input[name="empathy"]:checked');
             const data = {
                 pleasureLeft: parseFloat(this.sliders.pleasureLeft.value),
                 arousalLeft: parseFloat(this.sliders.arousalLeft.value),
@@ -378,7 +400,7 @@ class AnnotationSystem {
                 pleasureRight: parseFloat(this.sliders.pleasureRight.value),
                 arousalRight: parseFloat(this.sliders.arousalRight.value),
                 dominanceRight: parseFloat(this.sliders.dominanceRight.value),
-                empathy: parseInt(this.sliders.empathy.value)
+                empathy: checkedEmpathy ? parseInt(checkedEmpathy.value) : 4
             };
             this.saveAnnotation(this.currentAnnotationPoint, data);
         });
@@ -390,6 +412,7 @@ class AnnotationSystem {
         this.closeModalBtn.addEventListener('click', () => {
             // 如果有当前标注点，保存数据并继续
             if (this.currentAnnotationPoint && !this.annotationData[this.currentAnnotationPoint.time]) {
+                const checkedEmpathy = document.querySelector('input[name="empathy"]:checked');
                 const data = {
                     pleasureLeft: parseFloat(this.sliders.pleasureLeft.value),
                     arousalLeft: parseFloat(this.sliders.arousalLeft.value),
@@ -397,7 +420,7 @@ class AnnotationSystem {
                     pleasureRight: parseFloat(this.sliders.pleasureRight.value),
                     arousalRight: parseFloat(this.sliders.arousalRight.value),
                     dominanceRight: parseFloat(this.sliders.dominanceRight.value),
-                    empathy: parseInt(this.sliders.empathy.value)
+                    empathy: checkedEmpathy ? parseInt(checkedEmpathy.value) : 4
                 };
                 this.saveAnnotation(this.currentAnnotationPoint, data);
             } else {
@@ -427,6 +450,11 @@ class AnnotationSystem {
         // 滑动条更新
         Object.values(this.sliders).forEach(slider => {
             slider.addEventListener('input', () => this.updateSliderValues());
+        });
+
+        // Empathy单选按钮更新
+        this.empathyRadios.forEach(radio => {
+            radio.addEventListener('change', () => this.updateSliderValues());
         });
 
         // 编辑面板

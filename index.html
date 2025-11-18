@@ -7,7 +7,7 @@
     <meta http-equiv="Pragma" content="no-cache">
     <meta http-equiv="Expires" content="0">
     <title>Annotation System - Video Rating</title>
-    <link rel="stylesheet" href="styles.css?v=3.0">
+    <link rel="stylesheet" href="styles.css?v=4.0">
 </head>
 <body>
     <div class="container">
@@ -153,7 +153,7 @@
                             <!-- Dominance -->
                             <div class="scale-item">
                                 <label for="dominanceSliderLeft">
-                                    <strong>Dominance</strong>
+                                    <strong>Submissive – Dominant</strong>
                                     <span class="scale-range">Passive ← → Active</span>
                                 </label>
                                 <div class="slider-container">
@@ -206,7 +206,7 @@
                             <!-- Dominance -->
                             <div class="scale-item">
                                 <label for="dominanceSliderRight">
-                                    <strong>Dominance</strong>
+                                    <strong>Submissive – Dominant</strong>
                                     <span class="scale-range">Passive ← → Active</span>
                                 </label>
                                 <div class="slider-container">
@@ -225,26 +225,41 @@
                 <!-- Empathy Section -->
                 <div class="scale-section">
                     <h3>Empathy Assessment</h3>
-                    <p class="section-description">Please rate your level of understanding of the speaker's emotional state</p>
+                    <p class="section-description">Do you think the two people in the picture empathy each other?</p>
 
-                    <div class="scale-item">
-                        <label for="empathySlider">
-                            <strong>Empathy</strong>
-                            <span class="scale-range">Do not understand ← → Fully understand</span>
-                        </label>
-                        <div class="slider-container empathy-slider-container">
-                            <span class="slider-label">1</span>
-                            <input type="range" id="empathySlider" class="slider empathy-slider" min="1" max="7" step="1" value="4">
-                            <span class="slider-label">7</span>
+                    <div class="empathy-radio-container">
+                        <div class="empathy-option">
+                            <input type="radio" id="empathy1" name="empathy" value="1">
+                            <label for="empathy1">Not empathic at all</label>
                         </div>
-                        <div class="value-display">
-                            Current value: <span id="empathyValue">4</span>
+                        <div class="empathy-option">
+                            <input type="radio" id="empathy2" name="empathy" value="2">
+                            <label for="empathy2">Slightly empathic</label>
                         </div>
-                        <div class="empathy-labels">
-                            <span class="label-item">1: Do not understand</span>
-                            <span class="label-item">4: Moderate</span>
-                            <span class="label-item">7: Fully understand</span>
+                        <div class="empathy-option">
+                            <input type="radio" id="empathy3" name="empathy" value="3">
+                            <label for="empathy3">A little empathic</label>
                         </div>
+                        <div class="empathy-option">
+                            <input type="radio" id="empathy4" name="empathy" value="4" checked>
+                            <label for="empathy4">Neutral</label>
+                        </div>
+                        <div class="empathy-option">
+                            <input type="radio" id="empathy5" name="empathy" value="5">
+                            <label for="empathy5">Moderately empathic</label>
+                        </div>
+                        <div class="empathy-option">
+                            <input type="radio" id="empathy6" name="empathy" value="6">
+                            <label for="empathy6">Quite empathic</label>
+                        </div>
+                        <div class="empathy-option">
+                            <input type="radio" id="empathy7" name="empathy" value="7">
+                            <label for="empathy7">Very empathic</label>
+                        </div>
+                    </div>
+                    
+                    <div class="value-display">
+                        Current value: <span id="empathyValue">4</span>
                     </div>
                 </div>
             </div>
@@ -270,7 +285,7 @@
     <script src="data/videos.js?v=3.0"></script>
     <script src="data/annotation-config.js?v=2.0"></script>
     <script src="js/data-manager.js?v=2.0"></script>
-    <script src="js/app.js?v=2.0"></script>
+    <script src="js/app.js?v=4.0"></script>
     <script src="js/tester.js?v=2.0"></script>
 </body>
 </html>
