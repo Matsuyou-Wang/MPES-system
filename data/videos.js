@@ -13,6 +13,25 @@
 
 const VIDEOS = [
     {
+        title: 'Session2 - Script01 (IEMOCAP)',
+        path: 'assets/Ses02F_script01_1.mp4',
+        duration: 355,  // 5分55秒 = 355秒
+        annotationPoints: [
+            { time: 10 },
+            { time: 30 },
+            { time: 60 },
+            { time: 90 },
+            { time: 120 },
+            { time: 150 },
+            { time: 180 },
+            { time: 210 },
+            { time: 240 },
+            { time: 270 },
+            { time: 300 },
+            { time: 330 }
+        ]
+    },
+    {
         title: '示例视频 1 - 日常对话',
         path: 'assets/sample-video-1.mp4',
         duration: 120,
