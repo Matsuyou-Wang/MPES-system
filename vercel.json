@@ -2,7 +2,7 @@
   "version": 2,
   "builds": [
     {
-      "src": "**",
+      "src": "**/*",
       "use": "@vercel/static"
     }
   ],
@@ -12,15 +12,21 @@
       "dest": "/$1"
     }
   ],
-  "functions": {},
-  "redirects": [],
   "headers": [
     {
       "source": "/(.*)",
       "headers": [
         {
           "key": "Cache-Control",
-          "value": "public, max-age=86400"
+          "value": "no-cache, no-store, must-revalidate"
+        },
+        {
+          "key": "Pragma",
+          "value": "no-cache"
+        },
+        {
+          "key": "Expires", 
+          "value": "0"
         }
       ]
     },
@@ -29,7 +35,7 @@
       "headers": [
         {
           "key": "Cache-Control", 
-          "value": "public, max-age=31536000"
+          "value": "public, max-age=86400"
         }
       ]
     }
