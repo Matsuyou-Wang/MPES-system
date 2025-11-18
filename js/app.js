@@ -1,5 +1,10 @@
+/**
+ * 标注系统主应用逻辑
+ */
+
 class AnnotationSystem {
     constructor() {
+        // DOM 元素
         this.videoPlayer = document.getElementById('videoPlayer');
         this.videoList = document.getElementById('videoList');
         this.quickVideoList = document.getElementById('quickVideoList');
@@ -22,6 +27,7 @@ class AnnotationSystem {
         this.annotationView = document.getElementById('annotationView');
         this.closeModalBtn = document.querySelector('.close-btn');
 
+        // 滑动条和表单元素
         this.sliders = {
             pleasure: document.getElementById('pleasureSlider'),
             arousal: document.getElementById('arousalSlider'),
@@ -34,8 +40,10 @@ class AnnotationSystem {
             dominanceRight: document.getElementById('dominanceSliderRight')
         };
 
+        // Empathy单选按钮
         this.empathyRadios = document.querySelectorAll('input[name="empathy"]');
 
+        // 显示值元素
         this.valueDisplays = {
             pleasure: document.getElementById('pleasureValue'),
             arousal: document.getElementById('arousalValue'),
@@ -50,24 +58,27 @@ class AnnotationSystem {
 
         this.modalTimestamp = document.getElementById('modalTimestamp');
 
+        // 状态
         this.currentVideo = null;
         this.currentVideoIndex = -1;
-        this.annotationPoints = [];
-        this.annotationData = {};
+        this.annotationPoints = []; // 标注点信息
+        this.annotationData = {}; // 储存标注数据 { timestamp: { pleasure, arousal, dominance, empathy } }
         this.isModalOpen = false;
         this.currentAnnotationPoint = null;
         this.isPaused = true;
 
+        // 初始化
         this.init();
     }
 
     init() {
         this.loadVideos();
         this.setupEventListeners();
-        this.updateSliderValues();
+        this.updateSliderValues(); // 初始化滑动条显示值
     }
 
     loadVideos() {
+        // 从 videos.js 加载视频库数据
         if (typeof VIDEOS !== 'undefined') {
             this.videos = VIDEOS;
             this.renderVideoList();

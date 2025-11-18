@@ -1,102 +1,53 @@
-# Video Annotation System# 标注系统网页
+# 标注系统网页
 
+一个用于标注对话视频的网页应用系统，支持自动暂停、多维度情感评分和交互式标注。
 
+## 功能特性
 
-A web-based video annotation tool for emotion and empathy assessment.一个用于标注对话视频的网页应用系统，支持自动暂停、多维度情感评分和交互式标注。
-
-
-
-## Features## 功能特性
-
-
-
-- Video playback with automatic pause at predefined annotation points### 核心功能
-
-- PAD (Pleasure-Arousal-Dominance) assessment for left and right speakers- **视频库管理**: 从系统库选择多段对话视频
-
-- 7-point empathy evaluation scale- **自动暂停**: 视频播放到预设时间戳时自动暂停
-
-- Real-time annotation history- **问卷标注**: 弹出标准化评分问卷
-
-- Data export functionality- **多维度评分**:
-
+### 核心功能
+- **视频库管理**: 从系统库选择多段对话视频
+- **自动暂停**: 视频播放到预设时间戳时自动暂停
+- **问卷标注**: 弹出标准化评分问卷
+- **多维度评分**:
   - **PAD维度** (Pleasure, Arousal, Dominance): -1 到 1 的滑动条，配合 SAM 情感评估图
-
-## Setup  - **同理心** (Empathy): 1-7 的 Likert 量表
-
+  - **同理心** (Empathy): 1-7 的 Likert 量表
 - **标注管理**:
+  - 确认/清除按钮控制
+  - 标注历史记录
+  - 支持回到前面部分重新填写
+- **播放控制**: 完整的视频播放/暂停/进度控制
 
-1. Clone the repository  - 确认/清除按钮控制
-
-2. Place video files in the `assets/` directory  - 标注历史记录
-
-3. Update video configuration in `data/videos.js`  - 支持回到前面部分重新填写
-
-4. Open `index.html` in a modern web browser- **播放控制**: 完整的视频播放/暂停/进度控制
-
-
-
-## Usage### 用户交互
-
+### 用户交互
 - 直观的界面布局
+- 响应式设计（支持平板和手机）
+- 键盘快捷键（空格键播放/暂停）
+- 视频进度条点击快速定位
 
-1. Select a video from the library- 响应式设计（支持平板和手机）
+## 项目结构
 
-2. The video will pause at predefined points for annotation- 键盘快捷键（空格键播放/暂停）
-
-3. Rate PAD dimensions using sliders (-1 to +1)- 视频进度条点击快速定位
-
-4. Assess empathy level (1-7 scale)
-
-5. Continue playback or edit previous annotations## 项目结构
-
-
-
-## Configuration```
-
+```
 Experiment Interaction/
-
-Video data is configured in `data/videos.js` with the following structure:├── index.html              # 主HTML文件
-
+├── index.html              # 主HTML文件
 ├── styles.css              # 样式表
-
-```javascript├── js/
-
-{│   └── app.js             # 主应用逻辑
-
-    title: "Video Title",├── data/
-
-    path: "assets/video.mp4",│   └── videos.js          # 视频库配置数据
-
-    duration: 120,├── assets/                # 资源文件夹
-
-    annotationPoints: [│   ├── SAM.jpg            # SAM情感评估图（需要添加）
-
-        { time: 30 },│   ├── sample-video-1.mp4 # 示例视频（需要添加）
-
-        { time: 60 },│   ├── sample-video-2.mp4
-
-        { time: 90 }│   └── sample-video-3.mp4
-
-    ]└── README.md              # 本文件
-
-}```
-
+├── js/
+│   └── app.js             # 主应用逻辑
+├── data/
+│   └── videos.js          # 视频库配置数据
+├── assets/                # 资源文件夹
+│   ├── SAM.jpg            # SAM情感评估图（需要添加）
+│   ├── sample-video-1.mp4 # 示例视频（需要添加）
+│   ├── sample-video-2.mp4
+│   └── sample-video-3.mp4
+└── README.md              # 本文件
 ```
 
 ## 快速开始
 
-## Technical Details
-
 ### 1. 基本使用
 
-- Pure HTML5/CSS3/JavaScript implementation
+在浏览器中打开 `index.html` 文件。
 
-- No external dependencies在浏览器中打开 `index.html` 文件。
-
-- Responsive design
-
-- Cross-browser compatibility### 2. 添加视频
+### 2. 添加视频
 
 编辑 `data/videos.js` 文件，按照下面的格式添加视频：
 

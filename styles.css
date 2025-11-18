@@ -1,4 +1,4 @@
-/* Global Styles */
+/* ==================== 全局样式 ==================== */
 * {
     margin: 0;
     padding: 0;
@@ -11,7 +11,7 @@ body {
     color: #333;
 }
 
-/* Layout */
+/* ==================== 布局 ==================== */
 .container {
     display: flex;
     height: 100vh;
@@ -82,7 +82,7 @@ body {
     flex-direction: column;
 }
 
-/* View Transitions */
+/* ==================== 视图切换 ==================== */
 .view {
     display: none;
     flex: 1;
@@ -177,7 +177,7 @@ body {
     margin-bottom: 15px;
 }
 
-/* Three-Column Layout */
+/* ==================== 三列注解视图 ==================== */
 .annotation-left-panel {
     width: 220px;
     background-color: #f8f9fa;
@@ -295,7 +295,7 @@ body {
     color: #e3f2fd;
 }
 
-/* Annotation View */
+/* ==================== 标注视图 ==================== */
 .video-player-container {
     background-color: #000;
     border-radius: 0;
@@ -448,7 +448,7 @@ body {
     background-color: #0056b3;
 }
 
-/* Modal */
+/* ==================== 模态弹窗 ==================== */
 .modal {
     display: none;
     position: fixed;
@@ -545,7 +545,7 @@ body {
     font-weight: 500;
 }
 
-/* Form Elements */
+/* ==================== 量表部分 ==================== */
 .scale-section {
     margin-bottom: 30px;
     padding-bottom: 20px;
@@ -711,7 +711,7 @@ body {
     border-radius: 4px;
 }
 
-/* Modal Footer */
+/* ==================== 弹窗底部按钮 ==================== */
 .modal-footer {
     display: flex;
     gap: 10px;
@@ -753,7 +753,7 @@ body {
     transform: scale(0.98);
 }
 
-/* Edit Panel */
+/* ==================== 编辑面板 ==================== */
 .edit-panel {
     position: fixed;
     right: 0;
@@ -834,7 +834,7 @@ body {
     line-height: 1.6;
 }
 
-/* Responsive Design */
+/* ==================== 响应式设计 ==================== */
 @media (max-width: 1024px) {
     .sidebar {
         width: 200px;
@@ -896,7 +896,7 @@ body {
     }
 }
 
-/* Scrollbar */
+/* ==================== 滚动条美化 ==================== */
 ::-webkit-scrollbar {
     width: 8px;
     height: 8px;
