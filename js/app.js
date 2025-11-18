@@ -8,6 +8,7 @@ class AnnotationSystem {
         this.videoPlayer = document.getElementById('videoPlayer');
         this.videoList = document.getElementById('videoList');
         this.quickVideoList = document.getElementById('quickVideoList');
+        this.annotationVideoList = document.getElementById('annotationVideoList');
         this.startBtn = document.getElementById('startBtn');
         this.historyList = document.getElementById('historyList');
         this.modal = document.getElementById('annotationModal');
@@ -87,6 +88,7 @@ class AnnotationSystem {
     renderVideoList() {
         this.videoList.innerHTML = '';
         this.quickVideoList.innerHTML = '';
+        this.annotationVideoList.innerHTML = '';
         
         this.videos.forEach((video, index) => {
             // Sidebar video list
@@ -99,7 +101,7 @@ class AnnotationSystem {
             li.addEventListener('click', () => this.selectVideo(index));
             this.videoList.appendChild(li);
             
-            // Quick selection panel
+            // Quick selection panel (on welcome page)
             const quickItem = document.createElement('div');
             quickItem.className = 'quick-video-item';
             quickItem.innerHTML = `
@@ -115,6 +117,22 @@ class AnnotationSystem {
                 this.startBtn.disabled = false;
             });
             this.quickVideoList.appendChild(quickItem);
+            
+            // Annotation view left panel
+            const annItem = document.createElement('li');
+            annItem.className = 'annotation-video-item';
+            annItem.innerHTML = `
+                <div><strong>${video.title}</strong></div>
+                <div style="font-size: 11px; color: #666; margin-top: 3px;">Duration: ${this.formatTime(video.duration)}</div>
+            `;
+            annItem.addEventListener('click', () => {
+                this.selectVideo(index);
+                // Update annotation video list UI
+                document.querySelectorAll('.annotation-video-item').forEach((item, i) => {
+                    item.classList.toggle('active', i === index);
+                });
+            });
+            this.annotationVideoList.appendChild(annItem);
         });
     }
 

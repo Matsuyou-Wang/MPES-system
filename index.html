@@ -52,25 +52,36 @@
 
             <!-- Video Playing and Annotation View -->
             <div id="annotationView" class="view">
-                <div class="video-player-container">
-                    <video id="videoPlayer" class="video-player">
-                        <source src="" type="video/mp4">
-                        Your browser does not support video playback
-                    </video>
-                    <div class="video-controls">
-                        <button id="playBtn" class="control-btn">Play</button>
-                        <button id="pauseBtn" class="control-btn">Pause</button>
-                        <span id="currentTime" class="time-display">00:00</span>
-                        <span class="time-separator">/</span>
-                        <span id="duration" class="time-display">00:00</span>
-                        <div class="progress-bar">
-                            <div id="progress" class="progress-fill"></div>
+                <!-- Left: Video List Panel -->
+                <div class="annotation-left-panel">
+                    <h3>Video List</h3>
+                    <ul id="annotationVideoList" class="annotation-video-list">
+                        <!-- Videos loaded dynamically -->
+                    </ul>
+                </div>
+
+                <!-- Center: Video Player -->
+                <div class="annotation-center-panel">
+                    <div class="video-player-container">
+                        <video id="videoPlayer" class="video-player">
+                            <source src="" type="video/mp4">
+                            Your browser does not support video playback
+                        </video>
+                        <div class="video-controls">
+                            <button id="playBtn" class="control-btn">Play</button>
+                            <button id="pauseBtn" class="control-btn">Pause</button>
+                            <span id="currentTime" class="time-display">00:00</span>
+                            <span class="time-separator">/</span>
+                            <span id="duration" class="time-display">00:00</span>
+                            <div class="progress-bar">
+                                <div id="progress" class="progress-fill"></div>
+                            </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Annotation History Panel -->
-                <div class="annotation-history">
+                <!-- Right: Annotation History Panel -->
+                <div class="annotation-right-panel">
                     <h3>Annotation Progress</h3>
                     <div id="historyList" class="history-list">
                         <!-- Annotation records added dynamically -->
