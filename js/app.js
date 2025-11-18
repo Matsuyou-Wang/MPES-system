@@ -223,9 +223,9 @@ class AnnotationSystem {
     }
 
     updateSliderValues() {
-        this.valueDisplays.pleasure.textContent = parseFloat(this.sliders.pleasure.value).toFixed(1);
-        this.valueDisplays.arousal.textContent = parseFloat(this.sliders.arousal.value).toFixed(1);
-        this.valueDisplays.dominance.textContent = parseFloat(this.sliders.dominance.value).toFixed(1);
+        this.valueDisplays.pleasure.textContent = parseFloat(this.sliders.pleasure.value).toFixed(3);
+        this.valueDisplays.arousal.textContent = parseFloat(this.sliders.arousal.value).toFixed(3);
+        this.valueDisplays.dominance.textContent = parseFloat(this.sliders.dominance.value).toFixed(3);
         this.valueDisplays.empathy.textContent = this.sliders.empathy.value;
     }
 
@@ -243,29 +243,29 @@ class AnnotationSystem {
                     <div>
                         <span class="history-time">${this.formatTime(point.time)}</span>
                         <div class="history-values">
-                            PAD: (${annotation.pleasure.toFixed(1)}, ${annotation.arousal.toFixed(1)}, ${annotation.dominance.toFixed(1)}) | 
+                            PAD: (${annotation.pleasure.toFixed(3)}, ${annotation.arousal.toFixed(3)}, ${annotation.dominance.toFixed(3)}) | 
                             Empathy: ${annotation.empathy}
                         </div>
                     </div>
                     <div class="history-actions">
-                        <span class="history-status">已完成</span>
-                        <button class="history-edit-btn" data-time="${point.time}">编辑</button>
+                        <span class="history-status">Completed</span>
+                        <button class="history-edit-btn" data-time="${point.time}">Edit</button>
                     </div>
                 `;
             } else {
                 historyItem.innerHTML = `
                     <div>
                         <span class="history-time">${this.formatTime(point.time)}</span>
-                        <div class="history-values">待填写</div>
+                        <div class="history-values">Pending</div>
                     </div>
-                    <span class="history-status pending">待完成</span>
+                    <span class="history-status pending">Incomplete</span>
                 `;
             }
 
             this.historyList.appendChild(historyItem);
         });
 
-        // 添加编辑按钮事件
+        // Add edit button event listeners
         document.querySelectorAll('.history-edit-btn').forEach(btn => {
             btn.addEventListener('click', (e) => {
                 const time = parseFloat(e.target.dataset.time);

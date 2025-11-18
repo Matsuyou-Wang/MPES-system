@@ -172,9 +172,11 @@ body {
 
 .video-player {
     width: 100%;
-    height: 500px;
+    height: auto;
+    aspect-ratio: 16 / 9;
     background-color: #000;
     border-radius: 8px 8px 0 0;
+    object-fit: contain;
 }
 
 .video-controls {

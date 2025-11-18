@@ -1,56 +1,56 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>标注系统 - 对话视频评分</title>
+    <title>Annotation System - Video Rating</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="container">
-        <!-- 侧边栏：视频库 -->
+        <!-- Sidebar: Video Library -->
         <aside class="sidebar">
             <div class="sidebar-header">
-                <h2>系统库</h2>
+                <h2>Video Library</h2>
             </div>
             <div class="video-library">
-                <h3>可用视频</h3>
+                <h3>Available Videos</h3>
                 <ul id="videoList" class="video-list">
-                    <!-- 动态加载视频列表 -->
+                    <!-- Videos loaded dynamically -->
                 </ul>
             </div>
         </aside>
 
-        <!-- 主内容区 -->
+        <!-- Main Content Area -->
         <main class="main-content">
-            <!-- 初始选择界面 -->
+            <!-- Initial Selection View -->
             <div id="selectionView" class="view active">
                 <div class="welcome-box">
-                    <h1>对话视频标注系统</h1>
-                    <p>请从左侧系统库选择一段对话视频开始标注</p>
+                    <h1>Video Annotation System</h1>
+                    <p>Please select a video from the library on the left to start annotating</p>
                     <div class="info-box">
-                        <h3>标注说明</h3>
+                        <h3>Annotation Instructions</h3>
                         <ul>
-                            <li>视频将在关键位置自动暂停</li>
-                            <li>需要根据提示填写：PAD维度（pleasure, arousal, dominance）和同情心（empathy）</li>
-                            <li>PAD维度使用-1到1的滑动条，配合SAM情感图</li>
-                            <li>同情心使用1-7的量表</li>
-                            <li>完成后可继续播放或返回修改前面的评分</li>
+                            <li>The video will pause automatically at key points</li>
+                            <li>You will need to fill out a rating form for each segment</li>
+                            <li>Rate PAD dimensions (pleasure, arousal, dominance) from -1 to 1</li>
+                            <li>Rate empathy on a 1-7 scale</li>
+                            <li>After completion, you can continue playing or modify previous ratings</li>
                         </ul>
                     </div>
                 </div>
             </div>
 
-            <!-- 视频播放和标注界面 -->
+            <!-- Video Playing and Annotation View -->
             <div id="annotationView" class="view">
                 <div class="video-player-container">
                     <video id="videoPlayer" class="video-player">
                         <source src="" type="video/mp4">
-                        您的浏览器不支持视频播放
+                        Your browser does not support video playback
                     </video>
                     <div class="video-controls">
-                        <button id="playBtn" class="control-btn">播放</button>
-                        <button id="pauseBtn" class="control-btn">暂停</button>
+                        <button id="playBtn" class="control-btn">Play</button>
+                        <button id="pauseBtn" class="control-btn">Pause</button>
                         <span id="currentTime" class="time-display">00:00</span>
                         <span class="time-separator">/</span>
                         <span id="duration" class="time-display">00:00</span>
@@ -60,45 +60,45 @@
                     </div>
                 </div>
 
-                <!-- 标注历史面板 -->
+                <!-- Annotation History Panel -->
                 <div class="annotation-history">
-                    <h3>标注进度</h3>
+                    <h3>Annotation Progress</h3>
                     <div id="historyList" class="history-list">
-                        <!-- 动态添加标注记录 -->
+                        <!-- Annotation records added dynamically -->
                     </div>
                 </div>
             </div>
         </main>
     </div>
 
-    <!-- 标注问卷弹窗 -->
+    <!-- Annotation Questionnaire Modal -->
     <div id="annotationModal" class="modal">
         <div class="modal-content">
             <div class="modal-header">
-                <h2>标注问卷</h2>
+                <h2>Annotation Form</h2>
                 <span class="close-btn">&times;</span>
             </div>
 
             <div class="modal-body">
                 <div class="timestamp-info">
-                    <p>视频时间: <span id="modalTimestamp">00:00</span></p>
+                    <p>Video time: <span id="modalTimestamp">00:00</span></p>
                 </div>
 
-                <!-- PAD维度部分 -->
+                <!-- PAD Section -->
                 <div class="scale-section">
-                    <h3>情感状态评估 (PAD)</h3>
-                    <p class="section-description">请根据说话人在这句话中表现的情感，评估以下三个维度</p>
+                    <h3>Emotional State Assessment (PAD)</h3>
+                    <p class="section-description">Please rate the speaker's emotional state on the following three dimensions based on this sentence</p>
 
-                    <!-- SAM图 -->
+                    <!-- SAM Image -->
                     <div class="sam-image-container">
-                        <img id="samImage" src="assets/SAM.jpg" alt="SAM情感评估图" class="sam-image">
+                        <img id="samImage" src="assets/SAM.jpg" alt="SAM Emotional Assessment" class="sam-image">
                     </div>
 
-                    <!-- Pleasure (愉悦度) -->
+                    <!-- Pleasure -->
                     <div class="scale-item">
                         <label for="pleasureSlider">
-                            <strong>Pleasure (愉悦度)</strong>
-                            <span class="scale-range">不愉悦 ← → 愉悦</span>
+                            <strong>Pleasure</strong>
+                            <span class="scale-range">Unpleasant ← → Pleasant</span>
                         </label>
                         <div class="slider-container">
                             <span class="slider-label">-1</span>
@@ -106,15 +106,15 @@
                             <span class="slider-label">+1</span>
                         </div>
                         <div class="value-display">
-                            当前值: <span id="pleasureValue">0.0</span>
+                            Current value: <span id="pleasureValue">0.000</span>
                         </div>
                     </div>
 
-                    <!-- Arousal (唤醒度) -->
+                    <!-- Arousal -->
                     <div class="scale-item">
                         <label for="arousalSlider">
-                            <strong>Arousal (唤醒度)</strong>
-                            <span class="scale-range">平静 ← → 激动</span>
+                            <strong>Arousal</strong>
+                            <span class="scale-range">Calm ← → Excited</span>
                         </label>
                         <div class="slider-container">
                             <span class="slider-label">-1</span>
@@ -122,15 +122,15 @@
                             <span class="slider-label">+1</span>
                         </div>
                         <div class="value-display">
-                            当前值: <span id="arousalValue">0.0</span>
+                            Current value: <span id="arousalValue">0.000</span>
                         </div>
                     </div>
 
-                    <!-- Dominance (控制度) -->
+                    <!-- Dominance -->
                     <div class="scale-item">
                         <label for="dominanceSlider">
-                            <strong>Dominance (控制度)</strong>
-                            <span class="scale-range">被动 ← → 主动</span>
+                            <strong>Dominance</strong>
+                            <span class="scale-range">Passive ← → Active</span>
                         </label>
                         <div class="slider-container">
                             <span class="slider-label">-1</span>
@@ -138,20 +138,20 @@
                             <span class="slider-label">+1</span>
                         </div>
                         <div class="value-display">
-                            当前值: <span id="dominanceValue">0.0</span>
+                            Current value: <span id="dominanceValue">0.000</span>
                         </div>
                     </div>
                 </div>
 
-                <!-- Empathy部分 -->
+                <!-- Empathy Section -->
                 <div class="scale-section">
-                    <h3>同理心评估</h3>
-                    <p class="section-description">请根据您对说话人情感的理解程度进行评估</p>
+                    <h3>Empathy Assessment</h3>
+                    <p class="section-description">Please rate your level of understanding of the speaker's emotional state</p>
 
                     <div class="scale-item">
                         <label for="empathySlider">
-                            <strong>Empathy (同理心)</strong>
-                            <span class="scale-range">完全不理解 ← → 完全理解</span>
+                            <strong>Empathy</strong>
+                            <span class="scale-range">Do not understand ← → Fully understand</span>
                         </label>
                         <div class="slider-container empathy-slider-container">
                             <span class="slider-label">1</span>
@@ -159,32 +159,32 @@
                             <span class="slider-label">7</span>
                         </div>
                         <div class="value-display">
-                            当前值: <span id="empathyValue">4</span>
+                            Current value: <span id="empathyValue">4</span>
                         </div>
                         <div class="empathy-labels">
-                            <span class="label-item">1: 完全不理解</span>
-                            <span class="label-item">4: 一般</span>
-                            <span class="label-item">7: 完全理解</span>
+                            <span class="label-item">1: Do not understand</span>
+                            <span class="label-item">4: Moderate</span>
+                            <span class="label-item">7: Fully understand</span>
                         </div>
                     </div>
                 </div>
             </div>
 
             <div class="modal-footer">
-                <button id="clearBtn" class="btn btn-secondary">清除</button>
-                <button id="confirmBtn" class="btn btn-primary">确认</button>
+                <button id="clearBtn" class="btn btn-secondary">Clear</button>
+                <button id="confirmBtn" class="btn btn-primary">Confirm</button>
             </div>
         </div>
     </div>
 
-    <!-- 返回编辑面板 -->
+    <!-- Edit Panel -->
     <div id="editPanel" class="edit-panel hidden">
         <div class="edit-panel-header">
-            <h3>编辑标注</h3>
+            <h3>Edit Annotation</h3>
             <button class="close-edit-panel">&times;</button>
         </div>
         <div id="editList" class="edit-list">
-            <!-- 动态生成可编辑的标注项 -->
+            <!-- Edit items generated dynamically -->
         </div>
     </div>
 
