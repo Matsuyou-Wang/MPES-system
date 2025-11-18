@@ -93,6 +93,12 @@ body {
     display: flex;
 }
 
+#annotationView {
+    flex-direction: column;
+    padding: 20px;
+    gap: 20px;
+}
+
 /* 选择视图 */
 #selectionView {
     align-items: center;
@@ -166,8 +172,9 @@ body {
     background-color: #000;
     border-radius: 8px;
     overflow: hidden;
-    margin-bottom: 20px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    flex-shrink: 0;
+    max-height: 60vh;
 }
 
 .video-player {
@@ -235,6 +242,8 @@ body {
     border-radius: 8px;
     padding: 15px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    flex: 1;
+    overflow-y: auto;
 }
 
 .annotation-history h3 {
@@ -246,7 +255,7 @@ body {
 }
 
 .history-list {
-    max-height: 300px;
+    height: 100%;
     overflow-y: auto;
 }
 
