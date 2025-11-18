@@ -3,88 +3,117 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MPES Video Annotation System</title>
+    <title>Annotation System - Video Rating</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <h1>MPES Video Annotation System</h1>
-        <p>Annotation tool for multimodal physiological emotion synthesis videos</p>
-    </header>
-
-    <main class="container">
-        <!-- Video Player Section -->
-        <div class="video-section">
-            <video id="videoPlayer" controls preload="auto" width="800" height="600">
-                <source id="videoSource" src="" type="video/mp4">
-                Your browser does not support the video element.
-            </video>
-            
-            <div class="video-controls">
-                <div class="video-info">
-                    <span id="videoTitle">Select a video</span>
-                    <span id="videoIndex">0 / 0</span>
-                </div>
-                
-                <div class="navigation-buttons">
-                    <button id="prevBtn" class="btn btn-secondary">Previous</button>
-                    <button id="nextBtn" class="btn btn-primary">Next</button>
-                </div>
+    <div class="container">
+        <!-- Sidebar: Video Library -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h2>Video Library</h2>
             </div>
-            
-            <div class="video-list">
-                <h3>Video List</h3>
-                <ul id="videoListItems">
-                    <!-- Video list items generated dynamically -->
+            <div class="video-library">
+                <h3>Available Videos</h3>
+                <ul id="videoList" class="video-list">
+                    <!-- Videos loaded dynamically -->
                 </ul>
             </div>
-        </div>
+        </aside>
 
-        <!-- Annotation Section -->
-        <div class="annotation-section">
-            <div class="instructions">
-                <h3>Annotation Instructions</h3>
-                <ul>
-                    <li>Watch the video carefully to understand the context</li>
-                    <li>Rate PAD dimensions (pleasure, arousal, dominance) from -1 to 1</li>
-                    <li>Rate empathy on a 1-7 scale (how much the right speaker empathizes with the left speaker)</li>
-                </ul>
-            </div>
-
-            <div class="annotation-panel">
-                <div class="annotation-controls">
-                    <button id="annotateBtn" class="btn btn-success">Annotate</button>
-                    <button id="editBtn" class="btn btn-warning">Edit</button>
-                </div>
-                
-                <div class="annotation-list">
-                    <h3>Annotations</h3>
-                    <div id="annotationItems">
-                        <!-- Annotation items generated dynamically -->
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <!-- Initial Selection View -->
+            <div id="selectionView" class="view active">
+                <div class="welcome-box">
+                    <h1>Video Annotation System</h1>
+                    <p>Please select a video from the library on the left to start annotating</p>
+                    
+                    <div class="video-selection-panel">
+                        <h3>Quick Select Video</h3>
+                        <div id="quickVideoList" class="quick-video-list">
+                            <!-- Videos loaded dynamically here -->
+                        </div>
+                        <button id="startBtn" class="btn btn-primary" disabled>Start Annotation</button>
+                    </div>
+                    
+                    <div class="info-box">
+                        <h3>Annotation Instructions</h3>
+                        <ul>
+                            <li>The video will pause automatically at key points</li>
+                            <li>You will need to fill out a rating form for each segment</li>
+                            <li>Rate PAD dimensions (pleasure, arousal, dominance) from -1 to 1</li>
+                            <li>Rate empathy on a 1-7 scale</li>
+                            <li>After completion, you can continue playing or modify previous ratings</li>
+                        </ul>
                     </div>
                 </div>
             </div>
-        </div>
-    </main>
 
-    <!-- Annotation Modal -->
+            <!-- Video Playing and Annotation View -->
+            <div id="annotationView" class="view">
+                <!-- Left: Video List Panel -->
+                <div class="annotation-left-panel">
+                    <h3>Video List</h3>
+                    <ul id="annotationVideoList" class="annotation-video-list">
+                        <!-- Videos loaded dynamically -->
+                    </ul>
+                </div>
+
+                <!-- Center: Video Player -->
+                <div class="annotation-center-panel">
+                    <div class="video-player-container">
+                        <video id="videoPlayer" class="video-player">
+                            <source src="" type="video/mp4">
+                            Your browser does not support video playback
+                        </video>
+                        <div class="video-controls">
+                            <button id="playBtn" class="control-btn">Play</button>
+                            <button id="pauseBtn" class="control-btn">Pause</button>
+                            <span id="currentTime" class="time-display">00:00</span>
+                            <span class="time-separator">/</span>
+                            <span id="duration" class="time-display">00:00</span>
+                            <div class="progress-bar">
+                                <div id="progress" class="progress-fill"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right: Annotation History Panel -->
+                <div class="annotation-right-panel">
+                    <h3>Annotation Progress</h3>
+                    <div id="historyList" class="history-list">
+                        <!-- Annotation records added dynamically -->
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Annotation Questionnaire Modal -->
     <div id="annotationModal" class="modal">
         <div class="modal-content">
             <div class="modal-header">
-                <h2>Video Annotation</h2>
-                <span class="close">&times;</span>
+                <h2>Annotation Form</h2>
+                <span class="close-btn">&times;</span>
             </div>
 
             <div class="modal-body">
-                <!-- PAD Dimensions Section -->
-                <div class="scale-section">
-                    <h3>PAD Dimensions</h3>
-                    <p class="section-description">Rate PAD dimensions (pleasure, arousal, dominance) from -1 to 1</p>
+                <div class="timestamp-info">
+                    <p>Video time: <span id="modalTimestamp">00:00</span></p>
+                </div>
 
-                    <div class="speakers-container">
+                <!-- PAD Section -->
+                <div class="scale-section">
+                    <h3>Emotional State Assessment (PAD)</h3>
+                    <p class="section-description">Please rate the emotional state of both speakers on the following three dimensions based on this sentence</p>
+
+                    <!-- PAD Dimensions - Two Columns Layout -->
+                    <div class="pad-dimensions-container">
                         <!-- Left Speaker -->
-                        <div class="speaker-section">
-                            <h4>Left Speaker</h4>
+                        <div class="pad-speaker-column">
+                            <h4 class="speaker-label">Left Speaker</h4>
                             
                             <!-- Pleasure -->
                             <div class="scale-item">
@@ -117,8 +146,8 @@
                             <!-- Dominance -->
                             <div class="scale-item">
                                 <label for="dominanceSliderLeft">
-                                    <strong>Dominance</strong>
-                                    <span class="scale-range">Submissive ← → Dominant</span>
+                                    <strong>Submissive – Dominant</strong>
+                                    <span class="scale-range">Passive ← → Active</span>
                                 </label>
                                 <div class="slider-container">
                                     <span class="slider-label">-1</span>
@@ -130,8 +159,8 @@
                         </div>
 
                         <!-- Right Speaker -->
-                        <div class="speaker-section">
-                            <h4>Right Speaker</h4>
+                        <div class="pad-speaker-column">
+                            <h4 class="speaker-label">Right Speaker</h4>
                             
                             <!-- Pleasure -->
                             <div class="scale-item">
@@ -164,8 +193,8 @@
                             <!-- Dominance -->
                             <div class="scale-item">
                                 <label for="dominanceSliderRight">
-                                    <strong>Dominance</strong>
-                                    <span class="scale-range">Submissive ← → Dominant</span>
+                                    <strong>Submissive – Dominant</strong>
+                                    <span class="scale-range">Passive ← → Active</span>
                                 </label>
                                 <div class="slider-container">
                                     <span class="slider-label">-1</span>
@@ -181,36 +210,36 @@
                 <!-- Empathy Section -->
                 <div class="scale-section">
                     <h3>Empathy Assessment</h3>
-                    <p class="section-description">How much does the right speaker empathize with the left speaker?</p>
+                    <p class="section-description">Do you think the right speaker empathizes with the left speaker?</p>
 
                     <div class="empathy-radio-container">
                         <div class="empathy-option">
                             <input type="radio" id="empathy1" name="empathy" value="1">
-                            <label for="empathy1">No empathy at all</label>
+                            <label for="empathy1">Not empathic at all</label>
                         </div>
                         <div class="empathy-option">
                             <input type="radio" id="empathy2" name="empathy" value="2">
-                            <label for="empathy2">Almost no empathy</label>
+                            <label for="empathy2">Slightly empathic</label>
                         </div>
                         <div class="empathy-option">
                             <input type="radio" id="empathy3" name="empathy" value="3">
-                            <label for="empathy3">Slight empathy</label>
+                            <label for="empathy3">A little empathic</label>
                         </div>
                         <div class="empathy-option">
                             <input type="radio" id="empathy4" name="empathy" value="4">
-                            <label for="empathy4">Moderate empathy</label>
+                            <label for="empathy4">Neutral</label>
                         </div>
                         <div class="empathy-option">
                             <input type="radio" id="empathy5" name="empathy" value="5">
-                            <label for="empathy5">Considerable empathy</label>
+                            <label for="empathy5">Moderately empathic</label>
                         </div>
                         <div class="empathy-option">
                             <input type="radio" id="empathy6" name="empathy" value="6">
-                            <label for="empathy6">High empathy</label>
+                            <label for="empathy6">Quite empathic</label>
                         </div>
                         <div class="empathy-option">
                             <input type="radio" id="empathy7" name="empathy" value="7">
-                            <label for="empathy7">Very high empathy</label>
+                            <label for="empathy7">Very empathic</label>
                         </div>
                     </div>
                 </div>
