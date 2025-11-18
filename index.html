@@ -2,8 +2,29 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Annotation System - Video Rating</title>
+    <meta name="viewport" content="width=device-width, initial-scale                            <div class="scale-item">
+                                <div class="scale-item">
+                                <label for="dominanceSliderRight">
+                                    <strong>支配度</strong>
+                                    <span class="scale-range">顺从 ← → 支配</span>
+                                </label>
+                                <div class="slider-container">
+                                    <span class="slider-label">-1</span>
+                                    <input type="range" id="dominanceSliderRight" class="slider pad-slider" min="-1" max="1" step="0.001" value="0">
+                                    <span class="slider-label">+1</span>
+                                    <strong class="slider-value" id="dominanceValueRight">0.000</strong>
+                                </div>
+                            </div>                <label for="dominanceSliderLeft">
+                                    <strong>支配度</strong>
+                                    <span class="scale-range">顺从 ← → 支配</span>
+                                </label>
+                                <div class="slider-container">
+                                    <span class="slider-label">-1</span>
+                                    <input type="range" id="dominanceSliderLeft" class="slider pad-slider" min="-1" max="1" step="0.001" value="0">
+                                    <span class="slider-label">+1</span>
+                                    <strong class="slider-value" id="dominanceValueLeft">0.000</strong>
+                                </div>
+                            </div>title>Annotation System - Video Rating</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -37,7 +58,7 @@
                         <ul>
                             <li>The video will pause automatically at key points</li>
                             <li>You will need to fill out a rating form for each segment</li>
-                            <li>Rate PAD dimensions (pleasure, arousal, dominance) from -1 to 1</li>
+                            <li>对PAD情感维度进行评分（愉悦度、唤醒度、支配度），范围从-1到1</li>
                             <li>Rate empathy on a 1-7 scale (右边的人对左边的人是否有共情)</li>
                             <li>After completion, you can continue playing or modify previous ratings</li>
                         </ul>
@@ -95,24 +116,24 @@
 
                 <!-- PAD Section -->
                 <div class="scale-section">
-                    <h3>Emotional State Assessment (PAD)</h3>
-                    <p class="section-description">Please rate the emotional state of both speakers on the following three dimensions based on this sentence</p>
+                    <h3>情感状态评估 (PAD)</h3>
+                    <p class="section-description">请根据这句话对两位说话者在以下三个维度上的情感状态进行评分</p>
 
                     <!-- PAD Dimensions - Two Columns Layout -->
                     <div class="pad-dimensions-container">
                         <!-- Left Speaker -->
                         <div class="pad-speaker-column">
-                            <h4 class="speaker-label">Left Speaker</h4>
+                            <h4 class="speaker-label">左边说话者</h4>
                             
                             <!-- Pleasure -->
                             <div class="scale-item">
                                 <label for="pleasureSliderLeft">
-                                    <strong>Pleasure</strong>
-                                    <span class="scale-range">Unpleasant ← → Pleasant</span>
+                                    <strong>愉悦度</strong>
+                                    <span class="scale-range">不愉快 ← → 愉快</span>
                                 </label>
                                 <div class="slider-container">
                                     <span class="slider-label">-1</span>
-                                    <input type="range" id="pleasureSliderLeft" class="slider pad-slider" min="-1" max="1" step="0.1" value="0">
+                                    <input type="range" id="pleasureSliderLeft" class="slider pad-slider" min="-1" max="1" step="0.001" value="0">
                                     <span class="slider-label">+1</span>
                                     <strong class="slider-value" id="pleasureValueLeft">0.000</strong>
                                 </div>
@@ -121,12 +142,12 @@
                             <!-- Arousal -->
                             <div class="scale-item">
                                 <label for="arousalSliderLeft">
-                                    <strong>Arousal</strong>
-                                    <span class="scale-range">Calm ← → Excited</span>
+                                    <strong>唤醒度</strong>
+                                    <span class="scale-range">平静 ← → 兴奋</span>
                                 </label>
                                 <div class="slider-container">
                                     <span class="slider-label">-1</span>
-                                    <input type="range" id="arousalSliderLeft" class="slider pad-slider" min="-1" max="1" step="0.1" value="0">
+                                    <input type="range" id="arousalSliderLeft" class="slider pad-slider" min="-1" max="1" step="0.001" value="0">
                                     <span class="slider-label">+1</span>
                                     <strong class="slider-value" id="arousalValueLeft">0.000</strong>
                                 </div>
@@ -149,17 +170,17 @@
 
                         <!-- Right Speaker -->
                         <div class="pad-speaker-column">
-                            <h4 class="speaker-label">Right Speaker</h4>
+                            <h4 class="speaker-label">右边说话者</h4>
                             
                             <!-- Pleasure -->
                             <div class="scale-item">
                                 <label for="pleasureSliderRight">
-                                    <strong>Pleasure</strong>
-                                    <span class="scale-range">Unpleasant ← → Pleasant</span>
+                                    <strong>愉悦度</strong>
+                                    <span class="scale-range">不愉快 ← → 愉快</span>
                                 </label>
                                 <div class="slider-container">
                                     <span class="slider-label">-1</span>
-                                    <input type="range" id="pleasureSliderRight" class="slider pad-slider" min="-1" max="1" step="0.1" value="0">
+                                    <input type="range" id="pleasureSliderRight" class="slider pad-slider" min="-1" max="1" step="0.001" value="0">
                                     <span class="slider-label">+1</span>
                                     <strong class="slider-value" id="pleasureValueRight">0.000</strong>
                                 </div>
@@ -168,12 +189,12 @@
                             <!-- Arousal -->
                             <div class="scale-item">
                                 <label for="arousalSliderRight">
-                                    <strong>Arousal</strong>
-                                    <span class="scale-range">Calm ← → Excited</span>
+                                    <strong>唤醒度</strong>
+                                    <span class="scale-range">平静 ← → 兴奋</span>
                                 </label>
                                 <div class="slider-container">
                                     <span class="slider-label">-1</span>
-                                    <input type="range" id="arousalSliderRight" class="slider pad-slider" min="-1" max="1" step="0.1" value="0">
+                                    <input type="range" id="arousalSliderRight" class="slider pad-slider" min="-1" max="1" step="0.001" value="0">
                                     <span class="slider-label">+1</span>
                                     <strong class="slider-value" id="arousalValueRight">0.000</strong>
                                 </div>
