@@ -23,7 +23,7 @@ const VIDEOS = [
     {
         title: 'Session 01F - Script 01-2',
         path: 'assets/Ses01F_script01_2.mp4',
-        duration: 151,  // 2分31秒
+        duration: 151,  // 2min 31sec
         annotationPoints: [
             { time: 21.66 },
             { time: 45.24 },
@@ -37,7 +37,7 @@ const VIDEOS = [
     {
         title: 'Session 01F - Script 01-3',
         path: 'assets/Ses01F_script01_3.mp4',
-        duration: 464,  // 7分44秒
+        duration: 464,  // 7min 44sec
         annotationPoints: [
             { time: 10 },
             { time: 30 },
@@ -60,7 +60,7 @@ const VIDEOS = [
     {
         title: 'Session 01F - Script 02-1',
         path: 'assets/Ses01F_script02_1.mp4',
-        duration: 331,  // 5分31秒
+        duration: 331,  // 5min 31sec
         annotationPoints: [
             { time: 10 },
             { time: 30 },
@@ -79,7 +79,7 @@ const VIDEOS = [
     {
         title: 'Session 01F - Script 02-2',
         path: 'assets/Ses01F_script02_2.mp4',
-        duration: 482,  // 8分2秒
+        duration: 482,  // 8min 2sec
         annotationPoints: [
             { time: 10 },
             { time: 30 },
@@ -103,7 +103,7 @@ const VIDEOS = [
     {
         title: 'Session 01F - Script 03-1',
         path: 'assets/Ses01F_script03_1.mp4',
-        duration: 279,  // 4分39秒
+        duration: 279,  // 4min 39sec
         annotationPoints: [
             { time: 10 },
             { time: 30 },
@@ -124,7 +124,7 @@ const VIDEOS = [
     {
         title: 'Session 01F - Script 03-2',
         path: 'assets/Ses01F_script03_2.mp4',
-        duration: 315,  // 5分15秒
+        duration: 315,  // 5min 15sec
         annotationPoints: [
             { time: 10 },
             { time: 30 },

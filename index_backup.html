@@ -1,90 +1,135 @@
-<!DOCTYPE html>
+<!DOCT                                   <label for="dominanceSliderRight">
+                                    <strong>Dominance</strong>
+                                    <span class="scale-range">Submissive ← → Dominant</span>
+                                </label>                         <label for="dominanceSliderLeft">
+                                    <strong>Dominance</strong>
+                                    <span class="scale-range">Submissive ← → Dominant</span>
+                                </label>html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MPES Video Annotation System</title>
+    <meta name="viewport" content="width=device-width, initial-scale                            <div class="scale-item">
+                                <div class="scale-item">
+                                <label for="dominanceSliderRight">
+                                    <strong>支配度</strong>
+                                    <span class="scale-range">顺从 ← → 支配</span>
+                                </label>
+                                <div class="slider-container">
+                                    <span class="slider-label">-1</span>
+                                    <input type="range" id="dominanceSliderRight" class="slider pad-slider" min="-1" max="1" step="0.001" value="0">
+                                    <span class="slider-label">+1</span>
+                                    <strong class="slider-value" id="dominanceValueRight">0.000</strong>
+                                </div>
+                            </div>                <label for="dominanceSliderLeft">
+                                    <strong>支配度</strong>
+                                    <span class="scale-range">顺从 ← → 支配</span>
+                                </label>
+                                <div class="slider-container">
+                                    <span class="slider-label">-1</span>
+                                    <input type="range" id="dominanceSliderLeft" class="slider pad-slider" min="-1" max="1" step="0.001" value="0">
+                                    <span class="slider-label">+1</span>
+                                    <strong class="slider-value" id="dominanceValueLeft">0.000</strong>
+                                </div>
+                            </div>title>Annotation System - Video Rating</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <h1>MPES Video Annotation System</h1>
-        <p>Annotation tool for multimodal physiological emotion synthesis videos</p>
-    </header>
-
-    <main class="container">
-        <!-- Video Player Section -->
-        <div class="video-section">
-            <video id="videoPlayer" controls preload="auto" width="800" height="600">
-                <source id="videoSource" src="" type="video/mp4">
-                Your browser does not support the video element.
-            </video>
-            
-            <div class="video-controls">
-                <div class="video-info">
-                    <span id="videoTitle">Select a video</span>
-                    <span id="videoIndex">0 / 0</span>
-                </div>
-                
-                <div class="navigation-buttons">
-                    <button id="prevBtn" class="btn btn-secondary">Previous</button>
-                    <button id="nextBtn" class="btn btn-primary">Next</button>
-                </div>
+    <div class="container">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h2>Video Library</h2>
             </div>
-            
-            <div class="video-list">
-                <h3>Video List</h3>
-                <ul id="videoListItems">
-                    <!-- Video list items generated dynamically -->
+            <div class="video-library">
+                <h3>Available Videos</h3>
+                <ul id="videoList" class="video-list">
                 </ul>
             </div>
-        </div>
+        </aside>
 
-        <!-- Annotation Section -->
-        <div class="annotation-section">
-            <div class="instructions">
-                <h3>Annotation Instructions</h3>
-                <ul>
-                    <li>Watch the video carefully to understand the context</li>
-                    <li>Rate PAD dimensions (pleasure, arousal, dominance) from -1 to 1</li>
-                    <li>Rate empathy on a 1-7 scale (how much the right speaker empathizes with the left speaker)</li>
-                </ul>
-            </div>
-
-            <div class="annotation-panel">
-                <div class="annotation-controls">
-                    <button id="annotateBtn" class="btn btn-success">Annotate</button>
-                    <button id="editBtn" class="btn btn-warning">Edit</button>
-                </div>
-                
-                <div class="annotation-list">
-                    <h3>Annotations</h3>
-                    <div id="annotationItems">
-                        <!-- Annotation items generated dynamically -->
+        <main class="main-content">
+            <div id="selectionView" class="view active">
+                <div class="welcome-box">
+                    <h1>Video Annotation System</h1>
+                    <p>Please select a video from the library on the left to start annotating</p>
+                    
+                    <div class="video-selection-panel">
+                        <h3>Quick Select Video</h3>
+                        <div id="quickVideoList" class="quick-video-list">
+                        </div>
+                        <button id="startBtn" class="btn btn-primary" disabled>Start Annotation</button>
+                    </div>
+                    
+                    <div class="info-box">
+                        <h3>Annotation Instructions</h3>
+                        <ul>
+                            <li>The video will pause automatically at key points</li>
+                            <li>You will need to fill out a rating form for each segment</li>
+                            <li>Rate PAD dimensions (pleasure, arousal, dominance) from -1 to 1</li>
+                            <li>Rate empathy on a 1-7 scale (how much the right speaker empathizes with the left speaker)</li>
+                            <li>After completion, you can continue playing or modify previous ratings</li>
+                        </ul>
                     </div>
                 </div>
             </div>
-        </div>
-    </main>
 
-    <!-- Annotation Modal -->
+            <div id="annotationView" class="view">
+                <div class="annotation-left-panel">
+                    <h3>Video List</h3>
+                    <ul id="annotationVideoList" class="annotation-video-list">
+                    </ul>
+                </div>
+
+                <!-- Center: Video Player -->
+                <div class="annotation-center-panel">
+                    <div class="video-player-container">
+                        <video id="videoPlayer" class="video-player">
+                            <source src="" type="video/mp4">
+                            Your browser does not support video playback
+                        </video>
+                        <div class="video-controls">
+                            <button id="playBtn" class="control-btn">Play</button>
+                            <button id="pauseBtn" class="control-btn">Pause</button>
+                            <span id="currentTime" class="time-display">00:00</span>
+                            <span class="time-separator">/</span>
+                            <span id="duration" class="time-display">00:00</span>
+                            <div class="progress-bar">
+                                <div id="progress" class="progress-fill"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="annotation-right-panel">
+                    <h3>Annotation Progress</h3>
+                    <div id="historyList" class="history-list">
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
     <div id="annotationModal" class="modal">
         <div class="modal-content">
             <div class="modal-header">
-                <h2>Video Annotation</h2>
-                <span class="close">&times;</span>
+                <h2>Annotation Form</h2>
+                <span class="close-btn">&times;</span>
             </div>
 
             <div class="modal-body">
-                <!-- PAD Dimensions Section -->
+                <div class="timestamp-info">
+                    <p>Video time: <span id="modalTimestamp">00:00</span></p>
+                </div>
+
+                <!-- PAD Section -->
                 <div class="scale-section">
                     <h3>PAD Dimensions</h3>
-                    <p class="section-description">Rate PAD dimensions (pleasure, arousal, dominance) from -1 to 1</p>
+                    <p class="section-description">Rate the emotional dimensions for both speakers</p>
 
-                    <div class="speakers-container">
+                    <!-- PAD Dimensions - Two Columns Layout -->
+                    <div class="pad-dimensions-container">
                         <!-- Left Speaker -->
-                        <div class="speaker-section">
-                            <h4>Left Speaker</h4>
+                        <div class="pad-speaker-column">
+                            <h4 class="speaker-label">Left Speaker</h4>
                             
                             <!-- Pleasure -->
                             <div class="scale-item">
@@ -117,12 +162,12 @@
                             <!-- Dominance -->
                             <div class="scale-item">
                                 <label for="dominanceSliderLeft">
-                                    <strong>Dominance</strong>
-                                    <span class="scale-range">Submissive ← → Dominant</span>
+                                    <strong>Submissive – Dominant</strong>
+                                    <span class="scale-range">Passive ← → Active</span>
                                 </label>
                                 <div class="slider-container">
                                     <span class="slider-label">-1</span>
-                                    <input type="range" id="dominanceSliderLeft" class="slider pad-slider" min="-1" max="1" step="0.001" value="0">
+                                    <input type="range" id="dominanceSliderLeft" class="slider pad-slider" min="-1" max="1" step="0.1" value="0">
                                     <span class="slider-label">+1</span>
                                     <strong class="slider-value" id="dominanceValueLeft">0.000</strong>
                                 </div>
@@ -130,8 +175,8 @@
                         </div>
 
                         <!-- Right Speaker -->
-                        <div class="speaker-section">
-                            <h4>Right Speaker</h4>
+                        <div class="pad-speaker-column">
+                            <h4 class="speaker-label">Right Speaker</h4>
                             
                             <!-- Pleasure -->
                             <div class="scale-item">
