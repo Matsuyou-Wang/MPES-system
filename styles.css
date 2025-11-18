@@ -591,19 +591,6 @@ body {
     text-align: center;
 }
 
-/* SAM图 */
-.sam-image-container {
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-.sam-image {
-    max-width: 100%;
-    height: auto;
-    max-height: 200px;
-    border-radius: 4px;
-}
-
 /* 量表项 */
 .scale-item {
     margin-bottom: 20px;
