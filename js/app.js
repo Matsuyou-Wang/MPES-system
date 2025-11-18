@@ -142,6 +142,9 @@ class AnnotationSystem {
         this.annotationData = {};
         this.annotationPoints = this.currentVideo.annotationPoints || [];
 
+        // Hide sidebar and show annotation view
+        document.querySelector('.sidebar').style.display = 'none';
+
         // 更新UI
         document.querySelectorAll('.video-item').forEach((item, i) => {
             item.classList.toggle('active', i === index);
@@ -307,12 +310,19 @@ class AnnotationSystem {
                     <div>
                         <span class="history-time">${this.formatTime(point.time)}</span>
                         <div class="history-values">
-                            PAD: (${annotation.pleasure.toFixed(3)}, ${annotation.arousal.toFixed(3)}, ${annotation.dominance.toFixed(3)}) | 
-                            Empathy: ${annotation.empathy}
+                            <div style="font-size: 11px; margin-bottom: 3px;">
+                                <strong>L:</strong> (${annotation.pleasureLeft.toFixed(3)}, ${annotation.arousalLeft.toFixed(3)}, ${annotation.dominanceLeft.toFixed(3)})
+                            </div>
+                            <div style="font-size: 11px; margin-bottom: 3px;">
+                                <strong>R:</strong> (${annotation.pleasureRight.toFixed(3)}, ${annotation.arousalRight.toFixed(3)}, ${annotation.dominanceRight.toFixed(3)})
+                            </div>
+                            <div style="font-size: 11px;">
+                                <strong>E:</strong> ${annotation.empathy}
+                            </div>
                         </div>
                     </div>
                     <div class="history-actions">
-                        <span class="history-status">Completed</span>
+                        <span class="history-status">✓ Done</span>
                         <button class="history-edit-btn" data-time="${point.time}">Edit</button>
                     </div>
                 `;
@@ -322,7 +332,7 @@ class AnnotationSystem {
                         <span class="history-time">${this.formatTime(point.time)}</span>
                         <div class="history-values">Pending</div>
                     </div>
-                    <span class="history-status pending">Incomplete</span>
+                    <span class="history-status pending">⧗ Wait</span>
                 `;
             }
 
