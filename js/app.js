@@ -305,12 +305,23 @@ class AnnotationSystem {
     }
 
     updateSliderValues() {
-        this.valueDisplays.pleasureLeft.textContent = parseFloat(this.sliders.pleasureLeft.value).toFixed(3);
-        this.valueDisplays.arousalLeft.textContent = parseFloat(this.sliders.arousalLeft.value).toFixed(3);
-        this.valueDisplays.dominanceLeft.textContent = parseFloat(this.sliders.dominanceLeft.value).toFixed(3);
-        this.valueDisplays.pleasureRight.textContent = parseFloat(this.sliders.pleasureRight.value).toFixed(3);
-        this.valueDisplays.arousalRight.textContent = parseFloat(this.sliders.arousalRight.value).toFixed(3);
-        this.valueDisplays.dominanceRight.textContent = parseFloat(this.sliders.dominanceRight.value).toFixed(3);
+        // 手动触发所有滑块的更新（用于表单重置时）
+        const sliderPairs = [
+            ['pleasureSliderLeft', 'pleasureValueLeft'],
+            ['arousalSliderLeft', 'arousalValueLeft'],
+            ['dominanceSliderLeft', 'dominanceValueLeft'],
+            ['pleasureSliderRight', 'pleasureValueRight'],
+            ['arousalSliderRight', 'arousalValueRight'],
+            ['dominanceSliderRight', 'dominanceValueRight']
+        ];
+
+        sliderPairs.forEach(([sliderId, displayId]) => {
+            const slider = document.getElementById(sliderId);
+            const display = document.getElementById(displayId);
+            if (slider && display) {
+                display.textContent = parseFloat(slider.value).toFixed(3);
+            }
+        });
     }
 
     renderHistory() {
@@ -443,10 +454,28 @@ class AnnotationSystem {
             this.videoPlayer.currentTime = percent * this.videoPlayer.duration;
         });
 
-        // 滑动条更新
-        Object.values(this.sliders).forEach(slider => {
-            slider.addEventListener('input', () => this.updateSliderValues());
-        });
+        // 滑动条更新 - 使用更可靠的事件绑定
+        const updateSliderValue = (sliderId, displayId) => {
+            const slider = document.getElementById(sliderId);
+            const display = document.getElementById(displayId);
+            if (slider && display) {
+                const updateFn = () => {
+                    display.textContent = parseFloat(slider.value).toFixed(3);
+                };
+                slider.addEventListener('input', updateFn);
+                slider.addEventListener('change', updateFn);
+                // 立即更新初始值
+                updateFn();
+            }
+        };
+
+        // 绑定所有PAD滑块
+        updateSliderValue('pleasureSliderLeft', 'pleasureValueLeft');
+        updateSliderValue('arousalSliderLeft', 'arousalValueLeft');
+        updateSliderValue('dominanceSliderLeft', 'dominanceValueLeft');
+        updateSliderValue('pleasureSliderRight', 'pleasureValueRight');
+        updateSliderValue('arousalSliderRight', 'arousalValueRight');
+        updateSliderValue('dominanceSliderRight', 'dominanceValueRight');
 
         // Empathy单选按钮更新
         this.empathyRadios.forEach(radio => {
