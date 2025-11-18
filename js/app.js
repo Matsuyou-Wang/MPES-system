@@ -29,7 +29,13 @@ class AnnotationSystem {
             pleasure: document.getElementById('pleasureSlider'),
             arousal: document.getElementById('arousalSlider'),
             dominance: document.getElementById('dominanceSlider'),
-            empathy: document.getElementById('empathySlider')
+            empathy: document.getElementById('empathySlider'),
+            pleasureLeft: document.getElementById('pleasureSliderLeft'),
+            arousalLeft: document.getElementById('arousalSliderLeft'),
+            dominanceLeft: document.getElementById('dominanceSliderLeft'),
+            pleasureRight: document.getElementById('pleasureSliderRight'),
+            arousalRight: document.getElementById('arousalSliderRight'),
+            dominanceRight: document.getElementById('dominanceSliderRight')
         };
 
         // 显示值元素
@@ -37,7 +43,13 @@ class AnnotationSystem {
             pleasure: document.getElementById('pleasureValue'),
             arousal: document.getElementById('arousalValue'),
             dominance: document.getElementById('dominanceValue'),
-            empathy: document.getElementById('empathyValue')
+            empathy: document.getElementById('empathyValue'),
+            pleasureLeft: document.getElementById('pleasureValueLeft'),
+            arousalLeft: document.getElementById('arousalValueLeft'),
+            dominanceLeft: document.getElementById('dominanceValueLeft'),
+            pleasureRight: document.getElementById('pleasureValueRight'),
+            arousalRight: document.getElementById('arousalValueRight'),
+            dominanceRight: document.getElementById('dominanceValueRight')
         };
 
         this.modalTimestamp = document.getElementById('modalTimestamp');
@@ -175,16 +187,22 @@ class AnnotationSystem {
         // 恢复之前的标注（如果有）
         const existingAnnotation = this.annotationData[point.time];
         if (existingAnnotation) {
-            this.sliders.pleasure.value = existingAnnotation.pleasure;
-            this.sliders.arousal.value = existingAnnotation.arousal;
-            this.sliders.dominance.value = existingAnnotation.dominance;
-            this.sliders.empathy.value = existingAnnotation.empathy;
+            this.sliders.pleasureLeft.value = existingAnnotation.pleasureLeft || 0;
+            this.sliders.arousalLeft.value = existingAnnotation.arousalLeft || 0;
+            this.sliders.dominanceLeft.value = existingAnnotation.dominanceLeft || 0;
+            this.sliders.pleasureRight.value = existingAnnotation.pleasureRight || 0;
+            this.sliders.arousalRight.value = existingAnnotation.arousalRight || 0;
+            this.sliders.dominanceRight.value = existingAnnotation.dominanceRight || 0;
+            this.sliders.empathy.value = existingAnnotation.empathy || 4;
             this.updateSliderValues();
         } else {
             // 重置为默认值
-            this.sliders.pleasure.value = 0;
-            this.sliders.arousal.value = 0;
-            this.sliders.dominance.value = 0;
+            this.sliders.pleasureLeft.value = 0;
+            this.sliders.arousalLeft.value = 0;
+            this.sliders.dominanceLeft.value = 0;
+            this.sliders.pleasureRight.value = 0;
+            this.sliders.arousalRight.value = 0;
+            this.sliders.dominanceRight.value = 0;
             this.sliders.empathy.value = 4;
             this.updateSliderValues();
         }
@@ -215,17 +233,23 @@ class AnnotationSystem {
     }
 
     clearAnnotationForm() {
-        this.sliders.pleasure.value = 0;
-        this.sliders.arousal.value = 0;
-        this.sliders.dominance.value = 0;
+        this.sliders.pleasureLeft.value = 0;
+        this.sliders.arousalLeft.value = 0;
+        this.sliders.dominanceLeft.value = 0;
+        this.sliders.pleasureRight.value = 0;
+        this.sliders.arousalRight.value = 0;
+        this.sliders.dominanceRight.value = 0;
         this.sliders.empathy.value = 4;
         this.updateSliderValues();
     }
 
     updateSliderValues() {
-        this.valueDisplays.pleasure.textContent = parseFloat(this.sliders.pleasure.value).toFixed(3);
-        this.valueDisplays.arousal.textContent = parseFloat(this.sliders.arousal.value).toFixed(3);
-        this.valueDisplays.dominance.textContent = parseFloat(this.sliders.dominance.value).toFixed(3);
+        this.valueDisplays.pleasureLeft.textContent = parseFloat(this.sliders.pleasureLeft.value).toFixed(3);
+        this.valueDisplays.arousalLeft.textContent = parseFloat(this.sliders.arousalLeft.value).toFixed(3);
+        this.valueDisplays.dominanceLeft.textContent = parseFloat(this.sliders.dominanceLeft.value).toFixed(3);
+        this.valueDisplays.pleasureRight.textContent = parseFloat(this.sliders.pleasureRight.value).toFixed(3);
+        this.valueDisplays.arousalRight.textContent = parseFloat(this.sliders.arousalRight.value).toFixed(3);
+        this.valueDisplays.dominanceRight.textContent = parseFloat(this.sliders.dominanceRight.value).toFixed(3);
         this.valueDisplays.empathy.textContent = this.sliders.empathy.value;
     }
 
@@ -282,9 +306,12 @@ class AnnotationSystem {
         // 按钮事件
         this.confirmBtn.addEventListener('click', () => {
             const data = {
-                pleasure: parseFloat(this.sliders.pleasure.value),
-                arousal: parseFloat(this.sliders.arousal.value),
-                dominance: parseFloat(this.sliders.dominance.value),
+                pleasureLeft: parseFloat(this.sliders.pleasureLeft.value),
+                arousalLeft: parseFloat(this.sliders.arousalLeft.value),
+                dominanceLeft: parseFloat(this.sliders.dominanceLeft.value),
+                pleasureRight: parseFloat(this.sliders.pleasureRight.value),
+                arousalRight: parseFloat(this.sliders.arousalRight.value),
+                dominanceRight: parseFloat(this.sliders.dominanceRight.value),
                 empathy: parseInt(this.sliders.empathy.value)
             };
             this.saveAnnotation(this.currentAnnotationPoint, data);
@@ -295,12 +322,15 @@ class AnnotationSystem {
         });
 
         this.closeModalBtn.addEventListener('click', () => {
-            // 如果有当前标注点，保存空数据并继续
+            // 如果有当前标注点，保存数据并继续
             if (this.currentAnnotationPoint && !this.annotationData[this.currentAnnotationPoint.time]) {
                 const data = {
-                    pleasure: parseFloat(this.sliders.pleasure.value),
-                    arousal: parseFloat(this.sliders.arousal.value),
-                    dominance: parseFloat(this.sliders.dominance.value),
+                    pleasureLeft: parseFloat(this.sliders.pleasureLeft.value),
+                    arousalLeft: parseFloat(this.sliders.arousalLeft.value),
+                    dominanceLeft: parseFloat(this.sliders.dominanceLeft.value),
+                    pleasureRight: parseFloat(this.sliders.pleasureRight.value),
+                    arousalRight: parseFloat(this.sliders.arousalRight.value),
+                    dominanceRight: parseFloat(this.sliders.dominanceRight.value),
                     empathy: parseInt(this.sliders.empathy.value)
                 };
                 this.saveAnnotation(this.currentAnnotationPoint, data);

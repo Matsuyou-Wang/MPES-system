@@ -429,6 +429,29 @@ body {
     margin-bottom: 15px;
 }
 
+/* PAD 两列布局 */
+.pad-dimensions-container {
+    display: flex;
+    gap: 30px;
+    margin-bottom: 20px;
+}
+
+.pad-speaker-column {
+    flex: 1;
+    padding: 15px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    border-left: 4px solid #007bff;
+}
+
+.speaker-label {
+    font-size: 15px;
+    font-weight: 600;
+    color: #007bff;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
 /* SAM图 */
 .sam-image-container {
     text-align: center;

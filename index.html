@@ -87,58 +87,119 @@
                 <!-- PAD Section -->
                 <div class="scale-section">
                     <h3>Emotional State Assessment (PAD)</h3>
-                    <p class="section-description">Please rate the speaker's emotional state on the following three dimensions based on this sentence</p>
+                    <p class="section-description">Please rate the emotional state of both speakers on the following three dimensions based on this sentence</p>
 
                     <!-- SAM Image -->
                     <div class="sam-image-container">
                         <img id="samImage" src="assets/SAM.jpg" alt="SAM Emotional Assessment" class="sam-image">
                     </div>
 
-                    <!-- Pleasure -->
-                    <div class="scale-item">
-                        <label for="pleasureSlider">
-                            <strong>Pleasure</strong>
-                            <span class="scale-range">Unpleasant ← → Pleasant</span>
-                        </label>
-                        <div class="slider-container">
-                            <span class="slider-label">-1</span>
-                            <input type="range" id="pleasureSlider" class="slider pad-slider" min="-1" max="1" step="0.1" value="0">
-                            <span class="slider-label">+1</span>
-                        </div>
-                        <div class="value-display">
-                            Current value: <span id="pleasureValue">0.000</span>
-                        </div>
-                    </div>
+                    <!-- PAD Dimensions - Two Columns Layout -->
+                    <div class="pad-dimensions-container">
+                        <!-- Left Speaker -->
+                        <div class="pad-speaker-column">
+                            <h4 class="speaker-label">Left Speaker</h4>
+                            
+                            <!-- Pleasure -->
+                            <div class="scale-item">
+                                <label for="pleasureSliderLeft">
+                                    <strong>Pleasure</strong>
+                                    <span class="scale-range">Unpleasant ← → Pleasant</span>
+                                </label>
+                                <div class="slider-container">
+                                    <span class="slider-label">-1</span>
+                                    <input type="range" id="pleasureSliderLeft" class="slider pad-slider" min="-1" max="1" step="0.1" value="0">
+                                    <span class="slider-label">+1</span>
+                                </div>
+                                <div class="value-display">
+                                    Current value: <span id="pleasureValueLeft">0.000</span>
+                                </div>
+                            </div>
 
-                    <!-- Arousal -->
-                    <div class="scale-item">
-                        <label for="arousalSlider">
-                            <strong>Arousal</strong>
-                            <span class="scale-range">Calm ← → Excited</span>
-                        </label>
-                        <div class="slider-container">
-                            <span class="slider-label">-1</span>
-                            <input type="range" id="arousalSlider" class="slider pad-slider" min="-1" max="1" step="0.1" value="0">
-                            <span class="slider-label">+1</span>
-                        </div>
-                        <div class="value-display">
-                            Current value: <span id="arousalValue">0.000</span>
-                        </div>
-                    </div>
+                            <!-- Arousal -->
+                            <div class="scale-item">
+                                <label for="arousalSliderLeft">
+                                    <strong>Arousal</strong>
+                                    <span class="scale-range">Calm ← → Excited</span>
+                                </label>
+                                <div class="slider-container">
+                                    <span class="slider-label">-1</span>
+                                    <input type="range" id="arousalSliderLeft" class="slider pad-slider" min="-1" max="1" step="0.1" value="0">
+                                    <span class="slider-label">+1</span>
+                                </div>
+                                <div class="value-display">
+                                    Current value: <span id="arousalValueLeft">0.000</span>
+                                </div>
+                            </div>
 
-                    <!-- Dominance -->
-                    <div class="scale-item">
-                        <label for="dominanceSlider">
-                            <strong>Dominance</strong>
-                            <span class="scale-range">Passive ← → Active</span>
-                        </label>
-                        <div class="slider-container">
-                            <span class="slider-label">-1</span>
-                            <input type="range" id="dominanceSlider" class="slider pad-slider" min="-1" max="1" step="0.1" value="0">
-                            <span class="slider-label">+1</span>
+                            <!-- Dominance -->
+                            <div class="scale-item">
+                                <label for="dominanceSliderLeft">
+                                    <strong>Dominance</strong>
+                                    <span class="scale-range">Passive ← → Active</span>
+                                </label>
+                                <div class="slider-container">
+                                    <span class="slider-label">-1</span>
+                                    <input type="range" id="dominanceSliderLeft" class="slider pad-slider" min="-1" max="1" step="0.1" value="0">
+                                    <span class="slider-label">+1</span>
+                                </div>
+                                <div class="value-display">
+                                    Current value: <span id="dominanceValueLeft">0.000</span>
+                                </div>
+                            </div>
                         </div>
-                        <div class="value-display">
-                            Current value: <span id="dominanceValue">0.000</span>
+
+                        <!-- Right Speaker -->
+                        <div class="pad-speaker-column">
+                            <h4 class="speaker-label">Right Speaker</h4>
+                            
+                            <!-- Pleasure -->
+                            <div class="scale-item">
+                                <label for="pleasureSliderRight">
+                                    <strong>Pleasure</strong>
+                                    <span class="scale-range">Unpleasant ← → Pleasant</span>
+                                </label>
+                                <div class="slider-container">
+                                    <span class="slider-label">-1</span>
+                                    <input type="range" id="pleasureSliderRight" class="slider pad-slider" min="-1" max="1" step="0.1" value="0">
+                                    <span class="slider-label">+1</span>
+                                </div>
+                                <div class="value-display">
+                                    Current value: <span id="pleasureValueRight">0.000</span>
+                                </div>
+                            </div>
+
+                            <!-- Arousal -->
+                            <div class="scale-item">
+                                <label for="arousalSliderRight">
+                                    <strong>Arousal</strong>
+                                    <span class="scale-range">Calm ← → Excited</span>
+                                </label>
+                                <div class="slider-container">
+                                    <span class="slider-label">-1</span>
+                                    <input type="range" id="arousalSliderRight" class="slider pad-slider" min="-1" max="1" step="0.1" value="0">
+                                    <span class="slider-label">+1</span>
+                                </div>
+                                <div class="value-display">
+                                    Current value: <span id="arousalValueRight">0.000</span>
+                                </div>
+                            </div>
+
+                            <!-- Dominance -->
+                            <div class="scale-item">
+                                <label for="dominanceSliderRight">
+                                    <strong>Dominance</strong>
+                                    <span class="scale-range">Passive ← → Active</span>
+                                </label>
+                                <div class="slider-container">
+                                    <span class="slider-label">-1</span>
+                                    <input type="range" id="dominanceSliderRight" class="slider pad-slider" min="-1" max="1" step="0.1" value="0">
+                                    <span class="slider-label">+1</span>
+                                </div>
+                                <div class="value-display">
+                                    Current value: <span id="dominanceValueRight">0.000</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
