@@ -7,6 +7,8 @@ class AnnotationSystem {
         // DOM 元素
         this.videoPlayer = document.getElementById('videoPlayer');
         this.videoList = document.getElementById('videoList');
+        this.quickVideoList = document.getElementById('quickVideoList');
+        this.startBtn = document.getElementById('startBtn');
         this.historyList = document.getElementById('historyList');
         this.modal = document.getElementById('annotationModal');
         this.confirmBtn = document.getElementById('confirmBtn');
@@ -84,15 +86,35 @@ class AnnotationSystem {
 
     renderVideoList() {
         this.videoList.innerHTML = '';
+        this.quickVideoList.innerHTML = '';
+        
         this.videos.forEach((video, index) => {
+            // Sidebar video list
             const li = document.createElement('li');
             li.className = 'video-item';
             li.innerHTML = `
                 <div>${video.title}</div>
-                <div style="font-size: 11px; color: #999; margin-top: 3px;">时长: ${this.formatTime(video.duration)}</div>
+                <div style="font-size: 11px; color: #999; margin-top: 3px;">Duration: ${this.formatTime(video.duration)}</div>
             `;
             li.addEventListener('click', () => this.selectVideo(index));
             this.videoList.appendChild(li);
+            
+            // Quick selection panel
+            const quickItem = document.createElement('div');
+            quickItem.className = 'quick-video-item';
+            quickItem.innerHTML = `
+                <div class="quick-video-item-title">${video.title}</div>
+                <div class="quick-video-item-duration">Duration: ${this.formatTime(video.duration)}</div>
+            `;
+            quickItem.addEventListener('click', () => {
+                this.selectVideo(index);
+                // Update quick selection UI
+                document.querySelectorAll('.quick-video-item').forEach((item, i) => {
+                    item.classList.toggle('selected', i === index);
+                });
+                this.startBtn.disabled = false;
+            });
+            this.quickVideoList.appendChild(quickItem);
         });
     }
 
@@ -303,6 +325,22 @@ class AnnotationSystem {
     }
 
     setupEventListeners() {
+        // Start annotation button
+        this.startBtn.addEventListener('click', () => {
+            if (this.currentVideo) {
+                this.annotationData = {};
+                this.annotationPoints = this.currentVideo.annotationPoints || [];
+                this.selectionView.classList.remove('active');
+                this.annotationView.classList.add('active');
+                this.videoPlayer.src = this.currentVideo.path;
+                this.videoPlayer.load();
+                this.isPaused = true;
+                this.updatePlayPauseButtons();
+                this.renderHistory();
+                this.setupVideoListeners();
+            }
+        });
+
         // 按钮事件
         this.confirmBtn.addEventListener('click', () => {
             const data = {

@@ -162,6 +162,65 @@ body {
     font-weight: bold;
 }
 
+/* 视频选择面板 */
+.video-selection-panel {
+    background-color: #f0f7ff;
+    border: 2px solid #007bff;
+    padding: 20px;
+    border-radius: 8px;
+    margin: 20px 0;
+}
+
+.video-selection-panel h3 {
+    font-size: 16px;
+    color: #007bff;
+    margin-bottom: 15px;
+}
+
+.quick-video-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.quick-video-item {
+    padding: 12px;
+    background-color: white;
+    border: 2px solid #ddd;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.quick-video-item:hover {
+    border-color: #007bff;
+    background-color: #f0f7ff;
+    transform: translateY(-2px);
+}
+
+.quick-video-item.selected {
+    background-color: #007bff;
+    color: white;
+    border-color: #007bff;
+}
+
+.quick-video-item-title {
+    font-weight: 600;
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+.quick-video-item-duration {
+    font-size: 12px;
+    color: #999;
+}
+
+.quick-video-item.selected .quick-video-item-duration {
+    color: #e3f2fd;
+}
+
 /* ==================== 标注视图 ==================== */
 .video-player-container {
     background-color: #000;
