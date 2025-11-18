@@ -1,21 +1,8 @@
-/**
- * 视频库数据
- * 格式: 
- * {
- *   title: 视频标题,
- *   path: 视频文件路径,
- *   duration: 视频时长（秒）,
- *   annotationPoints: [
- *     { time: 标注时间戳（秒）}
- *   ]
- * }
- */
-
 const VIDEOS = [
     {
         title: 'Session 01F - Script 01-1',
         path: 'assets/Ses01F_script01_1.mp4',
-        duration: 429,  // 7分9秒
+        duration: 429,
         annotationPoints: [
             { time: 30 },
             { time: 60 },
@@ -159,14 +146,9 @@ const VIDEOS = [
     }
 ];
 
-/**
- * 添加新视频到库中
- * 使用方法: addVideo({ title: '...', path: '...', duration: ..., annotationPoints: [...] })
- */
 function addVideo(videoData) {
     if (videoData.title && videoData.path && videoData.duration !== undefined) {
         VIDEOS.push(videoData);
-        // 如果应用已初始化，更新列表
         if (window.annotationSystem) {
             window.annotationSystem.videos = VIDEOS;
             window.annotationSystem.renderVideoList();
@@ -176,9 +158,6 @@ function addVideo(videoData) {
     }
 }
 
-/**
- * 移除指定索引的视频
- */
 function removeVideo(index) {
     if (index >= 0 && index < VIDEOS.length) {
         VIDEOS.splice(index, 1);
@@ -188,9 +167,6 @@ function removeVideo(index) {
     }
 }
 
-/**
- * 获取所有视频
- */
 function getAllVideos() {
     return VIDEOS;
 }

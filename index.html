@@ -8,7 +8,6 @@
 </head>
 <body>
     <div class="container">
-        <!-- Sidebar: Video Library -->
         <aside class="sidebar">
             <div class="sidebar-header">
                 <h2>Video Library</h2>
@@ -16,14 +15,11 @@
             <div class="video-library">
                 <h3>Available Videos</h3>
                 <ul id="videoList" class="video-list">
-                    <!-- Videos loaded dynamically -->
                 </ul>
             </div>
         </aside>
 
-        <!-- Main Content Area -->
         <main class="main-content">
-            <!-- Initial Selection View -->
             <div id="selectionView" class="view active">
                 <div class="welcome-box">
                     <h1>Video Annotation System</h1>
@@ -32,7 +28,6 @@
                     <div class="video-selection-panel">
                         <h3>Quick Select Video</h3>
                         <div id="quickVideoList" class="quick-video-list">
-                            <!-- Videos loaded dynamically here -->
                         </div>
                         <button id="startBtn" class="btn btn-primary" disabled>Start Annotation</button>
                     </div>
@@ -50,13 +45,10 @@
                 </div>
             </div>
 
-            <!-- Video Playing and Annotation View -->
             <div id="annotationView" class="view">
-                <!-- Left: Video List Panel -->
                 <div class="annotation-left-panel">
                     <h3>Video List</h3>
                     <ul id="annotationVideoList" class="annotation-video-list">
-                        <!-- Videos loaded dynamically -->
                     </ul>
                 </div>
 
@@ -80,18 +72,15 @@
                     </div>
                 </div>
 
-                <!-- Right: Annotation History Panel -->
                 <div class="annotation-right-panel">
                     <h3>Annotation Progress</h3>
                     <div id="historyList" class="history-list">
-                        <!-- Annotation records added dynamically -->
                     </div>
                 </div>
             </div>
         </main>
     </div>
 
-    <!-- Annotation Questionnaire Modal -->
     <div id="annotationModal" class="modal">
         <div class="modal-content">
             <div class="modal-header">
