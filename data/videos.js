@@ -38,13 +38,13 @@ const VIDEOS = [
         path: 'assets/Ses01F_script01_2.mp4',
         duration: 151,  // 2分31秒
         annotationPoints: [
-            { time: 10 },
-            { time: 30 },
-            { time: 50 },
-            { time: 70 },
-            { time: 90 },
-            { time: 110 },
-            { time: 130 }
+            { time: 21.66 },
+            { time: 45.24 },
+            { time: 58.2 },
+            { time: 82.65 },
+            { time: 108.1825 },
+            { time: 123.23 },
+            { time: 147.51 }
         ]
     },
     {

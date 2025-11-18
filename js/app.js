@@ -48,7 +48,6 @@ class AnnotationSystem {
             pleasure: document.getElementById('pleasureValue'),
             arousal: document.getElementById('arousalValue'),
             dominance: document.getElementById('dominanceValue'),
-            empathy: document.getElementById('empathyValue'),
             pleasureLeft: document.getElementById('pleasureValueLeft'),
             arousalLeft: document.getElementById('arousalValueLeft'),
             dominanceLeft: document.getElementById('dominanceValueLeft'),
@@ -241,9 +240,10 @@ class AnnotationSystem {
             this.sliders.dominanceRight.value = existingAnnotation.dominanceRight || 0;
             
             // 设置empathy单选按钮
-            const empathyValue = existingAnnotation.empathy || 4;
-            const empathyRadio = document.getElementById(`empathy${empathyValue}`);
-            if (empathyRadio) empathyRadio.checked = true;
+            if (existingAnnotation.empathy) {
+                const empathyRadio = document.getElementById(`empathy${existingAnnotation.empathy}`);
+                if (empathyRadio) empathyRadio.checked = true;
+            }
             
             this.updateSliderValues();
         } else {
@@ -255,9 +255,10 @@ class AnnotationSystem {
             this.sliders.arousalRight.value = 0;
             this.sliders.dominanceRight.value = 0;
             
-            // 重置empathy单选按钮到默认值（Neutral = 4）
-            const empathy4 = document.getElementById('empathy4');
-            if (empathy4) empathy4.checked = true;
+            // 清除所有empathy单选按钮的选择
+            this.empathyRadios.forEach(radio => {
+                radio.checked = false;
+            });
             
             this.updateSliderValues();
         }
@@ -295,9 +296,10 @@ class AnnotationSystem {
         this.sliders.arousalRight.value = 0;
         this.sliders.dominanceRight.value = 0;
         
-        // 重置empathy单选按钮到默认值（Neutral = 4）
-        const empathy4 = document.getElementById('empathy4');
-        if (empathy4) empathy4.checked = true;
+        // 清除所有empathy单选按钮的选择
+        this.empathyRadios.forEach(radio => {
+            radio.checked = false;
+        });
         
         this.updateSliderValues();
     }
@@ -309,12 +311,6 @@ class AnnotationSystem {
         this.valueDisplays.pleasureRight.textContent = parseFloat(this.sliders.pleasureRight.value).toFixed(3);
         this.valueDisplays.arousalRight.textContent = parseFloat(this.sliders.arousalRight.value).toFixed(3);
         this.valueDisplays.dominanceRight.textContent = parseFloat(this.sliders.dominanceRight.value).toFixed(3);
-        
-        // 更新empathy显示值
-        const checkedEmpathy = document.querySelector('input[name="empathy"]:checked');
-        if (checkedEmpathy) {
-            this.valueDisplays.empathy.textContent = checkedEmpathy.value;
-        }
     }
 
     renderHistory() {
