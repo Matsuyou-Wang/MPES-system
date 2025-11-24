@@ -11,8 +11,7 @@
         <!-- Sidebar: Video Library -->
         <aside class="sidebar">
             <div class="sidebar-header">
-                <h2 id="genderTitle">Video Library</h2>
-                <button onclick="goBack()" class="btn btn-secondary" style="margin-top: 10px; width: 100%;">Change Gender</button>
+                <h2>Video Library</h2>
             </div>
             <div class="video-library">
                 <h3>Available Videos</h3>
@@ -264,50 +263,10 @@
         </div>
     </div>
 
-    <script src="data/videos-extended.js"></script>
+    <script src="data/videos.js"></script>
     <script src="data/annotation-config.js"></script>
     <script src="js/data-manager.js"></script>
     <script src="js/app.js"></script>
     <script src="js/tester.js"></script>
-    <script>
-        // 性别选择功能
-        function goBack() {
-            window.location.href = 'gender-selection.html';
-        }
-
-        // 获取URL参数
-        function getUrlParameter(name) {
-            name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
-            var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
-            var results = regex.exec(location.search);
-            return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
-        }
-
-        // 根据性别加载视频
-        window.addEventListener('DOMContentLoaded', function() {
-            const selectedGender = getUrlParameter('gender') || localStorage.getItem('selectedGender') || 'male';
-            
-            if (typeof ALL_VIDEOS !== 'undefined') {
-                // 更新标题
-                const genderTitle = document.getElementById('genderTitle');
-                if (genderTitle) {
-                    genderTitle.textContent = selectedGender === 'male' ? 'Male Videos' : 'Female Videos';
-                }
-                
-                // 根据性别加载对应的视频
-                if (selectedGender === 'male' && ALL_VIDEOS.male) {
-                    window.videos = ALL_VIDEOS.male;
-                } else if (selectedGender === 'female' && ALL_VIDEOS.female) {
-                    window.videos = ALL_VIDEOS.female;
-                } else {
-                    // 默认使用男性视频
-                    window.videos = ALL_VIDEOS.male || [];
-                }
-                
-                // 存储当前选择
-                localStorage.setItem('selectedGender', selectedGender);
-            }
-        });
-    </script>
 </body>
 </html>
