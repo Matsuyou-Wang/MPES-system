@@ -152,52 +152,12 @@
 
     <script>
         function selectGender(gender) {
-            console.log('正在选择性别:', gender);
-            try {
-                // 存储选择的性别到 localStorage
-                localStorage.setItem('selectedGender', gender);
-                console.log('已保存到 localStorage:', gender);
-                
-                // 跳转到主注释界面
-                const targetUrl = 'annotation.html?gender=' + gender;
-                console.log('跳转到:', targetUrl);
-                window.location.href = targetUrl;
-            } catch (error) {
-                console.error('选择性别时出错:', error);
-                alert('选择性别时出错，请重试');
-            }
-        }
-
-        // 等待页面加载完成
-        document.addEventListener('DOMContentLoaded', function() {
-            console.log('页面加载完成，绑定事件监听器');
+            // 存储选择的性别到 localStorage
+            localStorage.setItem('selectedGender', gender);
             
-            // 获取性别选项元素
-            const maleOption = document.getElementById('maleOption');
-            const femaleOption = document.getElementById('femaleOption');
-
-            if (maleOption) {
-                maleOption.addEventListener('click', function(e) {
-                    console.log('点击了男性选项');
-                    e.preventDefault();
-                    selectGender('male');
-                });
-                console.log('男性选项事件监听器已绑定');
-            } else {
-                console.error('找不到男性选项元素');
-            }
-
-            if (femaleOption) {
-                femaleOption.addEventListener('click', function(e) {
-                    console.log('点击了女性选项');
-                    e.preventDefault();
-                    selectGender('female');
-                });
-                console.log('女性选项事件监听器已绑定');
-            } else {
-                console.error('找不到女性选项元素');
-            }
-        });
+            // 跳转到主注释界面
+            window.location.href = 'annotation.html?gender=' + gender;
+        }
     </script>
 </body>
 </html>

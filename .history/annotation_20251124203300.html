@@ -12,7 +12,7 @@
         <aside class="sidebar">
             <div class="sidebar-header">
                 <h2 id="genderTitle">Video Library</h2>
-                <button id="changeGenderBtn" class="btn btn-secondary" style="margin-top: 10px; width: 100%;">Change Gender</button>
+                <button onclick="goBack()" class="btn btn-secondary" style="margin-top: 10px; width: 100%;">Change Gender</button>
             </div>
             <div class="video-library">
                 <h3>Available Videos</h3>
@@ -319,15 +319,6 @@
                 }
             } catch (error) {
                 console.error('初始化注释系统时出错:', error);
-            }
-
-            // 绑定Change Gender按钮事件
-            const changeGenderBtn = document.getElementById('changeGenderBtn');
-            if (changeGenderBtn) {
-                changeGenderBtn.addEventListener('click', goBack);
-                console.log('Change Gender 按钮事件已绑定');
-            } else {
-                console.error('找不到Change Gender按钮');
             }
         });
     </script>
