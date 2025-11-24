@@ -2261,6 +2261,1670 @@ const DIALOG_DATA = {
             "f_text": "Or not.",
             "m_text": "Or not."
         }
+    ],
+    "Ses01M_script01_1.mp4": [
+        {
+            "time": 39.31,
+            "type": "M_end",
+            "f_text": "Did you talk to him?",
+            "m_text": "I don't know.  But he went back in the kitchen and he cried."
+        },
+        {
+            "time": 42.1267,
+            "type": "F_end",
+            "f_text": "Did you talk to him?",
+            "m_text": "I don't know.  But he went back in the kitchen and he cried."
+        },
+        {
+            "time": 46.58,
+            "type": "M_end",
+            "f_text": "Cried hard?",
+            "m_text": "No.  I figured I'd just let it wait."
+        },
+        {
+            "time": 50.417,
+            "type": "F_end",
+            "f_text": "Cried hard?",
+            "m_text": "No.  I figured I'd just let it wait."
+        },
+        {
+            "time": 165.33,
+            "type": "M_end",
+            "f_text": "Why?",
+            "m_text": "Yeah, okay all right, all right.  Listen, um, you know why I asked Annie here, right?"
+        },
+        {
+            "time": 168.4175,
+            "type": "F_end",
+            "f_text": "Why?",
+            "m_text": "Yeah, okay all right, all right.  Listen, um, you know why I asked Annie here, right?"
+        },
+        {
+            "time": 179.29,
+            "type": "M_end",
+            "f_text": "Well, that's only your business, Chris.",
+            "m_text": "I'm going to ask her to marry me."
+        },
+        {
+            "time": 183.78,
+            "type": "F_end",
+            "f_text": "Well, that's only your business, Chris.",
+            "m_text": "I'm going to ask her to marry me."
+        },
+        {
+            "time": 245.9,
+            "type": "M_end",
+            "f_text": "Did you ask Annie yet?",
+            "m_text": "To hell with that."
+        },
+        {
+            "time": 251.1095,
+            "type": "F_end",
+            "f_text": "Did you ask Annie yet?",
+            "m_text": "To hell with that."
+        },
+        {
+            "time": 267.62,
+            "type": "M_end",
+            "f_text": "The trouble is you don't see enough women, you never did.",
+            "m_text": "Well, if she does then that's the end of it.  However from her letters I think she's pretty much forgotten him."
+        },
+        {
+            "time": 274.23,
+            "type": "F_end",
+            "f_text": "The trouble is you don't see enough women, you never did.",
+            "m_text": "Well, if she does then that's the end of it.  However from her letters I think she's pretty much forgotten him."
+        },
+        {
+            "time": 277.85,
+            "type": "M_end",
+            "f_text": "I don't see why it has to be Annie.",
+            "m_text": "So what?  I'm just--I'm not fast with women."
+        },
+        {
+            "time": 281.21,
+            "type": "F_end",
+            "f_text": "I don't see why it has to be Annie.",
+            "m_text": "So what?  I'm just--I'm not fast with women."
+        },
+        {
+            "time": 295.59,
+            "type": "M_end",
+            "f_text": "He thinks he's coming back, Chris.  You marry that girl you're pronouncing him dead.",
+            "m_text": "I don't know, it I think of her, I grew up next to her.  She is what I think of when I think of a wife."
+        },
+        {
+            "time": 308.35,
+            "type": "F_end",
+            "f_text": "He thinks he's coming back, Chris.  You marry that girl you're pronouncing him dead.",
+            "m_text": "I don't know, it I think of her, I grew up next to her.  She is what I think of when I think of a wife."
+        },
+        {
+            "time": 383.3415,
+            "type": "M_end",
+            "f_text": "You mean to tell me you would leave the business for this.",
+            "m_text": "If that can't happen here..."
+        },
+        {
+            "time": 389.97,
+            "type": "F_end",
+            "f_text": "You mean to tell me you would leave the business for this.",
+            "m_text": "If that can't happen here..."
+        },
+        {
+            "time": 397.08,
+            "type": "M_end",
+            "f_text": "All right but you don't think like that because what the hell is this all for.  This is all for you, what are we working for Chris? The whole shooting match is for you.",
+            "m_text": "Then help me stay here mom."
+        },
+        {
+            "time": 408.98,
+            "type": "F_end",
+            "f_text": "All right but you don't think like that because what the hell is this all for.  This is all for you, what are we working for Chris? The whole shooting match is for you.",
+            "m_text": "Then help me stay here mom."
+        },
+        {
+            "time": 414.78,
+            "type": "M_end",
+            "f_text": "I don't understand you, do I?",
+            "m_text": "I am thinking like that."
+        },
+        {
+            "time": 418.941,
+            "type": "F_end",
+            "f_text": "I don't understand you, do I?",
+            "m_text": "I am thinking like that."
+        }
+    ],
+    "Ses01M_script01_2.mp4": [
+        {
+            "time": 32.19,
+            "type": "M_end",
+            "f_text": "He's not going to marry her.",
+            "m_text": "Don't look at me like that.  He didn't tell me anything he told you."
+        },
+        {
+            "time": 35.3425,
+            "type": "F_end",
+            "f_text": "He's not going to marry her.",
+            "m_text": "Don't look at me like that.  He didn't tell me anything he told you."
+        },
+        {
+            "time": 157.89,
+            "type": "M_end",
+            "f_text": "I can't help it.",
+            "m_text": "Look at you. You're shaking."
+        },
+        {
+            "time": 161.86,
+            "type": "F_end",
+            "f_text": "I can't help it.",
+            "m_text": "Look at you. You're shaking."
+        }
+    ],
+    "Ses01M_script01_3.mp4": [
+        {
+            "time": 53.27,
+            "type": "M_end",
+            "f_text": "You've been kind of embarrassed ever since I got here.",
+            "m_text": "What?"
+        },
+        {
+            "time": 59.22,
+            "type": "F_end",
+            "f_text": "You've been kind of embarrassed ever since I got here.",
+            "m_text": "What?"
+        },
+        {
+            "time": 102.15,
+            "type": "M_end",
+            "f_text": "Well I guess that's why I came.",
+            "m_text": "So then would you want to?  I mean I guess, you kind of have to know, maybe that's why I asked you to come."
+        },
+        {
+            "time": 109.63,
+            "type": "F_end",
+            "f_text": "Well I guess that's why I came.",
+            "m_text": "So then would you want to?  I mean I guess, you kind of have to know, maybe that's why I asked you to come."
+        },
+        {
+            "time": 147.95,
+            "type": "M_end",
+            "f_text": "I've been ready a long, long time.",
+            "m_text": "I'm sorry I'm embarrassing you, aren't I?  See, I didn't want to do it here I didn't on this porch, with this ring--I didn't want to win you away from anything."
+        },
+        {
+            "time": 154.14,
+            "type": "F_end",
+            "f_text": "I've been ready a long, long time.",
+            "m_text": "I'm sorry I'm embarrassing you, aren't I?  See, I didn't want to do it here I didn't on this porch, with this ring--I didn't want to win you away from anything."
+        },
+        {
+            "time": 161.5,
+            "type": "M_end",
+            "f_text": "I almost got married two years ago.",
+            "m_text": "So then he's gone.  You sure?"
+        },
+        {
+            "time": 165.3,
+            "type": "F_end",
+            "f_text": "I almost got married two years ago.",
+            "m_text": "So then he's gone.  You sure?"
+        },
+        {
+            "time": 252.92,
+            "type": "M_end",
+            "f_text": "You got to tell me.",
+            "m_text": "I don't know it's--it's complicated. But it's going from me now."
+        },
+        {
+            "time": 256.4398,
+            "type": "F_end",
+            "f_text": "You got to tell me.",
+            "m_text": "I don't know it's--it's complicated. But it's going from me now."
+        },
+        {
+            "time": 263.97,
+            "type": "M_end",
+            "f_text": "Wouldn't work like this.",
+            "m_text": "It's kind of all mixed up with all these other things."
+        },
+        {
+            "time": 269.08,
+            "type": "F_end",
+            "f_text": "Wouldn't work like this.",
+            "m_text": "It's kind of all mixed up with all these other things."
+        },
+        {
+            "time": 283.91,
+            "type": "M_end",
+            "f_text": "How many?",
+            "m_text": "Well I lost them."
+        },
+        {
+            "time": 288.34,
+            "type": "F_end",
+            "f_text": "How many?",
+            "m_text": "Well I lost them."
+        },
+        {
+            "time": 463.85,
+            "type": "M_end",
+            "f_text": "'Cause you mustn't feel that way.  Everything you have, you have a right to...",
+            "m_text": "I want you to know Annie."
+        },
+        {
+            "time": 472.87,
+            "type": "F_end",
+            "f_text": "'Cause you mustn't feel that way.  Everything you have, you have a right to...",
+            "m_text": "I want you to know Annie."
+        }
+    ],
+    "Ses01M_script02_1.mp4": [
+        {
+            "time": 128.46,
+            "type": "M_end",
+            "f_text": "I'm fine.",
+            "m_text": "What's wrong?  Are you okay?  Huh?  You cold?"
+        },
+        {
+            "time": 130.3,
+            "type": "F_end",
+            "f_text": "I'm fine.",
+            "m_text": "What's wrong?  Are you okay?  Huh?  You cold?"
+        },
+        {
+            "time": 401.8275,
+            "type": "M_end",
+            "f_text": "That's the wind.",
+            "m_text": "It's crazy.  Look at this, I'm giving myself goose bumps, the hairs are standing up on my arm."
+        },
+        {
+            "time": 405.04,
+            "type": "F_end",
+            "f_text": "That's the wind.",
+            "m_text": "It's crazy.  Look at this, I'm giving myself goose bumps, the hairs are standing up on my arm."
+        }
+    ],
+    "Ses01M_script02_2.mp4": [
+        {
+            "time": 140.3043,
+            "type": "M_end",
+            "f_text": "You don't understand anything I'm saying.",
+            "m_text": "Okay, I'm trying to work this backwards"
+        },
+        {
+            "time": 145.1545,
+            "type": "F_end",
+            "f_text": "You don't understand anything I'm saying.",
+            "m_text": "Okay, I'm trying to work this backwards"
+        },
+        {
+            "time": 273.1525,
+            "type": "M_end",
+            "f_text": "No.",
+            "m_text": "Do you want to dance?"
+        },
+        {
+            "time": 275.4759,
+            "type": "F_end",
+            "f_text": "No.",
+            "m_text": "Do you want to dance?"
+        },
+        {
+            "time": 381.51,
+            "type": "M_end",
+            "f_text": "This is just this.  I mean it includes a lot and everything but it's--do you understand what I'm saying?",
+            "m_text": "I know me neither."
+        },
+        {
+            "time": 394.05,
+            "type": "F_end",
+            "f_text": "This is just this.  I mean it includes a lot and everything but it's--do you understand what I'm saying?",
+            "m_text": "I know me neither."
+        },
+        {
+            "time": 425.97,
+            "type": "M_end",
+            "f_text": "Are you kidding me?  For heaven sake Augie anything I'm doing I'd rather be doing it with you.",
+            "m_text": "No, I know but--I know I don't make you happy."
+        },
+        {
+            "time": 435.48,
+            "type": "F_end",
+            "f_text": "Are you kidding me?  For heaven sake Augie anything I'm doing I'd rather be doing it with you.",
+            "m_text": "No, I know but--I know I don't make you happy."
+        },
+        {
+            "time": 463.23,
+            "type": "M_end",
+            "f_text": "So maybe we're in the wrong spot.  But we're with the right person.",
+            "m_text": "Actually, you know what?  Now you mentioned that--no I don't."
+        },
+        {
+            "time": 472.4052,
+            "type": "F_end",
+            "f_text": "So maybe we're in the wrong spot.  But we're with the right person.",
+            "m_text": "Actually, you know what?  Now you mentioned that--no I don't."
+        },
+        {
+            "time": 535.2345,
+            "type": "M_end",
+            "f_text": "Or not.",
+            "m_text": "If we are really quiet, the fish might come."
+        },
+        {
+            "time": 539.3749,
+            "type": "F_end",
+            "f_text": "Or not.",
+            "m_text": "If we are really quiet, the fish might come."
+        }
+    ],
+    "Ses01M_script03_1.mp4": [
+        {
+            "time": 42.96,
+            "type": "M_end",
+            "f_text": "Oh, oh, that sent shivers on my spine.",
+            "m_text": "No, it's a wrong number."
+        },
+        {
+            "time": 49.63,
+            "type": "F_end",
+            "f_text": "Oh, oh, that sent shivers on my spine.",
+            "m_text": "No, it's a wrong number."
+        },
+        {
+            "time": 109.4,
+            "type": "M_end",
+            "f_text": "How long will it last, this ludicrous, overbearing love of ours?",
+            "m_text": "Oh yes.  ."
+        },
+        {
+            "time": 117.7531,
+            "type": "F_end",
+            "f_text": "How long will it last, this ludicrous, overbearing love of ours?",
+            "m_text": "Oh yes.  ."
+        },
+        {
+            "time": 133.26,
+            "type": "M_end",
+            "f_text": "If one of us dies...",
+            "m_text": "Well it depends on how well we've played."
+        },
+        {
+            "time": 137.04,
+            "type": "F_end",
+            "f_text": "If one of us dies...",
+            "m_text": "Well it depends on how well we've played."
+        },
+        {
+            "time": 177.9,
+            "type": "M_end",
+            "f_text": "Oh, Elliot.  Worms don't pop.",
+            "m_text": "Come here darling, kiss me"
+        },
+        {
+            "time": 185.41,
+            "type": "F_end",
+            "f_text": "Oh, Elliot.  Worms don't pop.",
+            "m_text": "Come here darling, kiss me"
+        },
+        {
+            "time": 206.15,
+            "type": "M_end",
+            "f_text": "The same applies to you too, except you so much as look at another women I'll kill you.",
+            "m_text": "You could run off with all the men in a world. I won't say a word.  Just as long as you love me best."
+        },
+        {
+            "time": 215.0,
+            "type": "F_end",
+            "f_text": "The same applies to you too, except you so much as look at another women I'll kill you.",
+            "m_text": "You could run off with all the men in a world. I won't say a word.  Just as long as you love me best."
+        },
+        {
+            "time": 262.15,
+            "type": "M_end",
+            "f_text": "The manager came in he found us rolling about the floor.  [LAUGHTER]",
+            "m_text": "Oh that was a rouser wasn't it?"
+        },
+        {
+            "time": 267.82,
+            "type": "F_end",
+            "f_text": "The manager came in he found us rolling about the floor.  [LAUGHTER]",
+            "m_text": "Oh that was a rouser wasn't it?"
+        }
+    ],
+    "Ses01M_script03_2.mp4": [
+        {
+            "time": 73.5745,
+            "type": "M_end",
+            "f_text": "I'm bored with this conversation.",
+            "m_text": "That's a nice point of view I must say."
+        },
+        {
+            "time": 77.98,
+            "type": "F_end",
+            "f_text": "I'm bored with this conversation.",
+            "m_text": "That's a nice point of view I must say."
+        },
+        {
+            "time": 111.61,
+            "type": "M_end",
+            "f_text": "I just, I just think it's becoming a habit with you.",
+            "m_text": "You can hardly call three glasses of liquor in a whole evening going on and on and on."
+        },
+        {
+            "time": 118.07,
+            "type": "F_end",
+            "f_text": "I just, I just think it's becoming a habit with you.",
+            "m_text": "You can hardly call three glasses of liquor in a whole evening going on and on and on."
+        },
+        {
+            "time": 271.9275,
+            "type": "M_end",
+            "f_text": "Turn it on again, please.",
+            "m_text": "This is no time a year for Tunis."
+        },
+        {
+            "time": 275.34,
+            "type": "F_end",
+            "f_text": "Turn it on again, please.",
+            "m_text": "This is no time a year for Tunis."
+        }
+    ],
+    "Ses02M_script01_1.mp4": [
+        {
+            "time": 24.3,
+            "type": "M_end",
+            "f_text": "What was he doing out here at four in the morning?",
+            "m_text": "About four this morning. I heard it cracking and I woke up and looked out. He was standing right here when it cracked."
+        },
+        {
+            "time": 28.33,
+            "type": "F_end",
+            "f_text": "What was he doing out here at four in the morning?",
+            "m_text": "About four this morning. I heard it cracking and I woke up and looked out. He was standing right here when it cracked."
+        },
+        {
+            "time": 54.26,
+            "type": "M_end",
+            "f_text": "He's getting just like after he died. What is the meaning of that?",
+            "m_text": "I guess he is."
+        },
+        {
+            "time": 59.87,
+            "type": "F_end",
+            "f_text": "He's getting just like after he died. What is the meaning of that?",
+            "m_text": "I guess he is."
+        },
+        {
+            "time": 143.1,
+            "type": "M_end",
+            "f_text": "Well that's only your business, Chris.",
+            "m_text": "I'm going to ask her to marry me."
+        },
+        {
+            "time": 146.25,
+            "type": "F_end",
+            "f_text": "Well that's only your business, Chris.",
+            "m_text": "I'm going to ask her to marry me."
+        },
+        {
+            "time": 201.62,
+            "type": "M_end",
+            "f_text": "Have you asked Annie yet?",
+            "m_text": "To hell with that."
+        },
+        {
+            "time": 204.19,
+            "type": "F_end",
+            "f_text": "Have you asked Annie yet?",
+            "m_text": "To hell with that."
+        },
+        {
+            "time": 223.11,
+            "type": "M_end",
+            "f_text": "Trouble is you don't see enough women, you never did.",
+            "m_text": "I don't know, I'll find out. Then we'll trash it out with dad, right? Mom, don't avoid me."
+        },
+        {
+            "time": 227.13,
+            "type": "F_end",
+            "f_text": "Trouble is you don't see enough women, you never did.",
+            "m_text": "I don't know, I'll find out. Then we'll trash it out with dad, right? Mom, don't avoid me."
+        },
+        {
+            "time": 235.76,
+            "type": "M_end",
+            "f_text": "That's a good answer but it doesn't answer anything. I mean you haven't seen her since you went away to war it's five years.",
+            "m_text": "Because it is."
+        },
+        {
+            "time": 242.82,
+            "type": "F_end",
+            "f_text": "That's a good answer but it doesn't answer anything. I mean you haven't seen her since you went away to war it's five years.",
+            "m_text": "Because it is."
+        },
+        {
+            "time": 266.43,
+            "type": "M_end",
+            "f_text": "Just give it some more thought.",
+            "m_text": "All right. All right. Mom."
+        },
+        {
+            "time": 269.27,
+            "type": "F_end",
+            "f_text": "Just give it some more thought.",
+            "m_text": "All right. All right. Mom."
+        },
+        {
+            "time": 320.7,
+            "type": "M_end",
+            "f_text": "Tell me, you'd leave the business?",
+            "m_text": "I want a family; I want kids; I want something I can give myself to. Annie is in the middle of that. Now where do I find it?"
+        },
+        {
+            "time": 323.57,
+            "type": "F_end",
+            "f_text": "Tell me, you'd leave the business?",
+            "m_text": "I want a family; I want kids; I want something I can give myself to. Annie is in the middle of that. Now where do I find it?"
+        },
+        {
+            "time": 326.52,
+            "type": "M_end",
+            "f_text": "Well, you don't want to think like that.",
+            "m_text": "Yes, on this I would."
+        },
+        {
+            "time": 329.41,
+            "type": "F_end",
+            "f_text": "Well, you don't want to think like that.",
+            "m_text": "Yes, on this I would."
+        },
+        {
+            "time": 342.14,
+            "type": "M_end",
+            "f_text": "Just don't go thinking that way.",
+            "m_text": "I know I know mom. All right. Just help me stay here."
+        },
+        {
+            "time": 344.78,
+            "type": "F_end",
+            "f_text": "Just don't go thinking that way.",
+            "m_text": "I know I know mom. All right. Just help me stay here."
+        },
+        {
+            "time": 346.97,
+            "type": "M_end",
+            "f_text": "I don't understand you, do I?",
+            "m_text": "Well, I am thinking that way."
+        },
+        {
+            "time": 350.81,
+            "type": "F_end",
+            "f_text": "I don't understand you, do I?",
+            "m_text": "Well, I am thinking that way."
+        }
+    ],
+    "Ses02M_script02_1.mp4": [
+        {
+            "time": 311.51,
+            "type": "M_end",
+            "f_text": "About what?",
+            "m_text": "Well, so what do you think?"
+        },
+        {
+            "time": 312.91,
+            "type": "F_end",
+            "f_text": "About what?",
+            "m_text": "Well, so what do you think?"
+        },
+        {
+            "time": 314.57,
+            "type": "M_end",
+            "f_text": "It's ridiculous.",
+            "m_text": "What I was saying."
+        },
+        {
+            "time": 316.83,
+            "type": "F_end",
+            "f_text": "It's ridiculous.",
+            "m_text": "What I was saying."
+        }
+    ],
+    "Ses02M_script02_2.mp4": [
+        {
+            "time": 100.09,
+            "type": "M_end",
+            "f_text": "You don't understand anything I'm saying.",
+            "m_text": "I thought you wanted to see them."
+        },
+        {
+            "time": 103.27,
+            "type": "F_end",
+            "f_text": "You don't understand anything I'm saying.",
+            "m_text": "I thought you wanted to see them."
+        },
+        {
+            "time": 368.35,
+            "type": "M_end",
+            "f_text": "Yes, I noticed that. It looks pretty on the water doesn't it? Big old white moon.",
+            "m_text": "I don't know it seemed like a pretty good spot to me. Look at the moon - view the moon view I got from here."
+        },
+        {
+            "time": 375.59,
+            "type": "F_end",
+            "f_text": "Yes, I noticed that. It looks pretty on the water doesn't it? Big old white moon.",
+            "m_text": "I don't know it seemed like a pretty good spot to me. Look at the moon - view the moon view I got from here."
+        },
+        {
+            "time": 391.54,
+            "type": "M_end",
+            "f_text": "No. No. I think you might be right. I think this may be the spot after all.",
+            "m_text": "You still cold? Do you want my jacket? Do you want to go home?"
+        },
+        {
+            "time": 400.12,
+            "type": "F_end",
+            "f_text": "No. No. I think you might be right. I think this may be the spot after all.",
+            "m_text": "You still cold? Do you want my jacket? Do you want to go home?"
+        },
+        {
+            "time": 409.48,
+            "type": "M_end",
+            "f_text": "Or not.",
+            "m_text": "Shh, if we're very quiet the fish might come."
+        },
+        {
+            "time": 412.12,
+            "type": "F_end",
+            "f_text": "Or not.",
+            "m_text": "Shh, if we're very quiet the fish might come."
+        }
+    ],
+    "Ses02M_script03_2.mp4": [
+        {
+            "time": 98.2496,
+            "type": "M_end",
+            "f_text": "watch me a minute, will you?",
+            "m_text": "That reply has broken my heart."
+        },
+        {
+            "time": 102.8988,
+            "type": "F_end",
+            "f_text": "watch me a minute, will you?",
+            "m_text": "That reply has broken my heart."
+        }
+    ],
+    "Ses03M_script01_1.mp4": [
+        {
+            "time": 47.2837,
+            "type": "M_end",
+            "f_text": "He cried hard?",
+            "m_text": "No.  I figured the best thing to do was leave him alone."
+        },
+        {
+            "time": 49.4985,
+            "type": "F_end",
+            "f_text": "He cried hard?",
+            "m_text": "No.  I figured the best thing to do was leave him alone."
+        },
+        {
+            "time": 51.432,
+            "type": "M_end",
+            "f_text": "God, what was he doing out there anyway?",
+            "m_text": "I could hear it right through the floor."
+        },
+        {
+            "time": 54.8596,
+            "type": "F_end",
+            "f_text": "God, what was he doing out there anyway?",
+            "m_text": "I could hear it right through the floor."
+        },
+        {
+            "time": 273.2258,
+            "type": "M_end",
+            "f_text": "Well that's a good answer but, it doesn't answer anything.  You haven't seen her since you left to go to the war and it's been five years.",
+            "m_text": "Because it is."
+        },
+        {
+            "time": 282.9111,
+            "type": "F_end",
+            "f_text": "Well that's a good answer but, it doesn't answer anything.  You haven't seen her since you left to go to the war and it's been five years.",
+            "m_text": "Because it is."
+        },
+        {
+            "time": 333.3939,
+            "type": "M_end",
+            "f_text": "What the hell is this?",
+            "m_text": "But if I can't have that here I'll get out."
+        },
+        {
+            "time": 336.3425,
+            "type": "F_end",
+            "f_text": "What the hell is this?",
+            "m_text": "But if I can't have that here I'll get out."
+        },
+        {
+            "time": 376.0898,
+            "type": "M_end",
+            "f_text": "Tell me something.  You can leave this business?",
+            "m_text": "Now Annie is in the middle of all that.  Where do I find it?"
+        },
+        {
+            "time": 381.0642,
+            "type": "F_end",
+            "f_text": "Tell me something.  You can leave this business?",
+            "m_text": "Now Annie is in the middle of all that.  Where do I find it?"
+        },
+        {
+            "time": 389.8003,
+            "type": "M_end",
+            "f_text": "Alright but you can't talk like that you hear?",
+            "m_text": "Then help me stay here."
+        },
+        {
+            "time": 394.1947,
+            "type": "F_end",
+            "f_text": "Alright but you can't talk like that you hear?",
+            "m_text": "Then help me stay here."
+        },
+        {
+            "time": 410.5946,
+            "type": "M_end",
+            "f_text": "I don't understand you do I?",
+            "m_text": "I am thinking like that."
+        },
+        {
+            "time": 414.7429,
+            "type": "F_end",
+            "f_text": "I don't understand you do I?",
+            "m_text": "I am thinking like that."
+        },
+        {
+            "time": 418.5924,
+            "type": "M_end",
+            "f_text": "Yeah.  I can see that.",
+            "m_text": "No you don't.  I'm a pretty tough guy."
+        },
+        {
+            "time": 422.6352,
+            "type": "F_end",
+            "f_text": "Yeah.  I can see that.",
+            "m_text": "No you don't.  I'm a pretty tough guy."
+        }
+    ],
+    "Ses03M_script01_2.mp4": [
+        {
+            "time": 42.205,
+            "type": "M_end",
+            "f_text": "What's going on here Joe?",
+            "m_text": "Well, so what?"
+        },
+        {
+            "time": 45.705,
+            "type": "F_end",
+            "f_text": "What's going on here Joe?",
+            "m_text": "Well, so what?"
+        },
+        {
+            "time": 136.2145,
+            "type": "M_end",
+            "f_text": "I can't do it all alone.",
+            "m_text": "Okay. Calm yourself. Just calm yourself."
+        },
+        {
+            "time": 140.7125,
+            "type": "F_end",
+            "f_text": "I can't do it all alone.",
+            "m_text": "Okay. Calm yourself. Just calm yourself."
+        },
+        {
+            "time": 157.9626,
+            "type": "M_end",
+            "f_text": "Look, just keep believing okay?",
+            "m_text": "Alright, alright, calm yourself okay?  Calm yourself. Wait, wait.  What do you mean, me above all?"
+        },
+        {
+            "time": 161.2573,
+            "type": "F_end",
+            "f_text": "Look, just keep believing okay?",
+            "m_text": "Alright, alright, calm yourself okay?  Calm yourself. Wait, wait.  What do you mean, me above all?"
+        }
+    ],
+    "Ses03M_script01_3.mp4": [
+        {
+            "time": 90.2475,
+            "type": "M_end",
+            "f_text": "Well,",
+            "m_text": "I mean, that's the reason why I asked you here."
+        },
+        {
+            "time": 93.4022,
+            "type": "F_end",
+            "f_text": "Well,",
+            "m_text": "I mean, that's the reason why I asked you here."
+        },
+        {
+            "time": 140.485,
+            "type": "M_end",
+            "f_text": "You started to write me.",
+            "m_text": "Why didn't you?"
+        },
+        {
+            "time": 143.56,
+            "type": "F_end",
+            "f_text": "You started to write me.",
+            "m_text": "Why didn't you?"
+        },
+        {
+            "time": 151.2361,
+            "type": "M_end",
+            "f_text": "I was waiting for you Chris, I mean, till then you never wrote and then when you did what did you say?",
+            "m_text": "Why didn't you let me know?"
+        },
+        {
+            "time": 158.5199,
+            "type": "F_end",
+            "f_text": "I was waiting for you Chris, I mean, till then you never wrote and then when you did what did you say?",
+            "m_text": "Why didn't you let me know?"
+        },
+        {
+            "time": 177.5798,
+            "type": "M_end",
+            "f_text": "I'll never forgive you for that.",
+            "m_text": "Oh God.  Annie, I kissed Annie.  I kissed Annie."
+        },
+        {
+            "time": 181.6575,
+            "type": "M_end",
+            "f_text": "I mean,  Why did you wait all these years?  There I was sitting around and wondering if I was crazy for thinking about you.",
+            "m_text": "How long, how long I've been waiting to do that."
+        },
+        {
+            "time": 183.4461,
+            "type": "F_end",
+            "f_text": "I'll never forgive you for that.",
+            "m_text": "Oh God.  Annie, I kissed Annie.  I kissed Annie."
+        },
+        {
+            "time": 190.0102,
+            "type": "F_end",
+            "f_text": "I mean,  Why did you wait all these years?  There I was sitting around and wondering if I was crazy for thinking about you.",
+            "m_text": "How long, how long I've been waiting to do that."
+        },
+        {
+            "time": 382.1793,
+            "type": "M_end",
+            "f_text": "And you still feel that way?",
+            "m_text": "And I didn't want to take any of it and I guess that included you."
+        },
+        {
+            "time": 385.8212,
+            "type": "F_end",
+            "f_text": "And you still feel that way?",
+            "m_text": "And I didn't want to take any of it and I guess that included you."
+        },
+        {
+            "time": 410.6601,
+            "type": "M_end",
+            "f_text": "What am I going to do with a fortune?",
+            "m_text": "Annie I'm going to make a fortune for you."
+        },
+        {
+            "time": 414.978,
+            "type": "F_end",
+            "f_text": "What am I going to do with a fortune?",
+            "m_text": "Annie I'm going to make a fortune for you."
+        }
+    ],
+    "Ses03M_script02_1.mp4": [
+        {
+            "time": 131.0047,
+            "type": "M_end",
+            "f_text": "Look, I'm cold.",
+            "m_text": "I wonder if they can hear us talk?  Or feel the vibrations in the sand when we move around?"
+        },
+        {
+            "time": 134.5338,
+            "type": "F_end",
+            "f_text": "Look, I'm cold.",
+            "m_text": "I wonder if they can hear us talk?  Or feel the vibrations in the sand when we move around?"
+        }
+    ],
+    "Ses03M_script02_2.mp4": [
+        {
+            "time": 11.5957,
+            "type": "M_end",
+            "f_text": "It's ridiculous.",
+            "m_text": "About what I just said?"
+        },
+        {
+            "time": 13.835,
+            "type": "F_end",
+            "f_text": "It's ridiculous.",
+            "m_text": "About what I just said?"
+        },
+        {
+            "time": 168.217,
+            "type": "M_end",
+            "f_text": "Look, do you remember the first time we came here?",
+            "m_text": "And then I'm putting the animals out in the yard, I'm pulling the car out of the garage, putting my jacket on."
+        },
+        {
+            "time": 173.7529,
+            "type": "F_end",
+            "f_text": "Look, do you remember the first time we came here?",
+            "m_text": "And then I'm putting the animals out in the yard, I'm pulling the car out of the garage, putting my jacket on."
+        },
+        {
+            "time": 207.1274,
+            "type": "M_end",
+            "f_text": "What?  Dancing barefoot in the sand?  Drinking out of a bottle of champagne?",
+            "m_text": "Wait a minute.  I've got it."
+        },
+        {
+            "time": 216.0121,
+            "type": "F_end",
+            "f_text": "What?  Dancing barefoot in the sand?  Drinking out of a bottle of champagne?",
+            "m_text": "Wait a minute.  I've got it."
+        },
+        {
+            "time": 390.9041,
+            "type": "M_end",
+            "f_text": "Well, I guess this is the wrong spot for the right people.",
+            "m_text": "Actually, now that you mention it, no I don't."
+        },
+        {
+            "time": 399.6521,
+            "type": "F_end",
+            "f_text": "Well, I guess this is the wrong spot for the right people.",
+            "m_text": "Actually, now that you mention it, no I don't."
+        }
+    ],
+    "Ses03M_script03_1.mp4": [
+        {
+            "time": 36.46,
+            "type": "M_end",
+            "f_text": "That sent shivers up my spine.",
+            "m_text": "Hello?  Hello?  What?"
+        },
+        {
+            "time": 42.6425,
+            "type": "F_end",
+            "f_text": "That sent shivers up my spine.",
+            "m_text": "Hello?  Hello?  What?"
+        },
+        {
+            "time": 126.29,
+            "type": "M_end",
+            "f_text": "What happens if one of us dies?  I mean, does the other one still laugh?",
+            "m_text": "Well, it depends on how well we've played."
+        },
+        {
+            "time": 131.1025,
+            "type": "F_end",
+            "f_text": "What happens if one of us dies?  I mean, does the other one still laugh?",
+            "m_text": "Well, it depends on how well we've played."
+        },
+        {
+            "time": 215.43,
+            "type": "M_end",
+            "f_text": "Yeah.  I know you did.  You threw it out the window and into the Grand Canal.  I don't think I'll ever forgive you for that.",
+            "m_text": "Horrible little thing."
+        },
+        {
+            "time": 223.1175,
+            "type": "F_end",
+            "f_text": "Yeah.  I know you did.  You threw it out the window and into the Grand Canal.  I don't think I'll ever forgive you for that.",
+            "m_text": "Horrible little thing."
+        },
+        {
+            "time": 231.48,
+            "type": "M_end",
+            "f_text": "I burnt a hole in my comb too and all the towels in the bathroom.",
+            "m_text": "Oh, the worst one was in Cannes when you-"
+        },
+        {
+            "time": 238.1252,
+            "type": "F_end",
+            "f_text": "I burnt a hole in my comb too and all the towels in the bathroom.",
+            "m_text": "Oh, the worst one was in Cannes when you-"
+        }
+    ],
+    "Ses04M_script02_1.mp4": [
+        {
+            "time": 177.2232,
+            "type": "M_end",
+            "f_text": "This isn't a moon landing we're talking about.  It's fish.  It's fish nobody even eats.",
+            "m_text": "Oh, it's a big night for these guys.  Uh, life's last orgy."
+        },
+        {
+            "time": 183.72,
+            "type": "F_end",
+            "f_text": "This isn't a moon landing we're talking about.  It's fish.  It's fish nobody even eats.",
+            "m_text": "Oh, it's a big night for these guys.  Uh, life's last orgy."
+        }
+    ],
+    "Ses04M_script02_2.mp4": [
+        {
+            "time": 141.2,
+            "type": "M_end",
+            "f_text": "Do you remember the first time we came to see it?",
+            "m_text": "Uh,okay.  So I'm putting on my jacket; putting out the animals;"
+        },
+        {
+            "time": 146.23,
+            "type": "F_end",
+            "f_text": "Do you remember the first time we came to see it?",
+            "m_text": "Uh,okay.  So I'm putting on my jacket; putting out the animals;"
+        }
+    ],
+    "Ses04M_script03_2.mp4": [
+        {
+            "time": 138.02,
+            "type": "M_end",
+            "f_text": "It's a pity you didn't- It's a pity you didn't have more brandy.",
+            "m_text": "Line?"
+        },
+        {
+            "time": 141.2266,
+            "type": "F_end",
+            "f_text": "It's a pity you didn't- It's a pity you didn't have more brandy.",
+            "m_text": "Line?"
+        }
+    ],
+    "Ses05M_script01_1.mp4": [
+        {
+            "time": 43.08,
+            "type": "M_end",
+            "f_text": "He cried hard?",
+            "m_text": "No.  I figured it was best to leave him alone."
+        },
+        {
+            "time": 45.3,
+            "type": "F_end",
+            "f_text": "He cried hard?",
+            "m_text": "No.  I figured it was best to leave him alone."
+        },
+        {
+            "time": 47.96,
+            "type": "M_end",
+            "f_text": "What was he doing out there at that hour?  He's getting just like after Larry died, walking around at night.  He dreams.",
+            "m_text": "I could hear him right through the floor in my room."
+        },
+        {
+            "time": 58.84,
+            "type": "F_end",
+            "f_text": "What was he doing out there at that hour?  He's getting just like after Larry died, walking around at night.  He dreams.",
+            "m_text": "I could hear him right through the floor in my room."
+        },
+        {
+            "time": 60.41,
+            "type": "M_end",
+            "f_text": "What's the meaning of that?",
+            "m_text": "I guess he is."
+        },
+        {
+            "time": 63.56,
+            "type": "F_end",
+            "f_text": "What's the meaning of that?",
+            "m_text": "I guess he is."
+        },
+        {
+            "time": 106.05,
+            "type": "M_end",
+            "f_text": "how are you gonna prove it?  Can you prove it?",
+            "m_text": "We have to say it to him."
+        },
+        {
+            "time": 108.95,
+            "type": "F_end",
+            "f_text": "how are you gonna prove it?  Can you prove it?",
+            "m_text": "We have to say it to him."
+        },
+        {
+            "time": 149.75,
+            "type": "M_end",
+            "f_text": "Well, that's your business, Chris.",
+            "m_text": "I'm going to ask her to marry me."
+        },
+        {
+            "time": 153.19,
+            "type": "F_end",
+            "f_text": "Well, that's your business, Chris.",
+            "m_text": "I'm going to ask her to marry me."
+        },
+        {
+            "time": 240.27,
+            "type": "M_end",
+            "f_text": "Well, the trouble is you never saw enough women.",
+            "m_text": "Well, if that's the case, then that's the end of it.  But from her letters it sounds like she has forgotten him.  I'll find out.  And then we'll thrash it out with dad, all right?  Mom, don't avoid me."
+        },
+        {
+            "time": 244.02,
+            "type": "F_end",
+            "f_text": "Well, the trouble is you never saw enough women.",
+            "m_text": "Well, if that's the case, then that's the end of it.  But from her letters it sounds like she has forgotten him.  I'll find out.  And then we'll thrash it out with dad, all right?  Mom, don't avoid me."
+        },
+        {
+            "time": 287.27,
+            "type": "M_end",
+            "f_text": "Just give it some more thought.",
+            "m_text": "All right then, mom."
+        },
+        {
+            "time": 289.72,
+            "type": "F_end",
+            "f_text": "Just give it some more thought.",
+            "m_text": "All right then, mom."
+        },
+        {
+            "time": 325.03,
+            "type": "M_end",
+            "f_text": "You can't think like that.",
+            "m_text": "Yes.  On this, I would."
+        },
+        {
+            "time": 327.23,
+            "type": "F_end",
+            "f_text": "You can't think like that.",
+            "m_text": "Yes.  On this, I would."
+        },
+        {
+            "time": 344.05,
+            "type": "M_end",
+            "f_text": "I don't understand you, do I?",
+            "m_text": "I am thinking that way."
+        },
+        {
+            "time": 348.79,
+            "type": "F_end",
+            "f_text": "I don't understand you, do I?",
+            "m_text": "I am thinking that way."
+        }
+    ],
+    "Ses05M_script01_1b.mp4": [
+        {
+            "time": 24.83,
+            "type": "M_end",
+            "f_text": "What was he doing out here four in the morning?",
+            "m_text": "About four this morning.  I heard it crack and I looked out the window and he was standing right there when it cracked."
+        },
+        {
+            "time": 28.87,
+            "type": "F_end",
+            "f_text": "What was he doing out here four in the morning?",
+            "m_text": "About four this morning.  I heard it crack and I looked out the window and he was standing right there when it cracked."
+        },
+        {
+            "time": 44.06,
+            "type": "M_end",
+            "f_text": "He's dreaming about him again.  He's getting just like after Larry died. What's the meaning of that?",
+            "m_text": "No.  I figured it was best to leave him alone."
+        },
+        {
+            "time": 55.02,
+            "type": "F_end",
+            "f_text": "He's dreaming about him again.  He's getting just like after Larry died. What's the meaning of that?",
+            "m_text": "No.  I figured it was best to leave him alone."
+        },
+        {
+            "time": 152.28,
+            "type": "M_end",
+            "f_text": "Well, that's your business, Chris.",
+            "m_text": "I'm gonna ask her to marry me."
+        },
+        {
+            "time": 155.11,
+            "type": "F_end",
+            "f_text": "Well, that's your business, Chris.",
+            "m_text": "I'm gonna ask her to marry me."
+        },
+        {
+            "time": 241.85,
+            "type": "M_end",
+            "f_text": "I just don't see why it has to be Annie.",
+            "m_text": "So what, I'm not fast with women?"
+        },
+        {
+            "time": 245.17,
+            "type": "F_end",
+            "f_text": "I just don't see why it has to be Annie.",
+            "m_text": "So what, I'm not fast with women?"
+        },
+        {
+            "time": 369.6377,
+            "type": "M_end",
+            "f_text": "I don't understand you, do I?",
+            "m_text": "Well, I am thinking like that."
+        },
+        {
+            "time": 373.01,
+            "type": "F_end",
+            "f_text": "I don't understand you, do I?",
+            "m_text": "Well, I am thinking like that."
+        }
+    ],
+    "Ses05M_script01_2.mp4": [
+        {
+            "time": 31.06,
+            "type": "M_end",
+            "f_text": "He's not going to marry her.",
+            "m_text": "What are you talking about?  He grew up next to the girl his whole life, why wouldn't he want to see her again?  Don't look at me like that.  He hasn't told me anything he didn't told you."
+        },
+        {
+            "time": 33.73,
+            "type": "F_end",
+            "f_text": "He's not going to marry her.",
+            "m_text": "What are you talking about?  He grew up next to the girl his whole life, why wouldn't he want to see her again?  Don't look at me like that.  He hasn't told me anything he didn't told you."
+        },
+        {
+            "time": 47.68,
+            "type": "M_end",
+            "f_text": "No.  She's not his girl, Joe.  She knows she's not.",
+            "m_text": "Now listen."
+        },
+        {
+            "time": 52.23,
+            "type": "F_end",
+            "f_text": "No.  She's not his girl, Joe.  She knows she's not.",
+            "m_text": "Now listen."
+        },
+        {
+            "time": 66.17,
+            "type": "M_end",
+            "f_text": "Because she knows what I know, that's why.  She's faithful as a rock.  In my worst moments I think of her waiting and I know again that I'm right.",
+            "m_text": "How do you know why she's waited?"
+        },
+        {
+            "time": 75.73,
+            "type": "F_end",
+            "f_text": "Because she knows what I know, that's why.  She's faithful as a rock.  In my worst moments I think of her waiting and I know again that I'm right.",
+            "m_text": "How do you know why she's waited?"
+        },
+        {
+            "time": 113.93,
+            "type": "M_end",
+            "f_text": "Believe with me, Joe.  I can't stand alone.",
+            "m_text": "Calm yourself."
+        },
+        {
+            "time": 117.53,
+            "type": "F_end",
+            "f_text": "Believe with me, Joe.  I can't stand alone.",
+            "m_text": "Calm yourself."
+        },
+        {
+            "time": 130.42,
+            "type": "M_end",
+            "f_text": "Just don't stop believing.",
+            "m_text": "What do you mean, me above all?"
+        },
+        {
+            "time": 133.18,
+            "type": "F_end",
+            "f_text": "Just don't stop believing.",
+            "m_text": "What do you mean, me above all?"
+        }
+    ],
+    "Ses05M_script01_3.mp4": [
+        {
+            "time": 38.67,
+            "type": "M_end",
+            "f_text": "You've been sort of embarrassed since I got here.",
+            "m_text": "What?"
+        },
+        {
+            "time": 43.17,
+            "type": "F_end",
+            "f_text": "You've been sort of embarrassed since I got here.",
+            "m_text": "What?"
+        },
+        {
+            "time": 53.46,
+            "type": "M_end",
+            "f_text": "I figured they would, your mother at least.",
+            "m_text": "Well, I planned on kind of sneaking up on you in a period of a week or so, but they all take it for granted that we're set."
+        },
+        {
+            "time": 57.13,
+            "type": "F_end",
+            "f_text": "I figured they would, your mother at least.",
+            "m_text": "Well, I planned on kind of sneaking up on you in a period of a week or so, but they all take it for granted that we're set."
+        },
+        {
+            "time": 78.59,
+            "type": "M_end",
+            "f_text": "Yes, that's why I came.",
+            "m_text": "Well, so would you want to?  I mean, I guess you know that's why I asked you to come."
+        },
+        {
+            "time": 82.18,
+            "type": "F_end",
+            "f_text": "Yes, that's why I came.",
+            "m_text": "Well, so would you want to?  I mean, I guess you know that's why I asked you to come."
+        },
+        {
+            "time": 131.61,
+            "type": "M_end",
+            "f_text": "I almost got married two years ago.",
+            "m_text": "So he's gone forever then?  You sure?"
+        },
+        {
+            "time": 134.53,
+            "type": "F_end",
+            "f_text": "I almost got married two years ago.",
+            "m_text": "So he's gone forever then?  You sure?"
+        },
+        {
+            "time": 137.07,
+            "type": "M_end",
+            "f_text": "You started to write me.",
+            "m_text": "Why didn't you?"
+        },
+        {
+            "time": 139.56,
+            "type": "F_end",
+            "f_text": "You started to write me.",
+            "m_text": "Why didn't you?"
+        },
+        {
+            "time": 195.77,
+            "type": "M_end",
+            "f_text": "You have to tell me.",
+            "m_text": "No, nothing like that."
+        },
+        {
+            "time": 198.97,
+            "type": "F_end",
+            "f_text": "You have to tell me.",
+            "m_text": "No, nothing like that."
+        },
+        {
+            "time": 210.69,
+            "type": "M_end",
+            "f_text": "You have to tell me.",
+            "m_text": "Yeah, I suppose I have been.  But it's going for me."
+        },
+        {
+            "time": 213.37,
+            "type": "F_end",
+            "f_text": "You have to tell me.",
+            "m_text": "Yeah, I suppose I have been.  But it's going for me."
+        },
+        {
+            "time": 216.64,
+            "type": "M_end",
+            "f_text": "It wouldn't work like this.",
+            "m_text": "I don't I don't know where to start."
+        },
+        {
+            "time": 219.0581,
+            "type": "F_end",
+            "f_text": "It wouldn't work like this.",
+            "m_text": "I don't I don't know where to start."
+        },
+        {
+            "time": 233.1245,
+            "type": "M_end",
+            "f_text": "How many?",
+            "m_text": "I lost them."
+        },
+        {
+            "time": 235.64,
+            "type": "F_end",
+            "f_text": "How many?",
+            "m_text": "I lost them."
+        },
+        {
+            "time": 405.28,
+            "type": "M_end",
+            "f_text": "Do you still feel like that?",
+            "m_text": "And I guess that included you."
+        },
+        {
+            "time": 409.18,
+            "type": "F_end",
+            "f_text": "Do you still feel like that?",
+            "m_text": "And I guess that included you."
+        },
+        {
+            "time": 413.43,
+            "type": "M_end",
+            "f_text": "Because you can't feel like that anymore, Chris.  Because everything you have, you have a right to, me included.",
+            "m_text": "I want you now, Annie."
+        },
+        {
+            "time": 424.4,
+            "type": "F_end",
+            "f_text": "Because you can't feel like that anymore, Chris.  Because everything you have, you have a right to, me included.",
+            "m_text": "I want you now, Annie."
+        },
+        {
+            "time": 432.34,
+            "type": "M_end",
+            "f_text": "[LAUGHTER] What will I do with a fortune?",
+            "m_text": "Oh, Annie,"
+        },
+        {
+            "time": 437.72,
+            "type": "F_end",
+            "f_text": "[LAUGHTER] What will I do with a fortune?",
+            "m_text": "Oh, Annie,"
+        }
+    ],
+    "Ses05M_script02_1.mp4": [
+        {
+            "time": 146.85,
+            "type": "M_end",
+            "f_text": "I just don't.",
+            "m_text": "Why not?"
+        },
+        {
+            "time": 148.77,
+            "type": "F_end",
+            "f_text": "I just don't.",
+            "m_text": "Why not?"
+        },
+        {
+            "time": 150.67,
+            "type": "M_end",
+            "f_text": "it's stupid.",
+            "m_text": "Oh"
+        },
+        {
+            "time": 155.1,
+            "type": "F_end",
+            "f_text": "it's stupid.",
+            "m_text": "Oh"
+        }
+    ],
+    "Ses05M_script02_2.mp4": [
+        {
+            "time": 77.21,
+            "type": "M_end",
+            "f_text": "We We don't ever.  Have we ever?",
+            "m_text": "Why not?"
+        },
+        {
+            "time": 80.15,
+            "type": "F_end",
+            "f_text": "We We don't ever.  Have we ever?",
+            "m_text": "Why not?"
+        },
+        {
+            "time": 109.0,
+            "type": "M_end",
+            "f_text": "I did want to see it.  I always want to see it.  I just- I keep thinking this will be the time and it never is.",
+            "m_text": "No, of course not."
+        },
+        {
+            "time": 118.09,
+            "type": "F_end",
+            "f_text": "I did want to see it.  I always want to see it.  I just- I keep thinking this will be the time and it never is.",
+            "m_text": "No, of course not."
+        },
+        {
+            "time": 198.95,
+            "type": "M_end",
+            "f_text": "Dancing barefoot in the sand, drinking champagne out of the bottle.",
+            "m_text": "Wait a minute.  I've got it."
+        },
+        {
+            "time": 207.03,
+            "type": "F_end",
+            "f_text": "Dancing barefoot in the sand, drinking champagne out of the bottle.",
+            "m_text": "Wait a minute.  I've got it."
+        },
+        {
+            "time": 313.702,
+            "type": "M_end",
+            "f_text": "But this isn't at all what I wanted it to be.",
+            "m_text": "Right."
+        },
+        {
+            "time": 318.2969,
+            "type": "F_end",
+            "f_text": "But this isn't at all what I wanted it to be.",
+            "m_text": "Right."
+        },
+        {
+            "time": 321.99,
+            "type": "M_end",
+            "f_text": "This is just this.  I mean, it's a lot and everything.  But it's not, you know, something else.  Am I making any sense?",
+            "m_text": "Now, I know.  Me either"
+        },
+        {
+            "time": 332.19,
+            "type": "F_end",
+            "f_text": "This is just this.  I mean, it's a lot and everything.  But it's not, you know, something else.  Am I making any sense?",
+            "m_text": "Now, I know.  Me either"
+        },
+        {
+            "time": 370.19,
+            "type": "M_end",
+            "f_text": "Yes.  Don't you know that? I mean, You're probably the one you wishes you were with somebody else, somebody who didn't take everything so hard and who knew how to enjoy herself.",
+            "m_text": "Really?"
+        },
+        {
+            "time": 381.75,
+            "type": "F_end",
+            "f_text": "Yes.  Don't you know that? I mean, You're probably the one you wishes you were with somebody else, somebody who didn't take everything so hard and who knew how to enjoy herself.",
+            "m_text": "Really?"
+        },
+        {
+            "time": 389.38,
+            "type": "M_end",
+            "f_text": "Okay.  Well, we're in the wrong spot but we're with the right person.",
+            "m_text": "Actually, now that you mention it, no.  I don't."
+        },
+        {
+            "time": 394.59,
+            "type": "F_end",
+            "f_text": "Okay.  Well, we're in the wrong spot but we're with the right person.",
+            "m_text": "Actually, now that you mention it, no.  I don't."
+        },
+        {
+            "time": 400.7742,
+            "type": "M_end",
+            "f_text": "Yes, I did notice that.  It does look really beautiful over the water.  Big old white moon.",
+            "m_text": "I don't know.  I think this is a pretty good spot.  I mean, look at the view of the moon from here."
+        },
+        {
+            "time": 411.26,
+            "type": "F_end",
+            "f_text": "Yes, I did notice that.  It does look really beautiful over the water.  Big old white moon.",
+            "m_text": "I don't know.  I think this is a pretty good spot.  I mean, look at the view of the moon from here."
+        },
+        {
+            "time": 416.02,
+            "type": "M_end",
+            "f_text": "Augie, you brought refreshments.",
+            "m_text": "Oh, well look what we've got here."
+        },
+        {
+            "time": 418.43,
+            "type": "F_end",
+            "f_text": "Augie, you brought refreshments.",
+            "m_text": "Oh, well look what we've got here."
+        },
+        {
+            "time": 427.84,
+            "type": "M_end",
+            "f_text": "No.  I'm beginning to think you might be right. I think  this might be the spot after all.  Augie, I'm sorry.",
+            "m_text": "Are you still cold?  Still want to go home?"
+        },
+        {
+            "time": 441.78,
+            "type": "F_end",
+            "f_text": "No.  I'm beginning to think you might be right. I think  this might be the spot after all.  Augie, I'm sorry.",
+            "m_text": "Are you still cold?  Still want to go home?"
+        },
+        {
+            "time": 447.47,
+            "type": "M_end",
+            "f_text": "Or not.",
+            "m_text": "Shh.  If we're really quiet, the fish might come."
+        },
+        {
+            "time": 450.69,
+            "type": "F_end",
+            "f_text": "Or not.",
+            "m_text": "Shh.  If we're really quiet, the fish might come."
+        }
+    ],
+    "Ses05M_script03_1.mp4": [
+        {
+            "time": 108.52,
+            "type": "M_end",
+            "f_text": "Well, will we always bicker and fight?",
+            "m_text": "[garbage] who knows?"
+        },
+        {
+            "time": 112.96,
+            "type": "F_end",
+            "f_text": "Well, will we always bicker and fight?",
+            "m_text": "[garbage] who knows?"
+        },
+        {
+            "time": 119.61,
+            "type": "M_end",
+            "f_text": "What if one of us dies, does the other one laugh then?",
+            "m_text": "Well, it depends on how well we played."
+        },
+        {
+            "time": 124.42,
+            "type": "F_end",
+            "f_text": "What if one of us dies, does the other one laugh then?",
+            "m_text": "Well, it depends on how well we played."
+        },
+        {
+            "time": 223.83,
+            "type": "M_end",
+            "f_text": "And then the manager came in and saw us all rolling all over the floor, biting and scratching one another. [LAUGHTER]",
+            "m_text": "Oh, I didn't hit you very hard."
+        },
+        {
+            "time": 230.55,
+            "type": "F_end",
+            "f_text": "And then the manager came in and saw us all rolling all over the floor, biting and scratching one another. [LAUGHTER]",
+            "m_text": "Oh, I didn't hit you very hard."
+        }
+    ],
+    "Ses05M_script03_2.mp4": [
+        {
+            "time": 221.37,
+            "type": "M_end",
+            "f_text": "You know what, I'm sick and tire of listening to you.  You're a-- You're a total sadistic bully.",
+            "m_text": "Very amusing indeed."
+        },
+        {
+            "time": 227.95,
+            "type": "F_end",
+            "f_text": "You know what, I'm sick and tire of listening to you.  You're a-- You're a total sadistic bully.",
+            "m_text": "Very amusing indeed."
+        }
     ]
 };
 
