@@ -23,6 +23,8 @@ class AnnotationSystem {
         this.selectionView = document.getElementById('selectionView');
         this.annotationView = document.getElementById('annotationView');
         this.closeModalBtn = document.querySelector('.close-btn');
+        this.startBtn = document.getElementById('startBtn');
+        this.quickVideoList = document.getElementById('quickVideoList');
 
         // 滑动条元素
         this.sliders = {
@@ -73,12 +75,23 @@ class AnnotationSystem {
     }
 
     loadVideos() {
-        // 从 videos.js 加载视频库数据
-        if (typeof VIDEOS !== 'undefined') {
-            this.videos = VIDEOS;
+        // 从 videos-extended.js 加载视频库数据（根据性别选择）
+        const selectedGender = localStorage.getItem('selectedGender') || 'male';
+        
+        if (typeof ALL_VIDEOS !== 'undefined') {
+            if (selectedGender === 'male' && ALL_VIDEOS.male) {
+                this.videos = ALL_VIDEOS.male;
+            } else if (selectedGender === 'female' && ALL_VIDEOS.female) {
+                this.videos = ALL_VIDEOS.female;
+            } else {
+                this.videos = ALL_VIDEOS.male || [];
+            }
+            
             this.renderVideoList();
+            this.renderQuickVideoList();
+            console.log(`加载了 ${this.videos.length} 个${selectedGender}视频`);
         } else {
-            console.error('Videos data not loaded');
+            console.error('ALL_VIDEOS data not loaded');
         }
     }
 
@@ -94,6 +107,37 @@ class AnnotationSystem {
             li.addEventListener('click', () => this.selectVideo(index));
             this.videoList.appendChild(li);
         });
+    }
+
+    renderQuickVideoList() {
+        if (!this.quickVideoList) return;
+        
+        this.quickVideoList.innerHTML = '';
+        this.videos.forEach((video, index) => {
+            const div = document.createElement('div');
+            div.className = 'quick-video-item';
+            div.innerHTML = `
+                <input type="radio" name="quickVideo" value="${index}" id="video-${index}">
+                <label for="video-${index}">${video.title}</label>
+            `;
+            
+            const radio = div.querySelector('input[type="radio"]');
+            radio.addEventListener('change', () => {
+                if (radio.checked) {
+                    this.selectedVideoIndex = index;
+                    this.enableStartButton();
+                }
+            });
+            
+            this.quickVideoList.appendChild(div);
+        });
+    }
+
+    enableStartButton() {
+        if (this.startBtn) {
+            this.startBtn.disabled = false;
+            console.log('Start button enabled');
+        }
     }
 
     selectVideo(index) {
@@ -351,6 +395,13 @@ class AnnotationSystem {
             this.videoPlayer.pause();
         });
 
+        // Start Annotation 按钮
+        if (this.startBtn) {
+            this.startBtn.addEventListener('click', () => {
+                this.startAnnotation();
+            });
+        }
+
         // 进度条点击
         this.progressBarContainer.addEventListener('click', (e) => {
             const rect = this.progressBarContainer.getBoundingClientRect();
@@ -391,6 +442,24 @@ class AnnotationSystem {
         const minutes = Math.floor(seconds / 60);
         const secs = Math.floor(seconds % 60);
         return `${String(minutes).padStart(2, '0')}:${String(secs).padStart(2, '0')}`;
+    }
+
+    startAnnotation() {
+        console.log('Starting annotation...');
+        
+        if (this.selectedVideoIndex === undefined || this.selectedVideoIndex === null) {
+            alert('Please select a video first!');
+            return;
+        }
+
+        // 切换到注释视图
+        this.selectionView.classList.remove('active');
+        this.annotationView.classList.add('active');
+        
+        // 选择视频
+        this.selectVideo(this.selectedVideoIndex);
+        
+        console.log(`Started annotation for video: ${this.videos[this.selectedVideoIndex].title}`);
     }
 }
 
