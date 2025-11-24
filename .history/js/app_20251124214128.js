@@ -138,9 +138,7 @@ class AnnotationSystem {
         this.currentVideoIndex = index;
         this.currentVideo = this.videos[index];
         this.annotationData = {};
-        
-        // 从dialog数据中加载annotation点
-        this.loadDialogPoints(this.currentVideo.path);
+        this.annotationPoints = this.currentVideo.annotationPoints || [];
 
         // 更新UI
         document.querySelectorAll('.video-item').forEach((item, i) => {
@@ -162,28 +160,6 @@ class AnnotationSystem {
 
         // 监听视频时间更新
         this.setupVideoListeners();
-        
-        console.log(`视频已选择: ${this.currentVideo.title}, 包含 ${this.annotationPoints.length} 个对话点`);
-    }
-
-    loadDialogPoints(videoPath) {
-        // 从video路径中提取文件名
-        const videoFilename = videoPath.split('/').pop();
-        
-        // 检查是否有对应的对话数据
-        if (typeof DIALOG_DATA !== 'undefined' && DIALOG_DATA[videoFilename]) {
-            this.annotationPoints = DIALOG_DATA[videoFilename].map(point => ({
-                time: point.time,
-                type: point.type,
-                f_text: point.f_text,
-                m_text: point.m_text
-            }));
-            console.log(`加载了 ${this.annotationPoints.length} 个对话时间点，来自 ${videoFilename}`);
-        } else {
-            // 如果没有对话数据，使用默认的30秒间隔
-            console.warn(`未找到 ${videoFilename} 的对话数据，使用默认间隔`);
-            this.annotationPoints = this.currentVideo.annotationPoints || [];
-        }
     }
 
     setupVideoListeners() {
@@ -246,21 +222,8 @@ class AnnotationSystem {
     }
 
     showAnnotationModal(point) {
-        console.log(`显示注释模态框: 时间=${point.time}, 类型=${point.type}`);
+        console.log(`显示注释模态框: 时间=${point.time}`);
         this.modalTimestamp.textContent = this.formatTime(point.time);
-        
-        // 显示对话文本
-        if (point.f_text) {
-            this.firstSpeakerText.textContent = point.f_text;
-        } else {
-            this.firstSpeakerText.textContent = 'No text available';
-        }
-        
-        if (point.m_text) {
-            this.secondSpeakerText.textContent = point.m_text;
-        } else {
-            this.secondSpeakerText.textContent = 'No text available';
-        }
         
         // 恢复之前的标注（如果有）
         const existingAnnotation = this.annotationData[point.time];
@@ -273,7 +236,6 @@ class AnnotationSystem {
             this.clearAnnotationForm();
         }
 
-        this.currentAnnotationPoint = point;
         this.modal.classList.add('show');
         this.isModalOpen = true;
         console.log('模态框已设置为显示状态');
@@ -355,12 +317,11 @@ class AnnotationSystem {
             if (annotation) {
                 historyItem.classList.add('completed');
                 const completedCount = this.questionNames.filter(q => annotation[q] !== null && annotation[q] !== undefined).length;
-                const typeLabel = point.type === 'F_end' ? 'Female speaker end' : 'Male speaker end';
                 historyItem.innerHTML = `
                     <div>
                         <span class="history-time">${this.formatTime(point.time)}</span>
                         <div class="history-values">
-                            ${typeLabel} | Empathy Assessment: ${completedCount}/9 questions answered
+                            Empathy Assessment: ${completedCount}/9 questions answered
                         </div>
                     </div>
                     <div class="history-actions">
@@ -369,11 +330,10 @@ class AnnotationSystem {
                     </div>
                 `;
             } else {
-                const typeLabel = point.type === 'F_end' ? 'Female speaker end' : 'Male speaker end';
                 historyItem.innerHTML = `
                     <div>
                         <span class="history-time">${this.formatTime(point.time)}</span>
-                        <div class="history-values">${typeLabel} | Pending</div>
+                        <div class="history-values">Pending</div>
                     </div>
                     <span class="history-status pending">Incomplete</span>
                 `;

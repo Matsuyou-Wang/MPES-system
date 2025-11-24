@@ -355,12 +355,11 @@ class AnnotationSystem {
             if (annotation) {
                 historyItem.classList.add('completed');
                 const completedCount = this.questionNames.filter(q => annotation[q] !== null && annotation[q] !== undefined).length;
-                const typeLabel = point.type === 'F_end' ? 'Female speaker end' : 'Male speaker end';
                 historyItem.innerHTML = `
                     <div>
                         <span class="history-time">${this.formatTime(point.time)}</span>
                         <div class="history-values">
-                            ${typeLabel} | Empathy Assessment: ${completedCount}/9 questions answered
+                            Empathy Assessment: ${completedCount}/9 questions answered
                         </div>
                     </div>
                     <div class="history-actions">
@@ -369,11 +368,10 @@ class AnnotationSystem {
                     </div>
                 `;
             } else {
-                const typeLabel = point.type === 'F_end' ? 'Female speaker end' : 'Male speaker end';
                 historyItem.innerHTML = `
                     <div>
                         <span class="history-time">${this.formatTime(point.time)}</span>
-                        <div class="history-values">${typeLabel} | Pending</div>
+                        <div class="history-values">Pending</div>
                     </div>
                     <span class="history-status pending">Incomplete</span>
                 `;

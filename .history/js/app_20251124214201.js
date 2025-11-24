@@ -246,21 +246,8 @@ class AnnotationSystem {
     }
 
     showAnnotationModal(point) {
-        console.log(`显示注释模态框: 时间=${point.time}, 类型=${point.type}`);
+        console.log(`显示注释模态框: 时间=${point.time}`);
         this.modalTimestamp.textContent = this.formatTime(point.time);
-        
-        // 显示对话文本
-        if (point.f_text) {
-            this.firstSpeakerText.textContent = point.f_text;
-        } else {
-            this.firstSpeakerText.textContent = 'No text available';
-        }
-        
-        if (point.m_text) {
-            this.secondSpeakerText.textContent = point.m_text;
-        } else {
-            this.secondSpeakerText.textContent = 'No text available';
-        }
         
         // 恢复之前的标注（如果有）
         const existingAnnotation = this.annotationData[point.time];
@@ -273,7 +260,6 @@ class AnnotationSystem {
             this.clearAnnotationForm();
         }
 
-        this.currentAnnotationPoint = point;
         this.modal.classList.add('show');
         this.isModalOpen = true;
         console.log('模态框已设置为显示状态');
@@ -355,12 +341,11 @@ class AnnotationSystem {
             if (annotation) {
                 historyItem.classList.add('completed');
                 const completedCount = this.questionNames.filter(q => annotation[q] !== null && annotation[q] !== undefined).length;
-                const typeLabel = point.type === 'F_end' ? 'Female speaker end' : 'Male speaker end';
                 historyItem.innerHTML = `
                     <div>
                         <span class="history-time">${this.formatTime(point.time)}</span>
                         <div class="history-values">
-                            ${typeLabel} | Empathy Assessment: ${completedCount}/9 questions answered
+                            Empathy Assessment: ${completedCount}/9 questions answered
                         </div>
                     </div>
                     <div class="history-actions">
@@ -369,11 +354,10 @@ class AnnotationSystem {
                     </div>
                 `;
             } else {
-                const typeLabel = point.type === 'F_end' ? 'Female speaker end' : 'Male speaker end';
                 historyItem.innerHTML = `
                     <div>
                         <span class="history-time">${this.formatTime(point.time)}</span>
-                        <div class="history-values">${typeLabel} | Pending</div>
+                        <div class="history-values">Pending</div>
                     </div>
                     <span class="history-status pending">Incomplete</span>
                 `;

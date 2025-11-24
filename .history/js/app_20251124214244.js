@@ -369,11 +369,10 @@ class AnnotationSystem {
                     </div>
                 `;
             } else {
-                const typeLabel = point.type === 'F_end' ? 'Female speaker end' : 'Male speaker end';
                 historyItem.innerHTML = `
                     <div>
                         <span class="history-time">${this.formatTime(point.time)}</span>
-                        <div class="history-values">${typeLabel} | Pending</div>
+                        <div class="history-values">Pending</div>
                     </div>
                     <span class="history-status pending">Incomplete</span>
                 `;
