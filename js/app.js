@@ -31,7 +31,7 @@ class AnnotationSystem {
             pleasure: document.getElementById('pleasureSlider'),
             arousal: document.getElementById('arousalSlider'),
             dominance: document.getElementById('dominanceSlider'),
-            empathy: document.getElementById('empathySlider'),
+            empathy: document.getElementsByName('empathy'),
             pleasureLeft: document.getElementById('pleasureSliderLeft'),
             arousalLeft: document.getElementById('arousalSliderLeft'),
             dominanceLeft: document.getElementById('dominanceSliderLeft'),
@@ -45,7 +45,7 @@ class AnnotationSystem {
             pleasure: document.getElementById('pleasureValue'),
             arousal: document.getElementById('arousalValue'),
             dominance: document.getElementById('dominanceValue'),
-            empathy: document.getElementById('empathyValue'),
+            empathy: null, // Radio buttons don't need value display
             pleasureLeft: document.getElementById('pleasureValueLeft'),
             arousalLeft: document.getElementById('arousalValueLeft'),
             dominanceLeft: document.getElementById('dominanceValueLeft'),
@@ -208,7 +208,8 @@ class AnnotationSystem {
 
         for (let point of this.annotationPoints) {
             // 检查是否到达标注点（考虑浮点数精度）
-            if (Math.abs(currentTime - point.time) < 0.5 && !point.triggered) {
+            if (Math.abs(currentTime - point.time) < 1.0 && !point.triggered) {
+                console.log(`注释点触发: 时间=${currentTime.toFixed(2)}, 目标=${point.time}`);
                 point.triggered = true;
                 this.pauseAndShowAnnotation(point);
                 break;
@@ -217,6 +218,7 @@ class AnnotationSystem {
     }
 
     pauseAndShowAnnotation(point) {
+        console.log(`暂停视频并显示注释窗口: 时间=${point.time}`);
         this.videoPlayer.pause();
         this.isPaused = true;
         this.updatePlayPauseButtons();
@@ -226,20 +228,23 @@ class AnnotationSystem {
     }
 
     showAnnotationModal(point) {
+        console.log(`显示注释模态框: 时间=${point.time}`);
         this.modalTimestamp.textContent = this.formatTime(point.time);
         
         // 恢复之前的标注（如果有）
         const existingAnnotation = this.annotationData[point.time];
         if (existingAnnotation) {
+            console.log('恢复已有标注数据:', existingAnnotation);
             this.sliders.pleasureLeft.value = existingAnnotation.pleasureLeft || 0;
             this.sliders.arousalLeft.value = existingAnnotation.arousalLeft || 0;
             this.sliders.dominanceLeft.value = existingAnnotation.dominanceLeft || 0;
             this.sliders.pleasureRight.value = existingAnnotation.pleasureRight || 0;
             this.sliders.arousalRight.value = existingAnnotation.arousalRight || 0;
             this.sliders.dominanceRight.value = existingAnnotation.dominanceRight || 0;
-            this.sliders.empathy.value = existingAnnotation.empathy || 4;
+            this.setEmpathyValue(existingAnnotation.empathy || 4);
             this.updateSliderValues();
         } else {
+            console.log('使用默认值初始化表单');
             // 重置为默认值
             this.sliders.pleasureLeft.value = 0;
             this.sliders.arousalLeft.value = 0;
@@ -247,12 +252,13 @@ class AnnotationSystem {
             this.sliders.pleasureRight.value = 0;
             this.sliders.arousalRight.value = 0;
             this.sliders.dominanceRight.value = 0;
-            this.sliders.empathy.value = 4;
+            this.setEmpathyValue(4);
             this.updateSliderValues();
         }
 
         this.modal.classList.add('show');
         this.isModalOpen = true;
+        console.log('模态框已设置为显示状态');
     }
 
     closeAnnotationModal() {
@@ -283,7 +289,7 @@ class AnnotationSystem {
         this.sliders.pleasureRight.value = 0;
         this.sliders.arousalRight.value = 0;
         this.sliders.dominanceRight.value = 0;
-        this.sliders.empathy.value = 4;
+        this.setEmpathyValue(4);
         this.updateSliderValues();
     }
 
@@ -294,7 +300,7 @@ class AnnotationSystem {
         this.valueDisplays.pleasureRight.textContent = parseFloat(this.sliders.pleasureRight.value).toFixed(3);
         this.valueDisplays.arousalRight.textContent = parseFloat(this.sliders.arousalRight.value).toFixed(3);
         this.valueDisplays.dominanceRight.textContent = parseFloat(this.sliders.dominanceRight.value).toFixed(3);
-        this.valueDisplays.empathy.textContent = this.sliders.empathy.value;
+        // No need to update empathy display - radio buttons handle their own state
     }
 
     renderHistory() {
@@ -356,7 +362,7 @@ class AnnotationSystem {
                 pleasureRight: parseFloat(this.sliders.pleasureRight.value),
                 arousalRight: parseFloat(this.sliders.arousalRight.value),
                 dominanceRight: parseFloat(this.sliders.dominanceRight.value),
-                empathy: parseInt(this.sliders.empathy.value)
+                empathy: this.getEmpathyValue()
             };
             this.saveAnnotation(this.currentAnnotationPoint, data);
         });
@@ -375,7 +381,7 @@ class AnnotationSystem {
                     pleasureRight: parseFloat(this.sliders.pleasureRight.value),
                     arousalRight: parseFloat(this.sliders.arousalRight.value),
                     dominanceRight: parseFloat(this.sliders.dominanceRight.value),
-                    empathy: parseInt(this.sliders.empathy.value)
+                    empathy: this.getEmpathyValue()
                 };
                 this.saveAnnotation(this.currentAnnotationPoint, data);
             } else {
@@ -460,6 +466,28 @@ class AnnotationSystem {
         this.selectVideo(this.selectedVideoIndex);
         
         console.log(`Started annotation for video: ${this.videos[this.selectedVideoIndex].title}`);
+    }
+
+    // Helper methods for empathy radio buttons
+    setEmpathyValue(value) {
+        // Set the radio button for empathy
+        if (this.sliders.empathy && this.sliders.empathy.length > 0) {
+            for (let radio of this.sliders.empathy) {
+                radio.checked = (radio.value == value);
+            }
+        }
+    }
+
+    getEmpathyValue() {
+        // Get the selected empathy value from radio buttons
+        if (this.sliders.empathy && this.sliders.empathy.length > 0) {
+            for (let radio of this.sliders.empathy) {
+                if (radio.checked) {
+                    return parseInt(radio.value);
+                }
+            }
+        }
+        return 4; // Default value
     }
 }
 
