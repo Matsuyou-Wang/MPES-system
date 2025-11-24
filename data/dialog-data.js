@@ -6,30 +6,6 @@
 const DIALOG_DATA = {
     "Ses01F_script01_1.mp4": [
         {
-            "time": 24.6667,
-            "type": "F_end",
-            "f_text": "When?",
-            "m_text": "Four o clock this morning.  I heard a crack and I woke up and looked out.  He was standing right over there when it cracked."
-        },
-        {
-            "time": 35.9971,
-            "type": "M_end",
-            "f_text": "When?",
-            "m_text": "Four o clock this morning.  I heard a crack and I woke up and looked out.  He was standing right over there when it cracked."
-        },
-        {
-            "time": 60.88,
-            "type": "F_end",
-            "f_text": "What?",
-            "m_text": "Being dishonest with him, you know.  This kind of thing always pays off and it's paying off."
-        },
-        {
-            "time": 68.25,
-            "type": "M_end",
-            "f_text": "What?",
-            "m_text": "Being dishonest with him, you know.  This kind of thing always pays off and it's paying off."
-        },
-        {
             "time": 129.51,
             "type": "F_end",
             "f_text": "To you it is, to me it is, but to your father, you can talk yourself until you are blue in the face.  But there is no grave and there is no body, so where are you?",
@@ -40,18 +16,6 @@ const DIALOG_DATA = {
             "type": "M_end",
             "f_text": "To you it is, to me it is, but to your father, you can talk yourself until you are blue in the face.  But there is no grave and there is no body, so where are you?",
             "m_text": "Sit down, Mom.  I want to talk to you."
-        },
-        {
-            "time": 152.6736,
-            "type": "F_end",
-            "f_text": "Why?",
-            "m_text": "You know."
-        },
-        {
-            "time": 155.8699,
-            "type": "M_end",
-            "f_text": "Why?",
-            "m_text": "You know."
         },
         {
             "time": 160.67,
@@ -128,18 +92,6 @@ const DIALOG_DATA = {
             "m_text": "Hey look, it's a nice day, huh?  Why are we arguing?"
         },
         {
-            "time": 105.76,
-            "type": "F_end",
-            "f_text": "I won't stand for any nonsense.",
-            "m_text": "Kate."
-        },
-        {
-            "time": 108.1825,
-            "type": "M_end",
-            "f_text": "I won't stand for any nonsense.",
-            "m_text": "Kate."
-        },
-        {
             "time": 140.69,
             "type": "F_end",
             "f_text": "I can't help it.",
@@ -153,18 +105,6 @@ const DIALOG_DATA = {
         }
     ],
     "Ses01F_script01_3.mp4": [
-        {
-            "time": 36.1344,
-            "type": "F_end",
-            "f_text": "I'm not sorry, no. But I'm...I can't stay.",
-            "m_text": "Why not?"
-        },
-        {
-            "time": 38.5386,
-            "type": "M_end",
-            "f_text": "I'm not sorry, no. But I'm...I can't stay.",
-            "m_text": "Why not?"
-        },
         {
             "time": 53.9831,
             "type": "F_end",
@@ -226,18 +166,6 @@ const DIALOG_DATA = {
             "m_text": "Why didn't you?"
         },
         {
-            "time": 169.66,
-            "type": "F_end",
-            "f_text": "I was waiting for you, Chris.  You sure can be ambiguous, you know.  And when you did finally write me,",
-            "m_text": "Give me a..."
-        },
-        {
-            "time": 173.6,
-            "type": "M_end",
-            "f_text": "I was waiting for you, Chris.  You sure can be ambiguous, you know.  And when you did finally write me,",
-            "m_text": "Give me a..."
-        },
-        {
             "time": 198.895,
             "type": "F_end",
             "f_text": "Not like that you're not.",
@@ -286,42 +214,6 @@ const DIALOG_DATA = {
             "m_text": "It's just all mixed up with so many other things, you know?  You know overseas I was in command of a company?"
         },
         {
-            "time": 261.66,
-            "type": "F_end",
-            "f_text": "Yeah, sure.",
-            "m_text": "Well I lost them."
-        },
-        {
-            "time": 264.9617,
-            "type": "M_end",
-            "f_text": "Yeah, sure.",
-            "m_text": "Well I lost them."
-        },
-        {
-            "time": 268.5425,
-            "type": "F_end",
-            "f_text": "How many?",
-            "m_text": "Pretty much all."
-        },
-        {
-            "time": 270.7875,
-            "type": "M_end",
-            "f_text": "How many?",
-            "m_text": "Pretty much all."
-        },
-        {
-            "time": 345.74,
-            "type": "F_end",
-            "f_text": "Mmhmm.",
-            "m_text": "To bring that on to the earth again, you know, is like some kind of monument and I thought I would just make a difference to them."
-        },
-        {
-            "time": 359.22,
-            "type": "M_end",
-            "f_text": "Mmhmm.",
-            "m_text": "To bring that on to the earth again, you know, is like some kind of monument and I thought I would just make a difference to them."
-        },
-        {
             "time": 450.47,
             "type": "F_end",
             "f_text": "Even me.  And your money?  Chris, there's nothing wrong in your money.  Your father put hundreds of planes into the air, you should be proud of that.  A man should be paid for that.",
@@ -335,18 +227,6 @@ const DIALOG_DATA = {
         }
     ],
     "Ses01F_script02_1.mp4": [
-        {
-            "time": 103.5025,
-            "type": "F_end",
-            "f_text": "[LAUGHTER]",
-            "m_text": "I wonder if they can hear me talk or like feel the vibrations in the sand when we move around."
-        },
-        {
-            "time": 111.23,
-            "type": "M_end",
-            "f_text": "[LAUGHTER]",
-            "m_text": "I wonder if they can hear me talk or like feel the vibrations in the sand when we move around."
-        },
         {
             "time": 323.82,
             "type": "F_end",
@@ -398,30 +278,6 @@ const DIALOG_DATA = {
             "m_text": "It's when we were driving past that Knickerbocker Liquor Locker, you said, let's get some champagne.  I said no, time's a wasting or something like that."
         },
         {
-            "time": 249.0832,
-            "type": "F_end",
-            "f_text": "No.",
-            "m_text": "Do you want to take off your shoes?"
-        },
-        {
-            "time": 250.92,
-            "type": "M_end",
-            "f_text": "No.",
-            "m_text": "Do you want to take off your shoes?"
-        },
-        {
-            "time": 293.38,
-            "type": "F_end",
-            "f_text": "[BREATHING]",
-            "m_text": "No I'm just like you.  I thought it was going to be all roses and peaches and the bills would just pay themselves.  And we'll have three, fat rosy cheeked children.  Huh, baby, the joke's on us.  Because you know what you get?"
-        },
-        {
-            "time": 309.03,
-            "type": "M_end",
-            "f_text": "[BREATHING]",
-            "m_text": "No I'm just like you.  I thought it was going to be all roses and peaches and the bills would just pay themselves.  And we'll have three, fat rosy cheeked children.  Huh, baby, the joke's on us.  Because you know what you get?"
-        },
-        {
             "time": 370.8,
             "type": "F_end",
             "f_text": "I didn't say that.",
@@ -456,18 +312,6 @@ const DIALOG_DATA = {
             "type": "M_end",
             "f_text": "So maybe we are in the wrong spot, but we are with the right person.",
             "m_text": "I don't know, it seemed like such a good spot to me."
-        },
-        {
-            "time": 476.5559,
-            "type": "F_end",
-            "f_text": "Or not.",
-            "m_text": "Or not."
-        },
-        {
-            "time": 479.1565,
-            "type": "M_end",
-            "f_text": "Or not.",
-            "m_text": "Or not."
         }
     ],
     "Ses01F_script03_1.mp4": [
@@ -596,18 +440,6 @@ const DIALOG_DATA = {
             "m_text": "I don't know the meaning of it.  But, I know one thing Mom, we made a terrible mistake with Dad."
         },
         {
-            "time": 65.66,
-            "type": "F_end",
-            "f_text": "What?",
-            "m_text": "Being dishonest with him.  I mean, that sort of thing always pays off and now it's paying off."
-        },
-        {
-            "time": 70.79,
-            "type": "M_end",
-            "f_text": "What?",
-            "m_text": "Being dishonest with him.  I mean, that sort of thing always pays off and now it's paying off."
-        },
-        {
             "time": 71.85,
             "type": "F_end",
             "f_text": "What you mean dishonest?",
@@ -642,18 +474,6 @@ const DIALOG_DATA = {
             "type": "M_end",
             "f_text": "What do you want me to do?  You're old enough to know your own mind.",
             "m_text": "So it's all right then?"
-        },
-        {
-            "time": 234.0509,
-            "type": "F_end",
-            "f_text": "I just don't see why it has to be Annie.",
-            "m_text": "Because it is."
-        },
-        {
-            "time": 235.97,
-            "type": "M_end",
-            "f_text": "I just don't see why it has to be Annie.",
-            "m_text": "Because it is."
         },
         {
             "time": 283.66,
@@ -694,30 +514,6 @@ const DIALOG_DATA = {
     ],
     "Ses02F_script01_2.mp4": [
         {
-            "time": 28.9,
-            "type": "F_end",
-            "f_text": "She's not-",
-            "m_text": "How do you know he's even thinking of it?"
-        },
-        {
-            "time": 32.51,
-            "type": "M_end",
-            "f_text": "She's not-",
-            "m_text": "How do you know he's even thinking of it?"
-        },
-        {
-            "time": 34.46,
-            "type": "F_end",
-            "f_text": "It's got that all about it.",
-            "m_text": "Well, so what?"
-        },
-        {
-            "time": 37.61,
-            "type": "M_end",
-            "f_text": "It's got that all about it.",
-            "m_text": "Well, so what?"
-        },
-        {
             "time": 42.84,
             "type": "F_end",
             "f_text": "She's not his girl, Joe.  She knows she's not.",
@@ -754,30 +550,6 @@ const DIALOG_DATA = {
             "type": "M_end",
             "f_text": "You know, it's lovely here, the air is sweet.",
             "m_text": "You're not sorry you came?"
-        },
-        {
-            "time": 26.81,
-            "type": "F_end",
-            "f_text": "No, not sorry.  Um, but, I'm- I'm not gonna stay.",
-            "m_text": "Why?"
-        },
-        {
-            "time": 28.52,
-            "type": "M_end",
-            "f_text": "No, not sorry.  Um, but, I'm- I'm not gonna stay.",
-            "m_text": "Why?"
-        },
-        {
-            "time": 40.86,
-            "type": "F_end",
-            "f_text": "You saw that.  I mean and then, well, you've been kind of, um--",
-            "m_text": "What?"
-        },
-        {
-            "time": 41.89,
-            "type": "M_end",
-            "f_text": "You saw that.  I mean and then, well, you've been kind of, um--",
-            "m_text": "What?"
         },
         {
             "time": 46.29,
@@ -912,42 +684,6 @@ const DIALOG_DATA = {
             "m_text": "It's all mixed up with so many other things.  You remember overseas, I was in command of a company?"
         },
         {
-            "time": 208.41,
-            "type": "F_end",
-            "f_text": "Yeah, sure.",
-            "m_text": "Well, I lost them."
-        },
-        {
-            "time": 211.38,
-            "type": "M_end",
-            "f_text": "Yeah, sure.",
-            "m_text": "Well, I lost them."
-        },
-        {
-            "time": 213.3,
-            "type": "F_end",
-            "f_text": "How many?",
-            "m_text": "Just about all."
-        },
-        {
-            "time": 215.64,
-            "type": "M_end",
-            "f_text": "How many?",
-            "m_text": "Just about all."
-        },
-        {
-            "time": 217.6679,
-            "type": "F_end",
-            "f_text": "Oh, gee.",
-            "m_text": "It takes some time for a guy to toss that off.  'Cause they weren't just men."
-        },
-        {
-            "time": 223.28,
-            "type": "M_end",
-            "f_text": "Oh, gee.",
-            "m_text": "It takes some time for a guy to toss that off.  'Cause they weren't just men."
-        },
-        {
             "time": 333.69,
             "type": "F_end",
             "f_text": "You still feel that way?",
@@ -986,30 +722,6 @@ const DIALOG_DATA = {
             "m_text": "You know, the flashlight, the silver one.  There's only one isn't there?"
         },
         {
-            "time": 45.74,
-            "type": "F_end",
-            "f_text": "That's not your flashlight.",
-            "m_text": "Who's is it?"
-        },
-        {
-            "time": 47.2,
-            "type": "M_end",
-            "f_text": "That's not your flashlight.",
-            "m_text": "Who's is it?"
-        },
-        {
-            "time": 73.97,
-            "type": "F_end",
-            "f_text": "Yeah.",
-            "m_text": "You cold?  Do you want my jacket?  Oh, we should've brought the blanket.  Our blanket."
-        },
-        {
-            "time": 79.71,
-            "type": "M_end",
-            "f_text": "Yeah.",
-            "m_text": "You cold?  Do you want my jacket?  Oh, we should've brought the blanket.  Our blanket."
-        },
-        {
             "time": 99.77,
             "type": "F_end",
             "f_text": "I'm cold.",
@@ -1046,18 +758,6 @@ const DIALOG_DATA = {
             "m_text": "No. No. That's not my point.  The point is there's no point in coming down if we just leave.  Don't you want to see it?"
         },
         {
-            "time": 126.12,
-            "type": "F_end",
-            "f_text": "Not particularly.",
-            "m_text": "Why not?"
-        },
-        {
-            "time": 127.82,
-            "type": "M_end",
-            "f_text": "Not particularly.",
-            "m_text": "Why not?"
-        },
-        {
             "time": 130.4,
             "type": "F_end",
             "f_text": "I just don't.  It's stupid.",
@@ -1082,30 +782,6 @@ const DIALOG_DATA = {
             "m_text": "Yeah they do."
         },
         {
-            "time": 187.54,
-            "type": "F_end",
-            "f_text": "I'm just not.",
-            "m_text": "For real?"
-        },
-        {
-            "time": 188.7,
-            "type": "M_end",
-            "f_text": "I'm just not.",
-            "m_text": "For real?"
-        },
-        {
-            "time": 189.7,
-            "type": "F_end",
-            "f_text": "Yeah.",
-            "m_text": "I don't get it.  The first time we came here, you said it was the best night of your life."
-        },
-        {
-            "time": 194.78,
-            "type": "M_end",
-            "f_text": "Yeah.",
-            "m_text": "I don't get it.  The first time we came here, you said it was the best night of your life."
-        },
-        {
             "time": 285.6,
             "type": "F_end",
             "f_text": "That's the wind.",
@@ -1119,18 +795,6 @@ const DIALOG_DATA = {
         }
     ],
     "Ses02F_script02_2.mp4": [
-        {
-            "time": 7.72,
-            "type": "F_end",
-            "f_text": "About what?",
-            "m_text": "What I was saying."
-        },
-        {
-            "time": 9.07,
-            "type": "M_end",
-            "f_text": "About what?",
-            "m_text": "What I was saying."
-        },
         {
             "time": 11.26,
             "type": "F_end",
@@ -1168,18 +832,6 @@ const DIALOG_DATA = {
             "m_text": "Maybe if you were with somebody else too."
         },
         {
-            "time": 337.14,
-            "type": "F_end",
-            "f_text": "Oh, for heaven sake, whatever I'm doing, I'd rather be doing it with you.",
-            "m_text": "Yeah?"
-        },
-        {
-            "time": 339.03,
-            "type": "M_end",
-            "f_text": "Oh, for heaven sake, whatever I'm doing, I'd rather be doing it with you.",
-            "m_text": "Yeah?"
-        },
-        {
             "time": 350.2,
             "type": "F_end",
             "f_text": "You're the one who probably wishes you were with someone else.  Someone who--you'd rather enjoy yourself and didn't take everything so hard.",
@@ -1214,33 +866,9 @@ const DIALOG_DATA = {
             "type": "M_end",
             "f_text": "Well, then we don't need glasses.",
             "m_text": "You still cold?  Do you wanna go home?"
-        },
-        {
-            "time": 413.92,
-            "type": "F_end",
-            "f_text": "Or not.",
-            "m_text": "Or not."
-        },
-        {
-            "time": 415.64,
-            "type": "M_end",
-            "f_text": "Or not.",
-            "m_text": "Or not."
         }
     ],
     "Ses02F_script03_1.mp4": [
-        {
-            "time": 7.63,
-            "type": "F_end",
-            "f_text": "Do you think it's them?",
-            "m_text": "I wonder."
-        },
-        {
-            "time": 8.8,
-            "type": "M_end",
-            "f_text": "Do you think it's them?",
-            "m_text": "I wonder."
-        },
         {
             "time": 16.24,
             "type": "F_end",
@@ -1316,30 +944,6 @@ const DIALOG_DATA = {
             "type": "M_end",
             "f_text": "There's nothing wrong with it.",
             "m_text": "I didn't ask Annie yet."
-        },
-        {
-            "time": 298.1406,
-            "type": "F_end",
-            "f_text": "That's a good answer, but it doesn't answer anything.",
-            "m_text": "I just-"
-        },
-        {
-            "time": 301.0418,
-            "type": "M_end",
-            "f_text": "That's a good answer, but it doesn't answer anything.",
-            "m_text": "I just-"
-        },
-        {
-            "time": 418.8146,
-            "type": "F_end",
-            "f_text": "All right, but you can't do that. You can't talk like that.",
-            "m_text": "Okay. Just-"
-        },
-        {
-            "time": 422.099,
-            "type": "M_end",
-            "f_text": "All right, but you can't do that. You can't talk like that.",
-            "m_text": "Okay. Just-"
         }
     ],
     "Ses03F_script01_2.mp4": [
@@ -1380,30 +984,6 @@ const DIALOG_DATA = {
             "type": "M_end",
             "f_text": "Well, you've been embarrassed ever since I came.",
             "m_text": "Yes, I guess I have been. But it's going from me now."
-        },
-        {
-            "time": 81.1677,
-            "type": "F_end",
-            "f_text": "Yeah.",
-            "m_text": "How did you know?"
-        },
-        {
-            "time": 87.0452,
-            "type": "M_end",
-            "f_text": "Yeah.",
-            "m_text": "How did you know?"
-        },
-        {
-            "time": 219.6564,
-            "type": "F_end",
-            "f_text": "What is it?",
-            "m_text": "Let's drive somewhere. I want to be alone with you."
-        },
-        {
-            "time": 224.0125,
-            "type": "M_end",
-            "f_text": "What is it?",
-            "m_text": "Let's drive somewhere. I want to be alone with you."
         },
         {
             "time": 251.8454,
@@ -1492,18 +1072,6 @@ const DIALOG_DATA = {
             "type": "M_end",
             "f_text": "At least we won't need glasses.",
             "m_text": "Are you still cold? Do you want to go home?"
-        },
-        {
-            "time": 445.0523,
-            "type": "F_end",
-            "f_text": "Or not.",
-            "m_text": "Or not."
-        },
-        {
-            "time": 447.1014,
-            "type": "M_end",
-            "f_text": "Or not.",
-            "m_text": "Or not."
         }
     ],
     "Ses03F_script03_1.mp4": [
@@ -1518,18 +1086,6 @@ const DIALOG_DATA = {
             "type": "M_end",
             "f_text": "What are we to do?",
             "m_text": "We're all right, aren't we darling? Whatever happens."
-        },
-        {
-            "time": 67.87,
-            "type": "F_end",
-            "f_text": "Who's they?",
-            "m_text": "All the futile moralists who try to make life unbearable. Laugh at them. Be flippant. Laugh at all the sacred shibboleths. Flippancy brings out the acid in their damn sweetness and light."
-        },
-        {
-            "time": 81.07,
-            "type": "M_end",
-            "f_text": "Who's they?",
-            "m_text": "All the futile moralists who try to make life unbearable. Laugh at them. Be flippant. Laugh at all the sacred shibboleths. Flippancy brings out the acid in their damn sweetness and light."
         },
         {
             "time": 167.93,
@@ -1582,18 +1138,6 @@ const DIALOG_DATA = {
             "m_text": "So am I. Bored stiff. Want some brandy?"
         },
         {
-            "time": 113.62,
-            "type": "F_end",
-            "f_text": "What?",
-            "m_text": "Nothing."
-        },
-        {
-            "time": 115.085,
-            "type": "M_end",
-            "f_text": "What?",
-            "m_text": "Nothing."
-        },
-        {
             "time": 132.95,
             "type": "F_end",
             "f_text": "It's a woman's job to allure the man. Watch me, won't you, a minute?",
@@ -1616,42 +1160,6 @@ const DIALOG_DATA = {
             "type": "M_end",
             "f_text": "No, it's not. I don't care.",
             "m_text": "It's a pity you didn't have more brandy. It might have made you a little less disagreeable."
-        },
-        {
-            "time": 170.02,
-            "type": "F_end",
-            "f_text": "I don't care. I don't care, do you understand? I don't care if they bark, if they roll over on the floor like hoops.",
-            "m_text": "Uhh,"
-        },
-        {
-            "time": 173.07,
-            "type": "M_end",
-            "f_text": "I don't care. I don't care, do you understand? I don't care if they bark, if they roll over on the floor like hoops.",
-            "m_text": "Uhh,"
-        },
-        {
-            "time": 237.95,
-            "type": "F_end",
-            "f_text": "Why?",
-            "m_text": "It's very late and it will annoy the people upstairs."
-        },
-        {
-            "time": 241.35,
-            "type": "M_end",
-            "f_text": "Why?",
-            "m_text": "It's very late and it will annoy the people upstairs."
-        },
-        {
-            "time": 256.8,
-            "type": "F_end",
-            "f_text": "Turn it on.",
-            "m_text": "No."
-        },
-        {
-            "time": 261.875,
-            "type": "M_end",
-            "f_text": "Turn it on.",
-            "m_text": "No."
         },
         {
             "time": 268.54,
@@ -1706,18 +1214,6 @@ const DIALOG_DATA = {
             "type": "M_end",
             "f_text": "What flashlight?",
             "m_text": "The flashlight, the silver one.  There's only one isn't there?"
-        },
-        {
-            "time": 71.97,
-            "type": "F_end",
-            "f_text": "Yes.",
-            "m_text": "Are you cold?  Do you want my jacket?  We should have brought the blanket, our blanket."
-        },
-        {
-            "time": 79.7541,
-            "type": "M_end",
-            "f_text": "Yes.",
-            "m_text": "Are you cold?  Do you want my jacket?  We should have brought the blanket, our blanket."
         }
     ],
     "Ses04F_script02_2.mp4": [
@@ -1744,18 +1240,6 @@ const DIALOG_DATA = {
             "type": "M_end",
             "f_text": "Well I'm sorry but it's still just fish to me.",
             "m_text": "Carla, can I ask you something?  Don't take this the wrong way but are you having your period?"
-        },
-        {
-            "time": 78.83,
-            "type": "F_end",
-            "f_text": "For heaven's sake, this is not about fish.",
-            "m_text": "Why not?"
-        },
-        {
-            "time": 84.43,
-            "type": "M_end",
-            "f_text": "For heaven's sake, this is not about fish.",
-            "m_text": "Why not?"
         },
         {
             "time": 87.95,
@@ -1896,18 +1380,6 @@ const DIALOG_DATA = {
             "m_text": "Well, so what."
         },
         {
-            "time": 91.18,
-            "type": "F_end",
-            "f_text": "I want you to pretend like he's coming back!",
-            "m_text": "But, Kate..."
-        },
-        {
-            "time": 96.29,
-            "type": "M_end",
-            "f_text": "I want you to pretend like he's coming back!",
-            "m_text": "But, Kate..."
-        },
-        {
             "time": 109.07,
             "type": "F_end",
             "f_text": "Laugh.  Laugh at me, but what happens the night that she goes to sleep in his bed, and his memorial breaks in pieces?",
@@ -1932,18 +1404,6 @@ const DIALOG_DATA = {
             "type": "M_end",
             "f_text": "It's so lovely here.  The air is sweet.",
             "m_text": "So you're not sorry you came?"
-        },
-        {
-            "time": 26.8707,
-            "type": "F_end",
-            "f_text": "No.  But I'm not going to stay.",
-            "m_text": "Why?"
-        },
-        {
-            "time": 28.6434,
-            "type": "M_end",
-            "f_text": "No.  But I'm not going to stay.",
-            "m_text": "Why?"
         },
         {
             "time": 44.5,
@@ -2090,42 +1550,6 @@ const DIALOG_DATA = {
             "m_text": "It's- It's mixed up with so many other things, I-"
         },
         {
-            "time": 243.2685,
-            "type": "F_end",
-            "f_text": "yeah sure.",
-            "m_text": "Yeah.  I lost them."
-        },
-        {
-            "time": 247.1344,
-            "type": "M_end",
-            "f_text": "yeah sure.",
-            "m_text": "Yeah.  I lost them."
-        },
-        {
-            "time": 249.2376,
-            "type": "F_end",
-            "f_text": "how many?",
-            "m_text": "just about all."
-        },
-        {
-            "time": 252.0118,
-            "type": "M_end",
-            "f_text": "how many?",
-            "m_text": "just about all."
-        },
-        {
-            "time": 253.9647,
-            "type": "F_end",
-            "f_text": "Oh gee.",
-            "m_text": "Takes a little time to toss something like that off you know because they weren't just men-"
-        },
-        {
-            "time": 262.738,
-            "type": "M_end",
-            "f_text": "Oh gee.",
-            "m_text": "Takes a little time to toss something like that off you know because they weren't just men-"
-        },
-        {
             "time": 406.66,
             "type": "F_end",
             "f_text": "Do you still feel like that?",
@@ -2139,42 +1563,6 @@ const DIALOG_DATA = {
         }
     ],
     "Ses05F_script02_1.mp4": [
-        {
-            "time": 79.03,
-            "type": "F_end",
-            "f_text": "yes.",
-            "m_text": "Are you cold?  You want my jacket?  We should have bought a blanket.  Our blanket-.  This is great, isn't it?"
-        },
-        {
-            "time": 88.736,
-            "type": "M_end",
-            "f_text": "yes.",
-            "m_text": "Are you cold?  You want my jacket?  We should have bought a blanket.  Our blanket-.  This is great, isn't it?"
-        },
-        {
-            "time": 139.6329,
-            "type": "F_end",
-            "f_text": "I just don't.",
-            "m_text": "Honey, this is a natural phenomenon. I mean,  It happens like once a year.  It's a great opportunity."
-        },
-        {
-            "time": 147.6153,
-            "type": "M_end",
-            "f_text": "I just don't.",
-            "m_text": "Honey, this is a natural phenomenon. I mean,  It happens like once a year.  It's a great opportunity."
-        },
-        {
-            "time": 209.54,
-            "type": "F_end",
-            "f_text": "Yes.",
-            "m_text": "I don't get it, the first time we came out here, you said it was the best night of your life and last year I remember distinctly you were so excited that you stuff your toe pushing me out of the door and you didn't notice it until you got into the car."
-        },
-        {
-            "time": 221.08,
-            "type": "M_end",
-            "f_text": "Yes.",
-            "m_text": "I don't get it, the first time we came out here, you said it was the best night of your life and last year I remember distinctly you were so excited that you stuff your toe pushing me out of the door and you didn't notice it until you got into the car."
-        },
         {
             "time": 310.7189,
             "type": "F_end",
@@ -2248,18 +1636,6 @@ const DIALOG_DATA = {
             "type": "M_end",
             "f_text": "No, I am beginning to think that maybe this is the spot after all.",
             "m_text": "Shh, If we're very quiet, the fish might come."
-        },
-        {
-            "time": 435.9426,
-            "type": "F_end",
-            "f_text": "Or not.",
-            "m_text": "Or not."
-        },
-        {
-            "time": 438.382,
-            "type": "M_end",
-            "f_text": "Or not.",
-            "m_text": "Or not."
         }
     ],
     "Ses01M_script01_1.mp4": [
@@ -2286,18 +1662,6 @@ const DIALOG_DATA = {
             "type": "F_end",
             "f_text": "Cried hard?",
             "m_text": "No.  I figured I'd just let it wait."
-        },
-        {
-            "time": 165.33,
-            "type": "M_end",
-            "f_text": "Why?",
-            "m_text": "Yeah, okay all right, all right.  Listen, um, you know why I asked Annie here, right?"
-        },
-        {
-            "time": 168.4175,
-            "type": "F_end",
-            "f_text": "Why?",
-            "m_text": "Yeah, okay all right, all right.  Listen, um, you know why I asked Annie here, right?"
         },
         {
             "time": 179.29,
@@ -2424,18 +1788,6 @@ const DIALOG_DATA = {
     ],
     "Ses01M_script01_3.mp4": [
         {
-            "time": 53.27,
-            "type": "M_end",
-            "f_text": "You've been kind of embarrassed ever since I got here.",
-            "m_text": "What?"
-        },
-        {
-            "time": 59.22,
-            "type": "F_end",
-            "f_text": "You've been kind of embarrassed ever since I got here.",
-            "m_text": "What?"
-        },
-        {
             "time": 102.15,
             "type": "M_end",
             "f_text": "Well I guess that's why I came.",
@@ -2560,18 +1912,6 @@ const DIALOG_DATA = {
             "m_text": "Okay, I'm trying to work this backwards"
         },
         {
-            "time": 273.1525,
-            "type": "M_end",
-            "f_text": "No.",
-            "m_text": "Do you want to dance?"
-        },
-        {
-            "time": 275.4759,
-            "type": "F_end",
-            "f_text": "No.",
-            "m_text": "Do you want to dance?"
-        },
-        {
             "time": 381.51,
             "type": "M_end",
             "f_text": "This is just this.  I mean it includes a lot and everything but it's--do you understand what I'm saying?",
@@ -2606,18 +1946,6 @@ const DIALOG_DATA = {
             "type": "F_end",
             "f_text": "So maybe we're in the wrong spot.  But we're with the right person.",
             "m_text": "Actually, you know what?  Now you mentioned that--no I don't."
-        },
-        {
-            "time": 535.2345,
-            "type": "M_end",
-            "f_text": "Or not.",
-            "m_text": "If we are really quiet, the fish might come."
-        },
-        {
-            "time": 539.3749,
-            "type": "F_end",
-            "f_text": "Or not.",
-            "m_text": "If we are really quiet, the fish might come."
         }
     ],
     "Ses01M_script03_1.mp4": [
@@ -2632,18 +1960,6 @@ const DIALOG_DATA = {
             "type": "F_end",
             "f_text": "Oh, oh, that sent shivers on my spine.",
             "m_text": "No, it's a wrong number."
-        },
-        {
-            "time": 109.4,
-            "type": "M_end",
-            "f_text": "How long will it last, this ludicrous, overbearing love of ours?",
-            "m_text": "Oh yes.  ."
-        },
-        {
-            "time": 117.7531,
-            "type": "F_end",
-            "f_text": "How long will it last, this ludicrous, overbearing love of ours?",
-            "m_text": "Oh yes.  ."
         },
         {
             "time": 133.26,
@@ -2928,18 +2244,6 @@ const DIALOG_DATA = {
             "type": "F_end",
             "f_text": "No. No. I think you might be right. I think this may be the spot after all.",
             "m_text": "You still cold? Do you want my jacket? Do you want to go home?"
-        },
-        {
-            "time": 409.48,
-            "type": "M_end",
-            "f_text": "Or not.",
-            "m_text": "Shh, if we're very quiet the fish might come."
-        },
-        {
-            "time": 412.12,
-            "type": "F_end",
-            "f_text": "Or not.",
-            "m_text": "Shh, if we're very quiet the fish might come."
         }
     ],
     "Ses02M_script03_2.mp4": [
@@ -3093,18 +2397,6 @@ const DIALOG_DATA = {
         }
     ],
     "Ses03M_script01_3.mp4": [
-        {
-            "time": 90.2475,
-            "type": "M_end",
-            "f_text": "Well,",
-            "m_text": "I mean, that's the reason why I asked you here."
-        },
-        {
-            "time": 93.4022,
-            "type": "F_end",
-            "f_text": "Well,",
-            "m_text": "I mean, that's the reason why I asked you here."
-        },
         {
             "time": 140.485,
             "type": "M_end",
@@ -3570,18 +2862,6 @@ const DIALOG_DATA = {
     ],
     "Ses05M_script01_3.mp4": [
         {
-            "time": 38.67,
-            "type": "M_end",
-            "f_text": "You've been sort of embarrassed since I got here.",
-            "m_text": "What?"
-        },
-        {
-            "time": 43.17,
-            "type": "F_end",
-            "f_text": "You've been sort of embarrassed since I got here.",
-            "m_text": "What?"
-        },
-        {
             "time": 53.46,
             "type": "M_end",
             "f_text": "I figured they would, your mother at least.",
@@ -3666,18 +2946,6 @@ const DIALOG_DATA = {
             "m_text": "I don't I don't know where to start."
         },
         {
-            "time": 233.1245,
-            "type": "M_end",
-            "f_text": "How many?",
-            "m_text": "I lost them."
-        },
-        {
-            "time": 235.64,
-            "type": "F_end",
-            "f_text": "How many?",
-            "m_text": "I lost them."
-        },
-        {
             "time": 405.28,
             "type": "M_end",
             "f_text": "Do you still feel like that?",
@@ -3700,59 +2968,9 @@ const DIALOG_DATA = {
             "type": "F_end",
             "f_text": "Because you can't feel like that anymore, Chris.  Because everything you have, you have a right to, me included.",
             "m_text": "I want you now, Annie."
-        },
-        {
-            "time": 432.34,
-            "type": "M_end",
-            "f_text": "[LAUGHTER] What will I do with a fortune?",
-            "m_text": "Oh, Annie,"
-        },
-        {
-            "time": 437.72,
-            "type": "F_end",
-            "f_text": "[LAUGHTER] What will I do with a fortune?",
-            "m_text": "Oh, Annie,"
-        }
-    ],
-    "Ses05M_script02_1.mp4": [
-        {
-            "time": 146.85,
-            "type": "M_end",
-            "f_text": "I just don't.",
-            "m_text": "Why not?"
-        },
-        {
-            "time": 148.77,
-            "type": "F_end",
-            "f_text": "I just don't.",
-            "m_text": "Why not?"
-        },
-        {
-            "time": 150.67,
-            "type": "M_end",
-            "f_text": "it's stupid.",
-            "m_text": "Oh"
-        },
-        {
-            "time": 155.1,
-            "type": "F_end",
-            "f_text": "it's stupid.",
-            "m_text": "Oh"
         }
     ],
     "Ses05M_script02_2.mp4": [
-        {
-            "time": 77.21,
-            "type": "M_end",
-            "f_text": "We We don't ever.  Have we ever?",
-            "m_text": "Why not?"
-        },
-        {
-            "time": 80.15,
-            "type": "F_end",
-            "f_text": "We We don't ever.  Have we ever?",
-            "m_text": "Why not?"
-        },
         {
             "time": 109.0,
             "type": "M_end",
@@ -3778,18 +2996,6 @@ const DIALOG_DATA = {
             "m_text": "Wait a minute.  I've got it."
         },
         {
-            "time": 313.702,
-            "type": "M_end",
-            "f_text": "But this isn't at all what I wanted it to be.",
-            "m_text": "Right."
-        },
-        {
-            "time": 318.2969,
-            "type": "F_end",
-            "f_text": "But this isn't at all what I wanted it to be.",
-            "m_text": "Right."
-        },
-        {
             "time": 321.99,
             "type": "M_end",
             "f_text": "This is just this.  I mean, it's a lot and everything.  But it's not, you know, something else.  Am I making any sense?",
@@ -3800,18 +3006,6 @@ const DIALOG_DATA = {
             "type": "F_end",
             "f_text": "This is just this.  I mean, it's a lot and everything.  But it's not, you know, something else.  Am I making any sense?",
             "m_text": "Now, I know.  Me either"
-        },
-        {
-            "time": 370.19,
-            "type": "M_end",
-            "f_text": "Yes.  Don't you know that? I mean, You're probably the one you wishes you were with somebody else, somebody who didn't take everything so hard and who knew how to enjoy herself.",
-            "m_text": "Really?"
-        },
-        {
-            "time": 381.75,
-            "type": "F_end",
-            "f_text": "Yes.  Don't you know that? I mean, You're probably the one you wishes you were with somebody else, somebody who didn't take everything so hard and who knew how to enjoy herself.",
-            "m_text": "Really?"
         },
         {
             "time": 389.38,
@@ -3860,18 +3054,6 @@ const DIALOG_DATA = {
             "type": "F_end",
             "f_text": "No.  I'm beginning to think you might be right. I think  this might be the spot after all.  Augie, I'm sorry.",
             "m_text": "Are you still cold?  Still want to go home?"
-        },
-        {
-            "time": 447.47,
-            "type": "M_end",
-            "f_text": "Or not.",
-            "m_text": "Shh.  If we're really quiet, the fish might come."
-        },
-        {
-            "time": 450.69,
-            "type": "F_end",
-            "f_text": "Or not.",
-            "m_text": "Shh.  If we're really quiet, the fish might come."
         }
     ],
     "Ses05M_script03_1.mp4": [
