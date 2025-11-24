@@ -259,17 +259,6 @@ class AnnotationSystem {
         console.log(`显示注释模态框: 时间=${point.time}, 类型=${point.type}`);
         this.modalTimestamp.textContent = this.formatTime(point.time);
         
-        // 根据类型设置说话者标签
-        if (point.type === 'F_end') {
-            // 评估女性说话者
-            this.evaluatingLabel.textContent = 'Female Speaker (Being Evaluated):';
-            this.evaluatedSpeaker.textContent = 'female speaker';
-        } else {
-            // 评估男性说话者  
-            this.evaluatingLabel.textContent = 'Male Speaker (Being Evaluated):';
-            this.evaluatedSpeaker.textContent = 'male speaker';
-        }
-        
         // 显示对话文本
         if (point.f_text) {
             this.firstSpeakerText.textContent = point.f_text;

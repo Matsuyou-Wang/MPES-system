@@ -49,8 +49,6 @@ class AnnotationSystem {
         this.modalTimestamp = document.getElementById('modalTimestamp');
         this.firstSpeakerText = document.getElementById('firstSpeakerText');
         this.secondSpeakerText = document.getElementById('secondSpeakerText');
-        this.evaluatingLabel = document.getElementById('evaluatingLabel');
-        this.evaluatedSpeaker = document.getElementById('evaluatedSpeaker');
 
         // 状态
         this.currentVideo = null;
@@ -259,17 +257,6 @@ class AnnotationSystem {
         console.log(`显示注释模态框: 时间=${point.time}, 类型=${point.type}`);
         this.modalTimestamp.textContent = this.formatTime(point.time);
         
-        // 根据类型设置说话者标签
-        if (point.type === 'F_end') {
-            // 评估女性说话者
-            this.evaluatingLabel.textContent = 'Female Speaker (Being Evaluated):';
-            this.evaluatedSpeaker.textContent = 'female speaker';
-        } else {
-            // 评估男性说话者  
-            this.evaluatingLabel.textContent = 'Male Speaker (Being Evaluated):';
-            this.evaluatedSpeaker.textContent = 'male speaker';
-        }
-        
         // 显示对话文本
         if (point.f_text) {
             this.firstSpeakerText.textContent = point.f_text;
@@ -390,12 +377,11 @@ class AnnotationSystem {
                     </div>
                 `;
             } else {
-                // 根据类型显示更清楚的标签
-                const speakerLabel = point.type === 'F_end' ? 'Evaluating Female Speaker' : 'Evaluating Male Speaker';
+                const typeLabel = point.type === 'F_end' ? 'Female speaker end' : 'Male speaker end';
                 historyItem.innerHTML = `
                     <div>
                         <span class="history-time">${this.formatTime(point.time)}</span>
-                        <div class="history-values">${speakerLabel} | Pending</div>
+                        <div class="history-values">${typeLabel} | Pending</div>
                     </div>
                     <span class="history-status pending">Incomplete</span>
                 `;
