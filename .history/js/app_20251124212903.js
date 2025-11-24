@@ -227,11 +227,25 @@ class AnnotationSystem {
         const existingAnnotation = this.annotationData[point.time];
         if (existingAnnotation) {
             console.log('恢复已有标注数据:', existingAnnotation);
-            this.setEmpathyValues(existingAnnotation);
+            this.sliders.pleasureLeft.value = existingAnnotation.pleasureLeft || 0;
+            this.sliders.arousalLeft.value = existingAnnotation.arousalLeft || 0;
+            this.sliders.dominanceLeft.value = existingAnnotation.dominanceLeft || 0;
+            this.sliders.pleasureRight.value = existingAnnotation.pleasureRight || 0;
+            this.sliders.arousalRight.value = existingAnnotation.arousalRight || 0;
+            this.sliders.dominanceRight.value = existingAnnotation.dominanceRight || 0;
+            this.setEmpathyValue(existingAnnotation.empathy || 4);
+            this.updateSliderValues();
         } else {
             console.log('使用默认值初始化表单');
             // 重置为默认值
-            this.clearAnnotationForm();
+            this.sliders.pleasureLeft.value = 0;
+            this.sliders.arousalLeft.value = 0;
+            this.sliders.dominanceLeft.value = 0;
+            this.sliders.pleasureRight.value = 0;
+            this.sliders.arousalRight.value = 0;
+            this.sliders.dominanceRight.value = 0;
+            this.setEmpathyValue(4);
+            this.updateSliderValues();
         }
 
         this.modal.classList.add('show');
@@ -266,42 +280,14 @@ class AnnotationSystem {
         });
     }
 
-    // Helper methods for empathy questions
-    setQuestionValue(questionName, value) {
-        const radioButtons = this.empathyQuestions[questionName];
-        if (radioButtons && radioButtons.length > 0) {
-            for (let radio of radioButtons) {
-                radio.checked = (radio.value == value);
-            }
-        }
-    }
-
-    getQuestionValue(questionName) {
-        const radioButtons = this.empathyQuestions[questionName];
-        if (radioButtons && radioButtons.length > 0) {
-            for (let radio of radioButtons) {
-                if (radio.checked) {
-                    return parseInt(radio.value);
-                }
-            }
-        }
-        return null; // No selection
-    }
-
-    getEmpathyValues() {
-        const data = {};
-        this.questionNames.forEach(questionName => {
-            data[questionName] = this.getQuestionValue(questionName);
-        });
-        return data;
-    }
-
-    setEmpathyValues(data) {
-        this.questionNames.forEach(questionName => {
-            if (data[questionName] !== undefined) {
-                this.setQuestionValue(questionName, data[questionName]);
-            }
-        });
+    updateSliderValues() {
+        this.valueDisplays.pleasureLeft.textContent = parseFloat(this.sliders.pleasureLeft.value).toFixed(3);
+        this.valueDisplays.arousalLeft.textContent = parseFloat(this.sliders.arousalLeft.value).toFixed(3);
+        this.valueDisplays.dominanceLeft.textContent = parseFloat(this.sliders.dominanceLeft.value).toFixed(3);
+        this.valueDisplays.pleasureRight.textContent = parseFloat(this.sliders.pleasureRight.value).toFixed(3);
+        this.valueDisplays.arousalRight.textContent = parseFloat(this.sliders.arousalRight.value).toFixed(3);
+        this.valueDisplays.dominanceRight.textContent = parseFloat(this.sliders.dominanceRight.value).toFixed(3);
+        // No need to update empathy display - radio buttons handle their own state
     }
 
     renderHistory() {
@@ -314,12 +300,12 @@ class AnnotationSystem {
             
             if (annotation) {
                 historyItem.classList.add('completed');
-                const completedCount = this.questionNames.filter(q => annotation[q] !== null && annotation[q] !== undefined).length;
                 historyItem.innerHTML = `
                     <div>
                         <span class="history-time">${this.formatTime(point.time)}</span>
                         <div class="history-values">
-                            Empathy Assessment: ${completedCount}/9 questions answered
+                            PAD: (${annotation.pleasure.toFixed(3)}, ${annotation.arousal.toFixed(3)}, ${annotation.dominance.toFixed(3)}) | 
+                            Empathy: ${annotation.empathy}
                         </div>
                     </div>
                     <div class="history-actions">
@@ -367,7 +353,15 @@ class AnnotationSystem {
         this.closeModalBtn.addEventListener('click', () => {
             // 如果有当前标注点，保存数据并继续
             if (this.currentAnnotationPoint && !this.annotationData[this.currentAnnotationPoint.time]) {
-                const data = this.getEmpathyValues();
+                const data = {
+                    pleasureLeft: parseFloat(this.sliders.pleasureLeft.value),
+                    arousalLeft: parseFloat(this.sliders.arousalLeft.value),
+                    dominanceLeft: parseFloat(this.sliders.dominanceLeft.value),
+                    pleasureRight: parseFloat(this.sliders.pleasureRight.value),
+                    arousalRight: parseFloat(this.sliders.arousalRight.value),
+                    dominanceRight: parseFloat(this.sliders.dominanceRight.value),
+                    empathy: this.getEmpathyValue()
+                };
                 this.saveAnnotation(this.currentAnnotationPoint, data);
             } else {
                 this.closeAnnotationModal();
@@ -400,7 +394,10 @@ class AnnotationSystem {
             this.videoPlayer.currentTime = percent * this.videoPlayer.duration;
         });
 
-        // 移除滑动条更新监听器（不再需要）
+        // 滑动条更新
+        Object.values(this.sliders).forEach(slider => {
+            slider.addEventListener('input', () => this.updateSliderValues());
+        });
 
         // 编辑面板
         this.closeEditPanel.addEventListener('click', () => {
@@ -450,6 +447,27 @@ class AnnotationSystem {
         console.log(`Started annotation for video: ${this.videos[this.selectedVideoIndex].title}`);
     }
 
+    // Helper methods for empathy radio buttons
+    setEmpathyValue(value) {
+        // Set the radio button for empathy
+        if (this.sliders.empathy && this.sliders.empathy.length > 0) {
+            for (let radio of this.sliders.empathy) {
+                radio.checked = (radio.value == value);
+            }
+        }
+    }
+
+    getEmpathyValue() {
+        // Get the selected empathy value from radio buttons
+        if (this.sliders.empathy && this.sliders.empathy.length > 0) {
+            for (let radio of this.sliders.empathy) {
+                if (radio.checked) {
+                    return parseInt(radio.value);
+                }
+            }
+        }
+        return 4; // Default value
+    }
 }
 
 // 初始化应用

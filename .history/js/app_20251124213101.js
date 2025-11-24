@@ -227,11 +227,25 @@ class AnnotationSystem {
         const existingAnnotation = this.annotationData[point.time];
         if (existingAnnotation) {
             console.log('恢复已有标注数据:', existingAnnotation);
-            this.setEmpathyValues(existingAnnotation);
+            this.sliders.pleasureLeft.value = existingAnnotation.pleasureLeft || 0;
+            this.sliders.arousalLeft.value = existingAnnotation.arousalLeft || 0;
+            this.sliders.dominanceLeft.value = existingAnnotation.dominanceLeft || 0;
+            this.sliders.pleasureRight.value = existingAnnotation.pleasureRight || 0;
+            this.sliders.arousalRight.value = existingAnnotation.arousalRight || 0;
+            this.sliders.dominanceRight.value = existingAnnotation.dominanceRight || 0;
+            this.setEmpathyValue(existingAnnotation.empathy || 4);
+            this.updateSliderValues();
         } else {
             console.log('使用默认值初始化表单');
             // 重置为默认值
-            this.clearAnnotationForm();
+            this.sliders.pleasureLeft.value = 0;
+            this.sliders.arousalLeft.value = 0;
+            this.sliders.dominanceLeft.value = 0;
+            this.sliders.pleasureRight.value = 0;
+            this.sliders.arousalRight.value = 0;
+            this.sliders.dominanceRight.value = 0;
+            this.setEmpathyValue(4);
+            this.updateSliderValues();
         }
 
         this.modal.classList.add('show');
