@@ -245,9 +245,9 @@ class AnnotationSystem {
         const clipPlayer = document.getElementById('clipPlayer');
         if (clipPlayer && this.currentVideo) {
             clipPlayer.src = this.currentVideo.path;
-            // 只用f_start和m_end
-            const startTime = point.f_start;
-            const endTime = point.m_end;
+            // 自动判断男女顺序，取最早开始和最晚结束
+            const startTime = Math.min(point.f_start, point.m_start);
+            const endTime = Math.max(point.f_end, point.m_end);
             clipPlayer.dataset.startTime = startTime;
             clipPlayer.dataset.endTime = endTime;
             clipPlayer.currentTime = startTime;
