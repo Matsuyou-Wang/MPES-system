@@ -245,14 +245,11 @@ class AnnotationSystem {
         const clipPlayer = document.getElementById('clipPlayer');
         if (clipPlayer && this.currentVideo) {
             clipPlayer.src = this.currentVideo.path;
-            const startTime = point.f_start || point.m_start || (point.time - 5);
-            const endTime = point.m_end || point.f_end || point.time;
-            
-            // 存储片段的起止时间到clipPlayer
+            // 只用f_start和m_end
+            const startTime = point.f_start;
+            const endTime = point.m_end;
             clipPlayer.dataset.startTime = startTime;
             clipPlayer.dataset.endTime = endTime;
-            
-            // 设置初始播放位置
             clipPlayer.currentTime = startTime;
         }
         
@@ -416,48 +413,30 @@ class AnnotationSystem {
 
         // 重播片段按钮
         const replaySegmentBtn = document.getElementById('replaySegmentBtn');
-        console.log('Replay按钮元素:', replaySegmentBtn);
         if (replaySegmentBtn) {
             replaySegmentBtn.addEventListener('click', (e) => {
-                console.log('Replay按钮被点击!');
                 e.preventDefault();
                 e.stopPropagation();
-                
                 const clipPlayer = document.getElementById('clipPlayer');
-                console.log('clipPlayer:', clipPlayer);
-                console.log('clipPlayer.dataset:', clipPlayer ? clipPlayer.dataset : null);
-                
-                if (clipPlayer && clipPlayer.dataset.startTime) {
+                if (clipPlayer && clipPlayer.dataset.startTime && clipPlayer.dataset.endTime) {
                     const startTime = parseFloat(clipPlayer.dataset.startTime);
                     const endTime = parseFloat(clipPlayer.dataset.endTime);
-                    
-                    console.log(`重播小窗片段: ${startTime} 到 ${endTime}`);
-                    
                     // 移除旧的监听器
                     if (clipPlayer._segmentEndHandler) {
                         clipPlayer.removeEventListener('timeupdate', clipPlayer._segmentEndHandler);
                     }
-                    
-                    // 设置小窗视频到开始位置并播放
                     clipPlayer.currentTime = startTime;
                     clipPlayer.play();
-                    
-                    // 监听播放,到达结束时间时暂停
                     const segmentEndHandler = () => {
                         if (clipPlayer.currentTime >= endTime) {
                             clipPlayer.pause();
                             clipPlayer.currentTime = startTime;
                         }
                     };
-                    
                     clipPlayer._segmentEndHandler = segmentEndHandler;
                     clipPlayer.addEventListener('timeupdate', segmentEndHandler);
-                } else {
-                    console.error('clipPlayer或startTime不存在!');
                 }
             });
-        } else {
-            console.error('找不到replaySegmentBtn按钮!');
         }
 
         this.closeModalBtn.addEventListener('click', () => {
