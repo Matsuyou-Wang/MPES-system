@@ -237,32 +237,29 @@ class AnnotationSystem {
     showAnnotationModal(point) {
         console.log(`显示注释模态框: 时间=${point.time}`);
         this.modalTimestamp.textContent = this.formatTime(point.time);
-        
-        // 存储当前point以供重播使用
         this.currentAnnotationPoint = point;
-        
-        // 设置小窗视频播放器
         const clipPlayer = document.getElementById('clipPlayer');
         if (clipPlayer && this.currentVideo) {
             clipPlayer.src = this.currentVideo.path;
-            // 自动判断男女顺序，取最早开始和最晚结束
             const startTime = Math.min(point.f_start, point.m_start);
             const endTime = Math.max(point.f_end, point.m_end);
             clipPlayer.dataset.startTime = startTime;
             clipPlayer.dataset.endTime = endTime;
             clipPlayer.currentTime = startTime;
         }
-        
-        // 显示对话文本
+        // 自动判断先后顺序，动态显示台词
         const speaker1Text = document.getElementById('speaker1Text');
         const speaker2Text = document.getElementById('speaker2Text');
-        if (point.f_text && point.m_text) {
-            speaker1Text.textContent = point.f_text;
-            speaker2Text.textContent = point.m_text;
+        let firstText, secondText;
+        if (point.f_start <= point.m_start) {
+            firstText = point.f_text || '';
+            secondText = point.m_text || '';
         } else {
-            speaker1Text.textContent = 'No transcript available';
-            speaker2Text.textContent = 'No transcript available';
+            firstText = point.m_text || '';
+            secondText = point.f_text || '';
         }
+        speaker1Text.textContent = firstText || 'No transcript available';
+        speaker2Text.textContent = secondText || 'No transcript available';
         
         // 恢复之前的标注（如果有）
         const existingAnnotation = this.annotationData[point.time];
