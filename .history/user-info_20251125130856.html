@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Empathy Assessment System</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .container {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            max-width: 600px;
+            width: 100%;
+            padding: 50px 40px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .header h1 {
+            color: #333;
+            font-size: 32px;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            color: #666;
+            font-size: 16px;
+        }
+
+        .form-section {
+            margin-bottom: 30px;
+        }
+
+        .form-section label {
+            display: block;
+            color: #333;
+            font-size: 16px;
+            font-weight: 500;
+            margin-bottom: 12px;
+        }
+
+        .form-section select {
+            width: 100%;
+            padding: 14px 16px;
+            font-size: 15px;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            background: white;
+            color: #333;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .form-section select:hover {
+            border-color: #667eea;
+        }
+
+        .form-section select:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+
+        .form-section select:disabled {
+            background: #f5f5f5;
+            cursor: not-allowed;
+            opacity: 0.6;
+        }
+
+        .continue-btn {
+            width: 100%;
+            padding: 16px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 30px;
+        }
+
+        .continue-btn:hover:not(:disabled) {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);
+        }
+
+        .continue-btn:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .progress-indicator {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 30px;
+        }
+
+        .progress-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: #e0e0e0;
+            transition: all 0.3s ease;
+        }
+
+        .progress-dot.active {
+            background: #667eea;
+            width: 30px;
+            border-radius: 5px;
+        }
+
+        .progress-dot.completed {
+            background: #4caf50;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Empathy Assessment System</h1>
+            <p>Please provide your basic information</p>
+        </div>
+
+        <form id="userInfoForm">
+            <div class="form-section">
+                <label for="country">Country</label>
+                <select id="country" name="country" required>
+                    <option value="">Select your country</option>
+                    <option value="USA">United States</option>
+                    <option value="UK">United Kingdom</option>
+                    <option value="Canada">Canada</option>
+                    <option value="Australia">Australia</option>
+                    <option value="Germany">Germany</option>
+                    <option value="France">France</option>
+                    <option value="China">China</option>
+                    <option value="Japan">Japan</option>
+                    <option value="Korea">South Korea</option>
+                    <option value="India">India</option>
+                    <option value="Other">Other</option>
+                </select>
+            </div>
+
+            <div class="form-section">
+                <label for="age">Age Range</label>
+                <select id="age" name="age" required disabled>
+                    <option value="">Select your age range</option>
+                    <option value="18-25">18-25</option>
+                    <option value="26-35">26-35</option>
+                    <option value="36-45">36-45</option>
+                    <option value="46-55">46-55</option>
+                    <option value="56-65">56-65</option>
+                    <option value="66+">66+</option>
+                </select>
+            </div>
+
+            <button type="submit" class="continue-btn" id="continueBtn" disabled>Continue</button>
+        </form>
+
+        <div class="progress-indicator">
+            <div class="progress-dot active"></div>
+            <div class="progress-dot"></div>
+            <div class="progress-dot"></div>
+        </div>
+    </div>
+
+    <script>
+        const countrySelect = document.getElementById('country');
+        const ageSelect = document.getElementById('age');
+        const continueBtn = document.getElementById('continueBtn');
+        const form = document.getElementById('userInfoForm');
+        const progressDots = document.querySelectorAll('.progress-dot');
+
+        // Enable age selection when country is selected
+        countrySelect.addEventListener('change', function() {
+            if (this.value) {
+                ageSelect.disabled = false;
+                progressDots[0].classList.add('completed');
+                progressDots[0].classList.remove('active');
+                progressDots[1].classList.add('active');
+            } else {
+                ageSelect.disabled = true;
+                ageSelect.value = '';
+                continueBtn.disabled = true;
+                progressDots[0].classList.remove('completed');
+                progressDots[0].classList.add('active');
+                progressDots[1].classList.remove('active');
+            }
+            checkFormCompletion();
+        });
+
+        // Enable continue button when both selections are made
+        ageSelect.addEventListener('change', function() {
+            if (this.value) {
+                progressDots[1].classList.add('completed');
+                progressDots[1].classList.remove('active');
+                progressDots[2].classList.add('active');
+            } else {
+                progressDots[1].classList.remove('completed');
+                progressDots[1].classList.add('active');
+                progressDots[2].classList.remove('active');
+            }
+            checkFormCompletion();
+        });
+
+        function checkFormCompletion() {
+            if (countrySelect.value && ageSelect.value) {
+                continueBtn.disabled = false;
+            } else {
+                continueBtn.disabled = true;
+            }
+        }
+
+        // Handle form submission
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Save user info to localStorage
+            const userInfo = {
+                country: countrySelect.value,
+                age: ageSelect.value,
+                timestamp: new Date().toISOString()
+            };
+            
+            localStorage.setItem('userInfo', JSON.stringify(userInfo));
+            
+            // Redirect to gender selection
+            window.location.href = 'gender-selection.html';
+        });
+    </script>
+</body>
+</html>

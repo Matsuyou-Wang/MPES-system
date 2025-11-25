@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Empathy Assessment System</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Microsoft YaHei', 'Arial', sans-serif;
+            background-color: #f5f5f5;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 40px 20px;
+        }
+
+        .selection-container {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            max-width: 700px;
+            width: 100%;
+            padding: 40px;
+            border-top: 4px solid #007bff;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .header h1 {
+            color: #007bff;
+            font-size: 28px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .header p {
+            color: #666;
+            font-size: 14px;
+        }
+
+        .form-section {
+            margin-bottom: 25px;
+        }
+
+        .form-section {
+            margin-bottom: 25px;
+        }
+
+        .form-section label {
+            display: block;
+            color: #333;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .form-section select {
+            width: 100%;
+            padding: 12px 14px;
+            font-size: 14px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            background: white;
+            color: #333;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .form-section select:hover {
+            border-color: #007bff;
+        }
+
+        .form-section select:focus {
+            outline: none;
+            border-color: #007bff;
+            box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1);
+        }
+
+        .gender-section {
+            margin: 35px 0 30px;
+        }
+
+        .gender-section label {
+            display: block;
+            color: #333;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .gender-options {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        .gender-option {
+            padding: 25px 20px;
+            border-radius: 6px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            border: 2px solid #e0e0e0;
+            background: #fafafa;
+        }
+
+        .gender-option:hover {
+            border-color: #007bff;
+            background: white;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 123, 255, 0.15);
+        }
+
+        .gender-option.selected {
+            border-color: #007bff;
+            background: #e3f2fd;
+        }
+
+        .gender-icon {
+            width: 50px;
+            height: 50px;
+            margin: 0 auto 12px;
+            background: #007bff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .gender-option.selected .gender-icon {
+            background: #0056b3;
+        }
+
+        .gender-title {
+            font-size: 16px;
+            font-weight: 500;
+            color: #333;
+        }
+
+        .continue-btn {
+            width: 100%;
+            padding: 14px;
+            background: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 15px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            margin-top: 10px;
+        }
+
+        .continue-btn:hover:not(:disabled) {
+            background: #0056b3;
+        }
+
+        .continue-btn:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+        }
+
+        .divider {
+            height: 1px;
+            background: #e0e0e0;
+            margin: 30px 0;
+        }
+
+        @media (max-width: 600px) {
+            .selection-container {
+                padding: 30px 20px;
+            }
+
+            .gender-options {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="selection-container">
+        <div class="header">
+            <h1>Assessment System</h1>
+            <p>Please provide your information to begin</p>
+        </div>
+
+        <form id="selectionForm">
+            <div class="form-section">
+                <label for="country">Country *</label>
+                <select id="country" name="country" required>
+                    <option value="">Select your country</option>
+                    <option value="United States">United States</option>
+                    <option value="United Kingdom">United Kingdom</option>
+                    <option value="Canada">Canada</option>
+                    <option value="Australia">Australia</option>
+                    <option value="Germany">Germany</option>
+                    <option value="France">France</option>
+                    <option value="Italy">Italy</option>
+                    <option value="Spain">Spain</option>
+                    <option value="Netherlands">Netherlands</option>
+                    <option value="Belgium">Belgium</option>
+                    <option value="Switzerland">Switzerland</option>
+                    <option value="Austria">Austria</option>
+                    <option value="Sweden">Sweden</option>
+                    <option value="Norway">Norway</option>
+                    <option value="Denmark">Denmark</option>
+                    <option value="Finland">Finland</option>
+                    <option value="Poland">Poland</option>
+                    <option value="Portugal">Portugal</option>
+                    <option value="Greece">Greece</option>
+                    <option value="Ireland">Ireland</option>
+                    <option value="Japan">Japan</option>
+                    <option value="South Korea">South Korea</option>
+                    <option value="Singapore">Singapore</option>
+                    <option value="Malaysia">Malaysia</option>
+                    <option value="Thailand">Thailand</option>
+                    <option value="Vietnam">Vietnam</option>
+                    <option value="Philippines">Philippines</option>
+                    <option value="Indonesia">Indonesia</option>
+                    <option value="India">India</option>
+                    <option value="Brazil">Brazil</option>
+                    <option value="Mexico">Mexico</option>
+                    <option value="Argentina">Argentina</option>
+                    <option value="Chile">Chile</option>
+                    <option value="Colombia">Colombia</option>
+                    <option value="Peru">Peru</option>
+                    <option value="South Africa">South Africa</option>
+                    <option value="Egypt">Egypt</option>
+                    <option value="Turkey">Turkey</option>
+                    <option value="Russia">Russia</option>
+                    <option value="Ukraine">Ukraine</option>
+                    <option value="Czech Republic">Czech Republic</option>
+                    <option value="Hungary">Hungary</option>
+                    <option value="Romania">Romania</option>
+                    <option value="Bulgaria">Bulgaria</option>
+                    <option value="Croatia">Croatia</option>
+                    <option value="New Zealand">New Zealand</option>
+                    <option value="Israel">Israel</option>
+                    <option value="Saudi Arabia">Saudi Arabia</option>
+                    <option value="UAE">United Arab Emirates</option>
+                    <option value="Other">Other</option>
+                </select>
+            </div>
+
+            <div class="form-section">
+                <label for="age">Age *</label>
+                <select id="age" name="age" required>
+                    <option value="">Select your age</option>
+                    <option value="18">18</option>
+                    <option value="19">19</option>
+                    <option value="20">20</option>
+                    <option value="21">21</option>
+                    <option value="22">22</option>
+                    <option value="23">23</option>
+                    <option value="24">24</option>
+                    <option value="25">25</option>
+                    <option value="26">26</option>
+                    <option value="27">27</option>
+                    <option value="28">28</option>
+                    <option value="29">29</option>
+                    <option value="30">30</option>
+                    <option value="31">31</option>
+                    <option value="32">32</option>
+                    <option value="33">33</option>
+                    <option value="34">34</option>
+                    <option value="35">35</option>
+                    <option value="36">36</option>
+                    <option value="37">37</option>
+                    <option value="38">38</option>
+                    <option value="39">39</option>
+                    <option value="40">40</option>
+                    <option value="41">41</option>
+                    <option value="42">42</option>
+                    <option value="43">43</option>
+                    <option value="44">44</option>
+                    <option value="45">45</option>
+                    <option value="46">46</option>
+                    <option value="47">47</option>
+                    <option value="48">48</option>
+                    <option value="49">49</option>
+                    <option value="50">50</option>
+                    <option value="51">51</option>
+                    <option value="52">52</option>
+                    <option value="53">53</option>
+                    <option value="54">54</option>
+                    <option value="55">55</option>
+                    <option value="56">56</option>
+                    <option value="57">57</option>
+                    <option value="58">58</option>
+                    <option value="59">59</option>
+                    <option value="60">60</option>
+                    <option value="61">61</option>
+                    <option value="62">62</option>
+                    <option value="63">63</option>
+                    <option value="64">64</option>
+                    <option value="65">65</option>
+                    <option value="66-70">66-70</option>
+                    <option value="71-75">71-75</option>
+                    <option value="76-80">76-80</option>
+                    <option value="80+">80+</option>
+                </select>
+            </div>
+
+            <div class="divider"></div>
+
+            <div class="gender-section">
+                <label>Gender *</label>
+                <div class="gender-options">
+                    <div class="gender-option" id="maleOption" data-gender="male">
+                        <div class="gender-icon">M</div>
+                        <div class="gender-title">Male</div>
+                    </div>
+                    
+                    <div class="gender-option" id="femaleOption" data-gender="female">
+                        <div class="gender-icon">F</div>
+                        <div class="gender-title">Female</div>
+                    </div>
+                </div>
+            </div>
+
+            <button type="submit" class="continue-btn" id="continueBtn" disabled>Continue to Assessment</button>
+        </form>
+    </div>
+
+    <script>
+        const countrySelect = document.getElementById('country');
+        const ageSelect = document.getElementById('age');
+        const maleOption = document.getElementById('maleOption');
+        const femaleOption = document.getElementById('femaleOption');
+        const continueBtn = document.getElementById('continueBtn');
+        const form = document.getElementById('selectionForm');
+        
+        let selectedGender = '';
+
+        // Check if form is complete
+        function checkFormCompletion() {
+            const countryValid = countrySelect.value !== '';
+            const ageValid = ageSelect.value !== '';
+            const genderValid = selectedGender !== '';
+
+            if (countryValid && ageValid && genderValid) {
+                continueBtn.disabled = false;
+            } else {
+                continueBtn.disabled = true;
+            }
+        }
+
+        // Gender selection
+        maleOption.addEventListener('click', function() {
+            selectedGender = 'male';
+            maleOption.classList.add('selected');
+            femaleOption.classList.remove('selected');
+            checkFormCompletion();
+        });
+
+        femaleOption.addEventListener('click', function() {
+            selectedGender = 'female';
+            femaleOption.classList.add('selected');
+            maleOption.classList.remove('selected');
+            checkFormCompletion();
+        });
+
+        // Form field listeners
+        countrySelect.addEventListener('change', checkFormCompletion);
+        ageSelect.addEventListener('change', checkFormCompletion);
+
+        // Form submission
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            // Save user info to localStorage
+            const userInfo = {
+                country: countrySelect.value,
+                age: ageSelect.value,
+                gender: selectedGender,
+                timestamp: new Date().toISOString()
+            };
+            
+            localStorage.setItem('userInfo', JSON.stringify(userInfo));
+            localStorage.setItem('selectedGender', selectedGender);
+            
+            // Redirect to annotation interface
+            window.location.href = 'annotation.html?gender=' + selectedGender;
+        });
+    </script>
+</body>
+</html>

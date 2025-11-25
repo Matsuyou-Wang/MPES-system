@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Empathy Assessment System - Video Rating</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar: Video Library -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h2 id="genderTitle">Video Library</h2>
+                <button id="changeGenderBtn" class="btn btn-secondary" style="margin-top: 10px; width: 100%;">Change Gender</button>
+            </div>
+            <div class="video-library">
+                <h3>Available Videos</h3>
+                <ul id="videoList" class="video-list">
+                    <!-- Videos loaded dynamically -->
+                </ul>
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <!-- Initial Selection View -->
+            <div id="selectionView" class="view active">
+                <div class="welcome-box">
+                    <h1>Annotation System</h1>
+                    <p>Please select a video from the available videos on the left to start annotating</p>
+                    
+                    <div class="info-box">
+                        <h3>Annotation Instructions</h3>
+                        <ul>
+                            <li>The video will automatically pause at designated annotation points</li>
+                            <li>Complete the rating form for each segment when prompted</li>
+                            <li>Evaluate the second speaker's empathy across 9 dimensions using a scale from 1 (not at all) to 7 (extensively)</li>
+                            <li>You can resume playback after submitting your ratings or return to modify previous annotations at any time</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Video Playing and Annotation View -->
+            <div id="annotationView" class="view">
+                <!-- Center: Video Player -->
+                <div class="annotation-center-panel">
+                    <div class="video-player-container">
+                        <video id="videoPlayer" class="video-player">
+                            <source src="" type="video/mp4">
+                            Your browser does not support video playback
+                        </video>
+                        <div class="video-controls">
+                            <button id="playBtn" class="control-btn">Play</button>
+                            <button id="pauseBtn" class="control-btn">Pause</button>
+                            <span id="currentTime" class="time-display">00:00</span>
+                            <span class="time-separator">/</span>
+                            <span id="duration" class="time-display">00:00</span>
+                            <div class="progress-bar">
+                                <div id="progress" class="progress-fill"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right: Annotation History Panel -->
+                <div class="annotation-right-panel">
+                    <h3>Annotation Progress</h3>
+                    <div id="historyList" class="history-list">
+                        <!-- Annotation records added dynamically -->
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Annotation Questionnaire Modal -->
+    <div id="annotationModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Annotation Form</h2>
+                <span class="close-btn">&times;</span>
+            </div>
+
+            <div class="modal-body">
+                <div class="timestamp-info">
+                    <p>Video time: <span id="modalTimestamp">00:00</span></p>
+                </div>
+
+                <!-- Empathy Assessment Section -->
+                <div class="scale-section">
+                    <p class="section-description">Please rate the second speaker on each dimension below on a scale from 1 (Not at all) to 7 (Extensively).</p>
+
+                    <!-- Question 1: Concern -->
+                    <div class="empathy-question">
+                        <p>The second speaker shows genuine concern and interest in the first speaker's situation and well-being.</p>
+                        <div class="slider-container">
+                            <span class="slider-label">1</span>
+                            <input type="range" min="1" max="7" value="4" class="slider empathy-slider" name="concern">
+                            <span class="slider-label">7</span>
+                            <span class="slider-value" id="concern-value">4</span>
+                        </div>
+                        <div class="empathy-labels">
+                            <span>Not at all</span>
+                            <span>A little</span>
+                            <span>Infrequently</span>
+                            <span>Somewhat</span>
+                            <span>Quite a bit</span>
+                            <span>Considerably</span>
+                            <span>Extensively</span>
+                        </div>
+                    </div>
+
+                    <!-- Question 2: Expressiveness -->
+                    <div class="empathy-question">
+                        <p>The second speaker uses vocal tone, energy, and pacing that fit the first speaker's emotional state.</p>
+                        <div class="slider-container">
+                            <span class="slider-label">1</span>
+                            <input type="range" min="1" max="7" value="4" class="slider empathy-slider" name="expressiveness">
+                            <span class="slider-label">7</span>
+                            <span class="slider-value" id="expressiveness-value">4</span>
+                        </div>
+                        <div class="empathy-labels">
+                            <span>Not at all</span>
+                            <span>A little</span>
+                            <span>Infrequently</span>
+                            <span>Somewhat</span>
+                            <span>Quite a bit</span>
+                            <span>Considerably</span>
+                            <span>Extensively</span>
+                        </div>
+                    </div>
+
+                    <!-- Question 3: Emotional Resonance -->
+                    <div class="empathy-question">
+                        <p>The second speaker sensitively reflects the intensity of the first speaker's emotions.</p>
+                        <div class="slider-container">
+                            <span class="slider-label">1</span>
+                            <input type="range" min="1" max="7" value="4" class="slider empathy-slider" name="emotional_resonance">
+                            <span class="slider-label">7</span>
+                            <span class="slider-value" id="emotional_resonance-value">4</span>
+                        </div>
+                        <div class="empathy-labels">
+                            <span>Not at all</span>
+                            <span>A little</span>
+                            <span>Infrequently</span>
+                            <span>Somewhat</span>
+                            <span>Quite a bit</span>
+                            <span>Considerably</span>
+                            <span>Extensively</span>
+                        </div>
+                    </div>
+
+                    <!-- Question 4: Warmth -->
+                    <div class="empathy-question">
+                        <p>The second speaker speaks in a warm, sincere, and supportive manner toward the first speaker.</p>
+                        <div class="slider-container">
+                            <span class="slider-label">1</span>
+                            <input type="range" min="1" max="7" value="4" class="slider empathy-slider" name="warmth">
+                            <span class="slider-label">7</span>
+                            <span class="slider-value" id="warmth-value">4</span>
+                        </div>
+                        <div class="empathy-labels">
+                            <span>Not at all</span>
+                            <span>A little</span>
+                            <span>Infrequently</span>
+                            <span>Somewhat</span>
+                            <span>Quite a bit</span>
+                            <span>Considerably</span>
+                            <span>Extensively</span>
+                        </div>
+                    </div>
+
+                    <!-- Question 5: Attunement -->
+                    <div class="empathy-question">
+                        <p>The second speaker notices and responds to subtle changes in the first speaker's mood, meaning, or emotional cues.</p>
+                        <div class="slider-container">
+                            <span class="slider-label">1</span>
+                            <input type="range" min="1" max="7" value="4" class="slider empathy-slider" name="attunement">
+                            <span class="slider-label">7</span>
+                            <span class="slider-value" id="attunement-value">4</span>
+                        </div>
+                        <div class="empathy-labels">
+                            <span>Not at all</span>
+                            <span>A little</span>
+                            <span>Infrequently</span>
+                            <span>Somewhat</span>
+                            <span>Quite a bit</span>
+                            <span>Considerably</span>
+                            <span>Extensively</span>
+                        </div>
+                    </div>
+
+                    <!-- Question 6: Cognitive Understanding -->
+                    <div class="empathy-question">
+                        <p>The second speaker accurately understands what the first speaker is thinking and restates it clearly and without distortion.</p>
+                        <div class="slider-container">
+                            <span class="slider-label">1</span>
+                            <input type="range" min="1" max="7" value="4" class="slider empathy-slider" name="cognitive_understanding">
+                            <span class="slider-label">7</span>
+                            <span class="slider-value" id="cognitive_understanding-value">4</span>
+                        </div>
+                        <div class="empathy-labels">
+                            <span>Not at all</span>
+                            <span>A little</span>
+                            <span>Infrequently</span>
+                            <span>Somewhat</span>
+                            <span>Quite a bit</span>
+                            <span>Considerably</span>
+                            <span>Extensively</span>
+                        </div>
+                    </div>
+
+                    <!-- Question 7: Understanding of Feelings -->
+                    <div class="empathy-question">
+                        <p>The second speaker demonstrates an accurate understanding of the first speaker's emotions and inner experiences.</p>
+                        <div class="slider-container">
+                            <span class="slider-label">1</span>
+                            <input type="range" min="1" max="7" value="4" class="slider empathy-slider" name="understanding_feelings">
+                            <span class="slider-label">7</span>
+                            <span class="slider-value" id="understanding_feelings-value">4</span>
+                        </div>
+                        <div class="empathy-labels">
+                            <span>Not at all</span>
+                            <span>A little</span>
+                            <span>Infrequently</span>
+                            <span>Somewhat</span>
+                            <span>Quite a bit</span>
+                            <span>Considerably</span>
+                            <span>Extensively</span>
+                        </div>
+                    </div>
+
+                    <!-- Question 8: Acceptance -->
+                    <div class="empathy-question">
+                        <p>The second speaker validates the first speaker's emotions without judging, dismissing, or minimizing them.</p>
+                        <div class="slider-container">
+                            <span class="slider-label">1</span>
+                            <input type="range" min="1" max="7" value="4" class="slider empathy-slider" name="acceptance">
+                            <span class="slider-label">7</span>
+                            <span class="slider-value" id="acceptance-value">4</span>
+                        </div>
+                        <div class="empathy-labels">
+                            <span>Not at all</span>
+                            <span>A little</span>
+                            <span>Infrequently</span>
+                            <span>Somewhat</span>
+                            <span>Quite a bit</span>
+                            <span>Considerably</span>
+                            <span>Extensively</span>
+                        </div>
+                    </div>
+
+                    <!-- Question 9: Responsiveness -->
+                    <div class="empathy-question">
+                        <p>The second speaker adapts replies in real time according to what the first speaker says, rather than pushing a fixed agenda.</p>
+                        <div class="slider-container">
+                            <span class="slider-label">1</span>
+                            <input type="range" min="1" max="7" value="4" class="slider empathy-slider" name="responsiveness">
+                            <span class="slider-label">7</span>
+                            <span class="slider-value" id="responsiveness-value">4</span>
+                        </div>
+                        <div class="empathy-labels">
+                            <span>Not at all</span>
+                            <span>A little</span>
+                            <span>Infrequently</span>
+                            <span>Somewhat</span>
+                            <span>Quite a bit</span>
+                            <span>Considerably</span>
+                            <span>Extensively</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-footer">
+                <button id="clearBtn" class="btn btn-secondary">Clear</button>
+                <button id="confirmBtn" class="btn btn-primary">Confirm</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Edit Panel -->
+    <div id="editPanel" class="edit-panel hidden">
+        <div class="edit-panel-header">
+            <h3>Edit Annotation</h3>
+            <button class="close-edit-panel">&times;</button>
+        </div>
+        <div id="editList" class="edit-list">
+            <!-- Edit items generated dynamically -->
+        </div>
+    </div>
+
+    <script src="data/videos-extended.js"></script>
+    <script src="data/annotation-config.js"></script>
+    <script src="data/dialog-data.js"></script>
+    <script src="js/data-manager.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/tester.js"></script>
+    <script>
+        // 性别选择功能
+        function goBack() {
+            window.location.href = 'gender-selection.html';
+        }
+
+        // 获取URL参数
+        function getUrlParameter(name) {
+            name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+            var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+            var results = regex.exec(location.search);
+            return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+        }
+
+        // 根据性别加载视频
+        window.addEventListener('DOMContentLoaded', function() {
+            const selectedGender = getUrlParameter('gender') || localStorage.getItem('selectedGender') || 'male';
+            
+            if (typeof ALL_VIDEOS !== 'undefined') {
+                // 更新标题
+                const genderTitle = document.getElementById('genderTitle');
+                if (genderTitle) {
+                    genderTitle.textContent = selectedGender === 'male' ? 'Male Videos' : 'Female Videos';
+                }
+                
+                // 根据性别加载对应的视频
+                if (selectedGender === 'male' && ALL_VIDEOS.male) {
+                    window.videos = ALL_VIDEOS.male;
+                } else if (selectedGender === 'female' && ALL_VIDEOS.female) {
+                    window.videos = ALL_VIDEOS.female;
+                } else {
+                    // 默认使用男性视频
+                    window.videos = ALL_VIDEOS.male || [];
+                }
+                
+                // 存储当前选择
+                localStorage.setItem('selectedGender', selectedGender);
+            }
+
+            // 初始化注释系统
+            try {
+                console.log('正在初始化注释系统...');
+                if (typeof AnnotationSystem !== 'undefined') {
+                    window.annotationSystem = new AnnotationSystem();
+                    console.log('注释系统初始化成功');
+                } else {
+                    console.error('AnnotationSystem 类未找到');
+                }
+            } catch (error) {
+                console.error('初始化注释系统时出错:', error);
+            }
+
+            // 绑定Change Gender按钮事件
+            const changeGenderBtn = document.getElementById('changeGenderBtn');
+            if (changeGenderBtn) {
+                changeGenderBtn.addEventListener('click', goBack);
+                console.log('Change Gender 按钮事件已绑定');
+            } else {
+                console.error('找不到Change Gender按钮');
+            }
+        });
+    </script>
+</body>
+</html>

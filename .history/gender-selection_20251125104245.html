@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Empathy Annotation System - Gender Selection</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .gender-selection-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px;
+            background: white;
+            min-height: 100vh;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 50px;
+            padding: 40px 0;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 12px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+
+        .header h1 {
+            font-size: 32px;
+            margin-bottom: 8px;
+            font-weight: 700;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .header .subtitle {
+            font-size: 18px;
+            margin-bottom: 8px;
+            opacity: 0.9;
+            font-weight: 500;
+        }
+
+        .header .description {
+            font-size: 14px;
+            opacity: 0.8;
+            margin: 0;
+            font-weight: 400;
+        }
+
+        .gender-options {
+            display: flex;
+            gap: 40px;
+            justify-content: center;
+            margin: 40px 0;
+            flex-wrap: wrap;
+        }
+
+        .gender-option {
+            background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+            border: 2px solid #e9ecef;
+            border-radius: 16px;
+            padding: 40px 35px;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            min-width: 280px;
+            flex: 1;
+            max-width: 320px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .gender-option::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.6), transparent);
+            transition: left 0.5s;
+        }
+
+        .gender-option:hover::before {
+            left: 100%;
+        }
+
+        .gender-option:hover {
+            background: linear-gradient(135deg, #fff 0%, #e3f2fd 100%);
+            border-color: #2196f3;
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 12px 40px rgba(33, 150, 243, 0.2);
+        }
+
+        .gender-title {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 12px;
+            color: #333;
+        }
+
+        .gender-description {
+            font-size: 14px;
+            color: #666;
+        }
+
+        .info-section {
+            margin-top: 50px;
+            padding: 35px;
+            background: linear-gradient(135deg, #f8f9ff 0%, #e6f3ff 100%);
+            border-radius: 12px;
+            border: 1px solid #e0e8ff;
+            box-shadow: 0 4px 16px rgba(0, 123, 255, 0.08);
+        }
+
+        .info-section h3 {
+            font-size: 20px;
+            color: #2c3e50;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .info-section ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .info-section li {
+            padding: 8px 0;
+            font-size: 14px;
+            color: #666;
+        }
+
+        .info-section li:before {
+            content: "• ";
+            color: #007bff;
+            font-weight: bold;
+            margin-right: 8px;
+        }
+    </style>
+</head>
+<body>
+    <div class="gender-selection-container">
+        <div class="header">
+            <h1>Empathy Assessment System</h1>
+            <p class="subtitle">Interactive Video Annotation Platform</p>
+            <p class="description">Please select your participant group to begin the empathy evaluation study</p>
+        </div>
+        
+        <div class="gender-options">
+            <div class="gender-option male" id="maleOption">
+                <div class="gender-title">Male Participant Group</div>
+                <div class="gender-description">Access videos featuring male speakers for empathy assessment</div>
+            </div>
+            
+            <div class="gender-option female" id="femaleOption">
+                <div class="gender-title">Female Participant Group</div>
+                <div class="gender-description">Access videos featuring female speakers for empathy assessment</div>
+            </div>
+        </div>
+        
+        <div class="info-section">
+            <h3>Study Instructions</h3>
+            <ul>
+                <li><strong>Interactive Videos:</strong> Each video automatically pauses at key moments for your assessment</li>
+                <li><strong>Empathy Evaluation:</strong> Rate the empathy demonstrated by the second speaker across 9 dimensions</li>
+                <li><strong>Flexible Assessment:</strong> Review and modify your ratings as needed - progress saves automatically</li>
+                <li><strong>Multiple Replays:</strong> Watch key segments multiple times to ensure accurate evaluation</li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        function selectGender(gender) {
+            console.log('正在选择性别:', gender);
+            try {
+                // 存储选择的性别到 localStorage
+                localStorage.setItem('selectedGender', gender);
+                console.log('已保存到 localStorage:', gender);
+                
+                // 跳转到主注释界面
+                const targetUrl = 'annotation.html?gender=' + gender;
+                console.log('跳转到:', targetUrl);
+                window.location.href = targetUrl;
+            } catch (error) {
+                console.error('选择性别时出错:', error);
+                alert('选择性别时出错，请重试');
+            }
+        }
+
+        // 等待页面加载完成
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('页面加载完成，绑定事件监听器');
+            
+            // 获取性别选项元素
+            const maleOption = document.getElementById('maleOption');
+            const femaleOption = document.getElementById('femaleOption');
+
+            if (maleOption) {
+                maleOption.addEventListener('click', function(e) {
+                    console.log('点击了男性选项');
+                    e.preventDefault();
+                    selectGender('male');
+                });
+                console.log('男性选项事件监听器已绑定');
+            } else {
+                console.error('找不到男性选项元素');
+            }
+
+            if (femaleOption) {
+                femaleOption.addEventListener('click', function(e) {
+                    console.log('点击了女性选项');
+                    e.preventDefault();
+                    selectGender('female');
+                });
+                console.log('女性选项事件监听器已绑定');
+            } else {
+                console.error('找不到女性选项元素');
+            }
+        });
+    </script>
+</body>
+</html>

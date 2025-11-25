@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>System Test Page</title>
+    <style>
+        body { 
+            font-family: Arial, sans-serif; 
+            padding: 20px; 
+            background-color: #f5f5f5;
+        }
+        .test-section { 
+            margin-bottom: 30px; 
+            padding: 20px; 
+            background: white; 
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .test-button { 
+            padding: 10px 20px; 
+            margin: 10px; 
+            background-color: #007bff; 
+            color: white; 
+            border: none; 
+            border-radius: 4px; 
+            cursor: pointer;
+        }
+        .test-button:hover { 
+            background-color: #0056b3; 
+        }
+        .result { 
+            margin-top: 10px; 
+            padding: 10px; 
+            background-color: #f8f9fa; 
+            border-left: 4px solid #007bff;
+        }
+        .error { 
+            border-left-color: #dc3545; 
+            background-color: #f8d7da;
+        }
+        .success { 
+            border-left-color: #28a745; 
+            background-color: #d4edda;
+        }
+    </style>
+</head>
+<body>
+    <h1>系统功能测试页面</h1>
+    
+    <div class="test-section">
+        <h2>1. 文件加载测试</h2>
+        <button class="test-button" onclick="testFileLoading()">测试文件加载</button>
+        <div id="fileLoadResult" class="result" style="display:none;"></div>
+    </div>
+
+    <div class="test-section">
+        <h2>2. 性别选择功能测试</h2>
+        <button class="test-button" onclick="testGenderSelection('male')">测试男性选择</button>
+        <button class="test-button" onclick="testGenderSelection('female')">测试女性选择</button>
+        <div id="genderResult" class="result" style="display:none;"></div>
+    </div>
+
+    <div class="test-section">
+        <h2>3. 视频数据测试</h2>
+        <button class="test-button" onclick="testVideoData()">测试视频数据</button>
+        <div id="videoDataResult" class="result" style="display:none;"></div>
+    </div>
+
+    <div class="test-section">
+        <h2>4. 页面跳转测试</h2>
+        <button class="test-button" onclick="window.location.href='index.html'">测试首页</button>
+        <button class="test-button" onclick="window.location.href='gender-selection.html'">测试性别选择页</button>
+        <button class="test-button" onclick="window.location.href='annotation.html?gender=male'">测试注释页面</button>
+    </div>
+
+    <script src="data/videos-extended.js"></script>
+    <script>
+        function showResult(elementId, message, isError = false) {
+            const element = document.getElementById(elementId);
+            element.style.display = 'block';
+            element.className = isError ? 'result error' : 'result success';
+            element.innerHTML = message;
+        }
+
+        function testFileLoading() {
+            let results = [];
+            
+            // 测试CSS文件
+            const cssLinks = document.querySelectorAll('link[rel="stylesheet"]');
+            results.push(`发现 ${cssLinks.length} 个CSS文件`);
+            
+            // 测试JavaScript文件
+            try {
+                if (typeof ALL_VIDEOS !== 'undefined') {
+                    results.push('✅ videos-extended.js 加载成功');
+                } else {
+                    results.push('❌ videos-extended.js 加载失败');
+                }
+            } catch(e) {
+                results.push('❌ videos-extended.js 错误: ' + e.message);
+            }
+
+            // 测试其他JS文件
+            const scriptTags = document.querySelectorAll('script[src]');
+            results.push(`发现 ${scriptTags.length} 个外部脚本文件`);
+            
+            showResult('fileLoadResult', results.join('<br>'));
+        }
+
+        function testGenderSelection(gender) {
+            try {
+                // 模拟性别选择
+                localStorage.setItem('selectedGender', gender);
+                const stored = localStorage.getItem('selectedGender');
+                
+                if (stored === gender) {
+                    showResult('genderResult', `✅ ${gender} 性别选择功能正常<br>localStorage 存储成功: ${stored}`);
+                } else {
+                    showResult('genderResult', `❌ localStorage 存储失败`, true);
+                }
+            } catch(e) {
+                showResult('genderResult', `❌ 错误: ${e.message}`, true);
+            }
+        }
+
+        function testVideoData() {
+            try {
+                if (typeof ALL_VIDEOS === 'undefined') {
+                    showResult('videoDataResult', '❌ ALL_VIDEOS 未定义', true);
+                    return;
+                }
+
+                let results = [];
+                results.push(`男性视频数量: ${ALL_VIDEOS.male ? ALL_VIDEOS.male.length : 0}`);
+                results.push(`女性视频数量: ${ALL_VIDEOS.female ? ALL_VIDEOS.female.length : 0}`);
+                
+                // 测试第一个视频
+                if (ALL_VIDEOS.male && ALL_VIDEOS.male.length > 0) {
+                    const firstVideo = ALL_VIDEOS.male[0];
+                    results.push(`第一个男性视频: ${firstVideo.title}`);
+                    results.push(`视频路径: ${firstVideo.path}`);
+                }
+
+                if (ALL_VIDEOS.female && ALL_VIDEOS.female.length > 0) {
+                    const firstVideo = ALL_VIDEOS.female[0];
+                    results.push(`第一个女性视频: ${firstVideo.title}`);
+                }
+
+                showResult('videoDataResult', results.join('<br>'));
+            } catch(e) {
+                showResult('videoDataResult', `❌ 错误: ${e.message}`, true);
+            }
+        }
+
+        // 页面加载完成后自动运行基础测试
+        window.addEventListener('DOMContentLoaded', function() {
+            testFileLoading();
+        });
+    </script>
+</body>
+</html>
